@@ -21,6 +21,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-gist", "~> 1.5"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.1"
   spec.add_runtime_dependency "jekyll-include-cache", "~> 0.1"
+  spec.add_runtime_dependency "tzinfo", "~> 1.2"
+  spec.add_runtime_dependency "tzinfo-data", "~> 1.2019"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake", "~> 10.0"
