@@ -207,6 +207,31 @@
   }
 }
 
+a.wechat {
+  position: relative;
+}
+.wechat img.qrcode {
+	position: absolute;
+	z-index: 99;
+	top: 0px;
+	right: 0px;
+	width: 7.5rem;
+	max-width: none;
+	height: 7.5rem;
+	transform: scale(0);
+	transform-origin: top left;
+	opacity: 0;
+	border: .3125rem solid #0085ba;
+	border-radius: .25rem;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.wechat:hover img.qrcode {
+	transform: scale(1);
+	opacity: 1;
+}
+
 .author__urls {
   display: none;
   position: absolute;
