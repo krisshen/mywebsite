@@ -3,7 +3,7 @@ title: "About this website"
 permalink: /about/
 header:
     image: "/images/about_header.jpg"
-last_modified_at:
+last_modified_at: 2019-10-09
 ---
 ---
 Hey Ya! 

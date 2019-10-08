@@ -5,7 +5,7 @@ header:
 tags: [myprojects, website, jekyll, minimal-mistakes]
 categories: [project_website]
 excerpt: First post here, to test basic post functions.
-last_modified_at:
+last_modified_at: 2019-10-09
 ---
 
 Ok, this is my first post to my personal website, when you see this post it means:

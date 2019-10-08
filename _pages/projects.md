@@ -19,7 +19,7 @@ feature_row:
   #   url: "/projects/resume/"
   #   btn_label: "Read More"
   #   btn_class: "btn--primary"
-last_modified_at:
+last_modified_at: 2019-10-09
 ---
 
 My personal projects:
