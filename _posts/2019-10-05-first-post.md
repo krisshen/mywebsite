@@ -1,5 +1,5 @@
 ---
-title: "First post, start building my own website"
+title: "First post! start building my own website"
 header:
   image: /images/header.jpg
 tags: [myprojects, website, jekyll, minimal-mistakes]
@@ -15,4 +15,4 @@ Ok, this is my first post to my personal website, when you see this post it mean
 
 More features to be enabled/added to this website... Let's see!
 
-For details please refer projects page, url to be provided here.
+For details please refer [my website project](/projects/website/) page.
