@@ -13,5 +13,5 @@ My name is **Kris Shen** and I'm a software automation test engineer, currently 
 
 The purpose of this website is to mainly record/share my thoughts, status, life/work experience, projects etc.
 
-Thanks for visiting my website, 
-Enjoy and have fun😘
+
+Thanks for visiting my website, enjoy and have fun😘
