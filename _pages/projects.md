@@ -3,7 +3,7 @@ title: "Projects"
 permalink: /projects/
 layout: splash
 header:
-    image: "/images/about_header.jpg"
+    image: "/images/projects_header.jpg"
 feature_row:
   - image_path: /images/mywebsite_preview.jpg
     # image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
