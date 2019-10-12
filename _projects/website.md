@@ -89,7 +89,7 @@ GitHub Pages feature is disabled by default, it's easy to enable it.
 
 - Reference: [GitHub official document](https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site)
 
-## Customization Problems Solutions
+## Customization
 
 ### Add Projects Tab
 
@@ -100,3 +100,10 @@ GitHub Pages feature is disabled by default, it's easy to enable it.
 ### Add URL To Project Preview Image
 
 ### Enable Page Update Time
+
+## Useful Links
+
+- [Emoji](http://emojihomepage.com/)
+- [Minimal Mistakes Documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+- [Jekyll Quickstart](https://jekyllrb.com/docs/)
+- [Jekyll Tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
