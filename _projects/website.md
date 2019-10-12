@@ -76,7 +76,18 @@ GitHub Pages feature is disabled by default, it's easy to enable it.
     {% include figure image_path="/images/website_githubpagesectiondone.jpg" caption="GitHub Pages enabled." %}
 5. Access the URL to check published website.
 
-### Setup Domain
+### Setup Custom Domain
+
+- Buy a domain name - I bought my one from [www.namecheap.com](https://www.namecheap.com), please note, this is not the only domain registrar, there are unlimited choices out there. Even after purchase, some configuration is also needed, please check the video below from 9m52s, it covers how to configure domian settings in namecheap, for other domain registrars I believe they are all similar
+    {% include video id="SKXkC4SqtRk?start=592" provider="youtube" %}
+- Create CNAME file in repository - In source code create a file named "CNAME" and place my new domain name into it 
+    
+    ![CNAME](/images/CNAME.jpg)
+
+- In repository settings GitHub Pages section, set the new domain name and save it, give it some time to pick up, then access the new domain name, should be all set.
+    {% include figure image_path="/images/website_githubpagesectioncustomdomain.jpg" caption="published to custom domain." %}  
+
+- Reference: [GitHub official document](https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site)
 
 ## Customization Problems Solutions
 
