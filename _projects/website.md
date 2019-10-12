@@ -37,8 +37,55 @@ Apart from the website code and content setup, we also need:
 
 ### Setup Website Code
 
+Website code is in minimal-mistakes Jekyll theme, there're 3 ways to install this, details please refer [minimal-mistakes#installation](https://github.com/mmistakes/minimal-mistakes#installation).
+
+- I followed the 3rd way - **directly copy** - to setup my initial repository:
+1. Clone [minimal-mistakes](https://github.com/mmistakes/minimal-mistakes) repository to my local
+2. Create a new GitHub repository, clone it to my local
+3. In my local copy "minimal-mistakes" directory's content into my new repository's directory
+4. Push them to my GitHub repository
+
+- Above steps are enough to serve a static website on GitHub, once I enable GitHub pages then I would get an initial website. But it's not enough to run it locally, so I also need to get my local develop enverionment ready:
+1. Install [Ruby](https://jekyllrb.com/docs/installation/) - because Jekyll is written in Ruby
+2. Install **Bundler** and **Jekyll** by running command:
+    ```
+    gem install jekyll bundler
+    ```
+    Because minimal-mistakes requires Jekyll and Bundler.
+3. cd to my repository's folder and run below command to get all dependencies installed:
+   ```
+   bundle
+   #or bundle install
+   ```
+4. Run following command to start up a local host:
+   ```
+   bundle exec jekyll serve
+   ```
+5. By default the local host will be served at: http://127.0.0.1:4000
+6. Done.
+
 ### Setup GitHub Pages
+
+GitHub Pages feature is disabled by default, it's easy to enable it.
+
+1. In GitHub go to my repository that I want to publish
+2. Click Settings
+3. In Setting page, scroll down to GitHub Pages section, select 'master' branch
+    {% include figure image_path="/images/website_githubpagesection.jpg" caption="GitHub Pages disabled by default." %}
+4. Then the Settings page should be auto-refreshed, go back to GitHub Pages section, check it again.
+    {% include figure image_path="/images/website_githubpagesectiondone.jpg" caption="GitHub Pages enabled." %}
+5. Access the URL to check published website.
 
 ### Setup Domain
 
-## Customize
+## Customization Problems Solutions
+
+### Add Projects Tab
+
+### Make Header Sticky
+
+### Add WeChat Info
+
+### Add URL To Project Preview Image
+
+### Enable Page Update Time
