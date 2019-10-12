@@ -62,7 +62,7 @@ Website code is in minimal-mistakes Jekyll theme, there're 3 ways to install thi
    bundle exec jekyll serve
    ```
 5. By default the local host will be served at: http://127.0.0.1:4000
-6. Done.
+6. Visit local host from browser, a default page should be shown.
 
 ### Setup GitHub Pages
 
@@ -84,7 +84,7 @@ GitHub Pages feature is disabled by default, it's easy to enable it.
     
     ![CNAME](/images/CNAME.jpg)
 
-- In repository settings GitHub Pages section, set the new domain name and save it, give it some time to pick up, then access the new domain name, should be all set.
+- In repository settings GitHub Pages section, set the new domain name and save it, give it some time to pick up my GitHub page, then access the new domain name, should be all set.
     {% include figure image_path="/images/website_githubpagesectioncustomdomain.jpg" caption="published to custom domain." %}  
 
 - Reference: [GitHub official document](https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site)
