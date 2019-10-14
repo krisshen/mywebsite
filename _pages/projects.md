@@ -12,13 +12,13 @@ feature_row:
     url: "/projects/website/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  # - image_path: /images/myresume_preview.jpg
-  #   # image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
-  #   title: "my resume"
-  #   excerpt: "To build an online interactive resume generator."
-  #   url: "/projects/resume/"
-  #   btn_label: "Read More"
-  #   btn_class: "btn--primary"
+  - image_path: /images/myresume_preview.jpg
+    # image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    title: "my resume"
+    excerpt: "To build an online interactive resume generator."
+    url: "/projects/resume/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
 ---
 
 My personal projects:

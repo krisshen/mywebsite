@@ -91,7 +91,9 @@ GitHub Pages feature is disabled by default, it's easy to enable it.
 
 ## Customization
 
-### Add Projects Tab
+### Add Projects Page
+
+Please refer this post: [how-to-add-projects-page](/project_website/how-to-add-projects-page/)
 
 ### Make Header Sticky
 
