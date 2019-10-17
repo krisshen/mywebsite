@@ -103,6 +103,8 @@ Please refer this post: [how-to-add-projects-page](/project_website/how-to-add-p
 
 ### Enable Page Update Time
 
+Please refer this post: [how-to-enable-page-update-time](/project_website/how-to-enable-page-update-time/)
+
 ## Useful Links
 
 - [Emoji](http://emojihomepage.com/)
