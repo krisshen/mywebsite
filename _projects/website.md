@@ -97,6 +97,12 @@ Please refer this post: [how-to-add-projects-page](/project_website/how-to-add-p
 
 ### Make Header Sticky
 
+Please refer this post: [how-to-make-header-sticky](/project_website/how-to-make-header-sticky/)
+
+### Enable Table Contents
+
+Please refer this post: [how-to-enable-table-contents](/project_website/how-to-enable-table-contents/)
+
 ### Add WeChat Info
 
 ### Add URL To Project Preview Image
