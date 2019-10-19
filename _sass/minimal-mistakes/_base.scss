@@ -33,6 +33,15 @@ h6 {
   font-weight: bold;
 }
 
+h2[id],
+h3[id],
+h4[id],
+h5[id],
+h6[id] {
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
 h1 {
   margin-top: 0;
   font-size: $type-size-3;
