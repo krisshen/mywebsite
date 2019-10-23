@@ -21,7 +21,7 @@ last_modified_at: #<-- add this line
 Actually `last_modified_at` is a Jekyll [plugin](https://github.com/gjtorikian/jekyll-last-modified-at) and I found out that I don't need to provide a date time for this field, if I leave it empty and host my site locally, when I visit this page in my local it can display the page's update time correctly:
 ![](/images/page_updatetime.jpg)
 
-**Update:** this feature now works in GitHub Pages, above change is enough. Following content can be ignored.
+**Update:** this feature now works sometimes in GitHub Pages, if above change doesn't work, then following update needs to be considered.
 {: .notice--success}
 
 
