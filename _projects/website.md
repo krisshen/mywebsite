@@ -61,7 +61,13 @@ Website code is in minimal-mistakes Jekyll theme, there're 3 ways to install thi
    ```
    bundle exec jekyll serve
    ```
-5. By default the local host will be served at: http://127.0.0.1:4000
+   - or run this command to start up a live reload local host:
+   ```
+   bundle exec jekyll serve --livereload
+   ```
+   - note: if on Windows, above command may throw error asking for 'wdm', add this to .gemspec file, also
+   may need to re-install Ruby eventmachine library [reference](https://stackoverflow.com/questions/30682575/unable-to-load-the-eventmachine-c-extension-to-use-the-pure-ruby-reactor)
+5. By default, the local host will be served at: http://127.0.0.1:4000
 6. Visit local host from browser, a default page should be shown.
 
 ### Setup GitHub Pages
