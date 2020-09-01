@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "tzinfo", "~> 1.2"
   spec.add_runtime_dependency "tzinfo-data", "~> 1.2019"
   spec.add_runtime_dependency "jekyll-last-modified-at", "~> 1.1"
-  
+
   spec.add_development_dependency "bundler"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", ">= 12.3.3"
 end
