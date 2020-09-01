@@ -110,8 +110,8 @@ author:
   name             : "Kris Shen"
   avatar           : "/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "How much time left?"
-  location         : "Wellington, New Zealand"
-  email            : 
+  location         : "Sydney, Australia"
+  email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -124,10 +124,10 @@ author:
       # url: "https://twitter.com/"
     - label: "WeChat"
       icon: "fab fa-fw fa-weixin"
-      url: ""
+      # url: ""
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/krisyangshen"
+      # url: "https://www.facebook.com/krisyangshen"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/krisshen"
