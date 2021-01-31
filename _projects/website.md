@@ -31,7 +31,7 @@ This website is built on top of minimal-mistakes (it's a Jekyll theme with a lot
 Apart from the website code and content setup, we also need:
 
 - A place to host this website. In GitHub there is a feature which can host websites directly from a repository, it's called [GitHub Pages](https://pages.github.com/), and it's FREE.
-- A custom domain to publish my website. That's why my website can be visited from [krisshen.me](https://krisshen.me) instead of a GitHub URL. But normally a custom domain needs to be purchased and it doesn't cost me much for this one... if I pick up website name wisely.
+- A custom domain to publish my website. That's why my website can be visited from [krisshen.com](https://krisshen.com) instead of a GitHub URL. But normally a custom domain needs to be purchased and it doesn't cost me much for this one... if I pick up website name wisely.
 
 ## Build Up Steps
 
