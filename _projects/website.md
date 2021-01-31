@@ -16,8 +16,7 @@ I will write down step by step of how did I build this website from scratch and 
 
 ### Inspired Video
 
-First things first, I got inspired by this video:
-{% include video id="qWrcgHwSG8M" provider="youtube" %}
+First things first, I got inspired by a video (unfortunately, the original [video](https://web.archive.org/web/20191220055309if_/https://www.youtube.com/watch?v=qWrcgHwSG8M&feature=youtu.be) was gone), but I found their website for the same setup - [how to setup GitHub Pages](https://www.dataoptimal.com/github-data-science-portfolio/)
 
 ### Main Parts Of My Website
 
