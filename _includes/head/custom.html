@@ -2,4 +2,64 @@
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
+<script>
+  (function () {
+    var savedTheme = localStorage.getItem("theme");
+    var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var theme = savedTheme || (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+
+<style>
+  .theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 30;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background: #fff;
+  }
+
+  [data-theme="dark"] .theme-toggle {
+    background: #1f2937;
+    border-color: #4b5563;
+  }
+
+  [data-theme="dark"] body {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+
+  [data-theme="dark"] .masthead,
+  [data-theme="dark"] .greedy-nav,
+  [data-theme="dark"] .page__footer,
+  [data-theme="dark"] .archive__item,
+  [data-theme="dark"] .sidebar {
+    background-color: #1f2937;
+    color: #e5e7eb;
+  }
+
+  [data-theme="dark"] a,
+  [data-theme="dark"] .site-title,
+  [data-theme="dark"] .greedy-nav a,
+  [data-theme="dark"] .page__footer a {
+    color: #93c5fd;
+  }
+
+  [data-theme="dark"] .toc,
+  [data-theme="dark"] pre,
+  [data-theme="dark"] code,
+  [data-theme="dark"] .notice,
+  [data-theme="dark"] .search-content {
+    background-color: #0f172a;
+    color: #e5e7eb;
+    border-color: #374151;
+  }
+</style>
+
 <!-- end custom head snippets -->
