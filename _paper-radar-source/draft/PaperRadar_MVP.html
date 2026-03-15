@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PaperRadar · 今日 AI 论文精选</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --ink-faint: #999;
+  --paper: #faf8f4;
+  --paper-warm: #f3f0ea;
+  --line: #e0dbd0;
+  --accent: #c0392b;
+  --font-body: 'Lora', Georgia, serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 28px 40px 20px;
+  text-align: center;
+}
+.masthead-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+}
+.masthead-title {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink);
+}
+.masthead-title span { color: var(--accent); }
+.masthead-sub {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  font-style: italic;
+}
+.masthead-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-faint);
+  margin-top: 14px;
+  letter-spacing: 0.1em;
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0 20px;
+}
+.section-label::before,
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.paper {
+  border: 1px solid var(--line);
+  background: #fff;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  animation: slideIn 0.4s ease both;
+}
+.paper:hover {
+  box-shadow: 4px 4px 0 var(--line);
+  transform: translate(-2px, -2px);
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.paper:nth-child(1) { animation-delay: 0.05s; }
+.paper:nth-child(2) { animation-delay: 0.15s; }
+.paper:nth-child(3) { animation-delay: 0.25s; }
+.paper:nth-child(4) { animation-delay: 0.35s; }
+.paper:nth-child(5) { animation-delay: 0.45s; }
+
+.paper-header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.paper-num {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--line);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.paper-meta { flex: 1; }
+.paper-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.paper-authors {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--ink-faint);
+}
+.paper-stars {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.switcher-row {
+  padding: 13px 28px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.switcher-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.switcher {
+  display: flex;
+  border: 1px solid var(--line);
+}
+.diff-btn {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  background: transparent;
+  color: var(--ink-light);
+  border: none;
+  border-right: 1px solid var(--line);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.diff-btn:last-child { border-right: none; }
+.diff-btn:hover { background: var(--paper-warm); color: var(--ink); }
+.diff-btn.active { background: var(--ink); color: var(--paper); }
+
+.paper-body {
+  padding: 22px 28px 20px;
+  border-bottom: 1px solid var(--line);
+  min-height: 100px;
+}
+.summary-text {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--ink);
+  transition: opacity 0.18s ease;
+}
+.summary-text.fade { opacity: 0; }
+
+.paper-footer {
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.arxiv-link {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.arxiv-link:before { content: '\2197  '; }
+.arxiv-link:hover { color: var(--accent); }
+.rec-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 40px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 600px) {
+  .masthead { padding: 20px 16px 16px; }
+  .container { padding: 0 16px 60px; }
+  .paper-header { padding: 18px 18px 14px; flex-wrap: wrap; }
+  .paper-num { font-size: 1.2rem; }
+  .switcher-row { padding: 12px 18px; flex-wrap: wrap; }
+  .paper-body { padding: 18px 18px 16px; }
+  .paper-footer { padding: 10px 18px; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-eyebrow">Daily AI Paper Digest</div>
+  <div class="masthead-title">Paper<span>Radar</span></div>
+  <div class="masthead-sub">每天精选 3–5 篇，让任何人都能读懂 AI 论文</div>
+  <div class="masthead-date" id="today-date"></div>
+</header>
+
+<div class="container">
+  <div class="section-label"><span>今日精选 · 5 篇</span></div>
+  <div id="papers-list"></div>
+</div>
+
+<footer class="site-footer">
+  数据来源：arXiv.org &nbsp;·&nbsp; 摘要由 AI 生成，仅供参考 &nbsp;·&nbsp; PaperRadar
+</footer>
+
+<script>
+// ── DATA ────────────────────────────────────────
+// 每日更新这个数组即可，其余无需改动
+var PAPERS = [];
+
+PAPERS.push({
+  title: 'Scaling LLM Test-Time Compute Optimally',
+  authors: 'Snell C., Lee J., Xu K. et al. \u00b7 UC Berkeley \u00b7 2024',
+  arxiv_id: '2408.03314',
+  stars: 5,
+  expert: '\u672c\u6587\u7cfb\u7edf\u7814\u7a76\u63a8\u7406\u9636\u6bb5\u6269\u5c55\u8ba1\u7b97\u9884\u7b97\u7684\u65b9\u6cd5\u3002\u901a\u8fc7\u5956\u52b1\u6a21\u578b\uff08PRM\uff09\u5f15\u5bfc beam search \u4e0e\u81ea\u9002\u5e94 MCTS\uff0c\u5728 MATH-500 \u4e0a\u9a8c\u8bc1 test-time compute \u4e0e\u6a21\u578b scaling \u7684\u4e92\u8865\u6027\u3002\u5b9e\u9a8c\u8868\u660e\u9488\u5bf9\u96be\u9898\u52a8\u6001\u5206\u914d\u8ba1\u7b97\u4f18\u4e8e\u5747\u5300\u5206\u914d\uff0c\u5c0f\u6a21\u578b\u914d\u5408\u5145\u8db3\u63a8\u7406\u8ba1\u7b97\u53ef\u8d85\u8d8a\u66f4\u5927\u53c2\u6570\u91cf\u6a21\u578b\u3002',
+  general: '\u901a\u5e38\u5927\u6a21\u578b\u8bad\u7ec3\u5b8c\u5c31\u56fa\u5b9a\u4e86\u3002\u8fd9\u7bc7\u8bba\u6587\u53d1\u73b0\uff1a\u7ed9\u6a21\u578b\u66f4\u591a\u601d\u8003\u65f6\u95f4\uff0c\u8ba9\u5b83\u540c\u65f6\u8003\u8651\u591a\u4e2a\u7b54\u6848\u518d\u6311\u6700\u597d\u7684\uff0c\u6570\u5b66\u9898\u51c6\u786e\u7387\u5927\u5e45\u63d0\u5347\uff0c\u800c\u4e14\u5b8c\u5168\u4e0d\u7528\u91cd\u65b0\u8bad\u7ec3\u3002\u5c31\u50cf\u8003\u8bd5\u5141\u8bb8\u6253\u8349\u7a3f\uff0c\u800c\u4e0d\u662f\u9003\u4f60\u810a\u53e3\u800c\u51fa\u3002',
+  lazy: '\u8ba9 AI \u591a\u60f3\u51e0\u79d2\u949f\uff0c\u7b54\u5bf9\u7387\u5927\u5e45\u63d0\u5347\u3002\u4e0d\u9700\u8981\u66f4\u5927\u7684\u6a21\u578b\uff0c\u7ed9\u66f4\u591a\u601d\u8003\u65f6\u95f4\u5c31\u591f\u4e86\u3002'
+});
+
+PAPERS.push({
+  title: 'HippoRAG: Neurologically Inspired Long-Term Memory for Large Language Models',
+  authors: 'Guo Q., Schumann G., Du T. et al. \u00b7 2024',
+  arxiv_id: '2405.14831',
+  stars: 4,
+  expert: 'HippoRAG \u6a21\u62df\u6d77\u9a6c\u4f53\u8bb0\u5fc6\u6574\u5408\u673a\u5236\uff0c\u5c06\u6587\u6863\u6784\u5efa\u4e3a\u5f00\u653e\u57df\u77e5\u8bc6\u56fe\u8c31\uff0c\u901a\u8fc7\u4e2a\u6027\u5316 PageRank \u5728\u7a00\u758f\u8bed\u4e49\u56fe\u4e0a\u5b9e\u73b0\u591a\u8df3\u5173\u8054\u68c0\u7d22\u3002\u5728 MuSiQue\u30012WikiMQA \u7b49\u591a\u8df3\u95ee\u7b54\u57fa\u51c6\u4e0a F1 \u8d85\u8d8a ColBERT\u3001LlamaIndex \u7b49\u65b9\u6848 15 \u523020 \u4e2a\u767e\u5206\u70b9\u3002',
+  general: '\u4f20\u7edf RAG \u68c0\u7d22\u50cf\u5173\u952e\u8bcd\u641c\u7d22\uff0c\u53ea\u627e\u6700\u76f8\u4f3c\u7684\u6bb5\u843d\u8fd4\u56de\u3002HippoRAG \u6a21\u4eff\u4eba\u8111\u8054\u60f3\u8bb0\u5fc6\uff0c\u628a\u6240\u6709\u6587\u6863\u53d8\u6210\u77e5\u8bc6\u7f51\u7edc\uff0c\u56de\u7b54\u95ee\u9898\u65f6\u6cbf\u5173\u8054\u8def\u5f84\u63a8\u7406\uff0c\u80fd\u628a\u591a\u7bc7\u6587\u6863\u91cc\u7684\u7ebf\u7d22\u4e32\u8054\u8d77\u6765\u3002\u6548\u679c\u6bd4\u4f20\u7edf RAG \u9ad8\u51fa\u8fd120%\u3002',
+  lazy: '\u7ed9 AI \u88c5\u4e86\u8054\u60f3\u8bb0\u5fc6\uff0c\u80fd\u50cf\u4eba\u4e00\u6837\u628a\u591a\u4e2a\u6587\u6863\u7684\u77e5\u8bc6\u4e32\u8d77\u6765\u56de\u7b54\u590d\u6742\u95ee\u9898\uff0c\u4e0d\u518d\u53ea\u9760\u5173\u952e\u8bcd\u5339\u914d\u3002'
+});
+
+PAPERS.push({
+  title: 'Mixtral of Experts: A High Quality Sparse Mixture-of-Experts',
+  authors: 'Jiang A., Sablayrolles A., Roux A. et al. \u00b7 Mistral AI \u00b7 2024',
+  arxiv_id: '2401.04088',
+  stars: 5,
+  expert: 'Mixtral 8x7B \u91c7\u7528\u7a00\u758f MoE \u67b6\u6784\uff0c\u6bcf\u4e2a token \u4ec5\u6fc0\u6d6028 \u4e2a\u4e13\u5bb6\u4e2d\u76842\u4e2a\uff0c\u63a8\u7406\u65f6\u5b9e\u9645\u4f7f\u7528\u53c2\u6570\u91cf\u7ea613B\uff0c\u4f46\u603046.7B \u5e26\u6765\u66f4\u5927\u77e5\u8bc6\u5bb9\u91cf\u3002\u5728 MMLU\u3001HumanEval\u3001GSM8K \u7b49\u4e3b\u6d41\u57fa\u51c6\u8d85\u8d8a LLaMA 2 70B \u4e0e GPT-3.5\uff0c\u63a8\u7406\u901f\u5ea6\u7ea6\u4e3a\u540c\u7b49\u7a20\u5bc6\u6a21\u578b\u76846\u500d\u3002',
+  general: 'Mixtral \u67098\u7ec4\u4e13\u5bb6\uff0c\u6bcf\u6b21\u56de\u7b54\u53ea\u8c03\u7528\u5176\u4e2d\u6700\u5408\u9002\u76842\u7ec4\uff0c\u6240\u4ee5\u901f\u5ea6\u5f88\u5feb\uff0c\u4f46\u56e0\u4e3a\u4e13\u5bb6\u603048\u4e2a\uff0c\u77e5\u8bc6\u50a8\u5907\u6bd4\u540c\u89c4\u6a21\u6a21\u578b\u66f4\u4e30\u5bcc\u3002\u5c31\u50cf\u67098\u4f4d\u987e\u95ee\uff0c\u6bcf\u6b21\u53ea\u8bf72\u4f4d\u6765\u5f00\u4f1a\uff0c\u65e2\u7701\u65f6\u53c8\u6709\u8d28\u91cf\u3002\u6700\u7ec8\u6548\u679c\u8d85\u8fc7\u4e86\u4f53\u79ef\u5927\u4e00\u500d\u76845 LLaMA 2 70B\u3002',
+  lazy: '\u540c\u6837\u7684\u901f\u5ea6\uff0c\u66f4\u806a\u660e\u7684\u7b54\u6848\u3002Mixtral \u9760\u4e13\u5bb6\u5206\u5de5\uff0c\u7528\u4e00\u534a\u7684\u8ba1\u7b97\u91cf\u6253\u8d25\u4e86\u5927\u4e00\u500d\u7684\u6a21\u578b\u3002'
+});
+
+PAPERS.push({
+  title: 'RLHF Workflow: From Reward Modeling to Online RLHF',
+  authors: 'Dong H., Xiong W., Pang B. et al. \u00b7 2024',
+  arxiv_id: '2405.07863',
+  stars: 4,
+  expert: '\u672c\u6587\u7cfb\u7edf\u6886\u7406\u4ece\u504f\u597d\u6570\u636e\u6536\u96c6\u3001\u5956\u52b1\u6a21\u578b\u8bad\u7ec3\u5230 online RLHF \u7684\u5b8c\u6574\u5de5\u7a0b\u6d41\u7a0b\uff0c\u91cd\u70b9\u5206\u6790 reward hacking\u3001\u5206\u5e03\u504f\u79fb\u4e0e KL \u6563\u5ea6\u7ea6\u675f\u7684\u6743\u8861\u3002\u63d0\u51fa\u8fed\u4ee3\u5f0f online DPO \u65b9\u6848\uff0c\u5728 AlpacaEval 2 \u548c MT-Bench \u4e0a\u76f8\u6bd4 offline DPO \u63d0\u5347\u663e\u8457\uff0c\u5e76\u5f00\u6e90\u4e86\u5b8c\u6574\u8bad\u7ec3\u4ee3\u7801\u3002',
+  general: 'RLHF \u662f\u8ba9 AI \u5b66\u4f1a\u7b26\u5408\u4eba\u7c7b\u504f\u597d\u7684\u6838\u5fc3\u6280\u672f\uff0c\u4f46\u5de5\u7a0b\u4e0a\u5f88\u590d\u6742\u3002\u8fd9\u7bc7\u8bba\u6587\u628a\u6574\u4e2a\u6d41\u7a0b\u62c6\u6210\u6e05\u6670\u6b65\u9aa4\uff1a\u6536\u96c6\u4eba\u7c7b\u53cd\u9988\u3001\u8bad\u7ec3\u5956\u52b1\u6a21\u578b\u3001\u7528\u5956\u52b1\u4fe1\u53f7\u4f18\u5316 AI\u3002\u91cd\u70b9\u89e3\u91ca\u4e86\u4e3a\u4ec0\u4e48\u8981\u6301\u7eed\u5728\u7ebf\u66f4\u65b0\uff0c\u800c\u4e0d\u662f\u4e00\u6b21\u6027\u8bad\u7ec3\u5c31\u5b8c\u4e8b\u3002',
+  lazy: '\u624b\u628a\u624b\u6559\u4f60\u600e\u4e48\u8ba9 AI \u5b66\u4f1a\u8ba8\u4eba\u559c\u6b22\u3002\u8fd9\u662f ChatGPT \u80cc\u540e\u5173\u952e\u6280\u672f\u7684\u5b8c\u6574\u5de5\u7a0b\u6307\u5357\u3002'
+});
+
+PAPERS.push({
+  title: 'The Llama 3 Herd of Models',
+  authors: 'Dubey A., Jauhri A., Pandey A. et al. \u00b7 Meta AI \u00b7 2024',
+  arxiv_id: '2407.21783',
+  stars: 5,
+  expert: 'LLaMA 3 \u7cfb\u5217\uff088B/70B/405B\uff09\u572815 \u4e07\u4ebf token \u8bed\u6599\u4e0a\u9884\u8bad\u7ec3\uff0c\u91c7\u7528 GQA\u3001RoPE \u4f4d\u7f6e\u7f16\u7801\u4e0e\u6269\u5c55\u4e0a\u4e0b\u6587\u7a97\u53e3\uff08128K tokens\uff09\u3002Instruct \u7248\u672c\u7ecf\u8fc7\u591a\u8f6e SFT\u3001\u62d2\u7edd\u91c7\u6837\u4e0e DPO \u5bf9\u9f50\uff0c405B \u6a21\u578b\u5728 MMLU\u3001HumanEval\u3001MATH \u7b49\u57fa\u51c6\u63a5\u8fd1 GPT-4 \u6c34\u5e73\uff0c\u5168\u7cfb\u5217\u6743\u91cd\u5f00\u6e90\u3002',
+  general: 'Meta \u53d1\u5e03\u7684\u6700\u5f3a\u5f00\u6e90\u5927\u6a21\u578b\u7cfb\u5217\u3002\u6700\u5c0f\u76848B \u7248\u672c\u5728\u666e\u901a\u663e\u5361\u4e0a\u5c31\u80fd\u8dd1\uff0c\u6700\u5927\u7684 405B \u7248\u672c\u9006\u8fd1 GPT-4 \u7684\u6c34\u5e73\u3002\u91cd\u8981\u7684\u662f\uff0c\u6240\u6709\u7248\u672c\u90fd\u5f00\u6e90\u514d\u8d39\uff0c\u4efb\u4f55\u4eba\u90fd\u53ef\u4ee5\u4e0b\u8f7d\u3001\u4fee\u6539\u3001\u5546\u7528\u3002\u8fd9\u7bc7\u8bba\u6587\u8be6\u7ec6\u8bf4\u660e\u4e86\u4ed6\u4eec\u600e\u4e48\u505a\u5230\u7684\u3002',
+  lazy: 'Meta \u5f00\u6e90\u4e86\u53ef\u4ee5\u5a72\u7f8e GPT-4 \u7684\u5927\u6a21\u578b\uff0c\u800c\u4e14\u514d\u8d39\u3002\u8fd9\u7bc7\u8bba\u6587\u89e3\u91ca\u4e86\u4ed6\u4eec\u600e\u4e48\u505a\u5230\u7684\u3002'
+});
+// ── END DATA ─────────────────────────────────────
+
+function stars(n) {
+  var s = '';
+  for (var i = 0; i < 5; i++) { s += i < n ? '\u2605' : '\u2606'; }
+  return s;
+}
+
+function numStr(i) { return i < 9 ? '0' + (i + 1) : '' + (i + 1); }
+
+function buildCard(p, idx) {
+  var card = document.createElement('article');
+  card.className = 'paper';
+
+  var header = document.createElement('div');
+  header.className = 'paper-header';
+  header.innerHTML =
+    '<div class="paper-num">' + numStr(idx) + '</div>' +
+    '<div class="paper-meta">' +
+      '<div class="paper-title"></div>' +
+      '<div class="paper-authors"></div>' +
+    '</div>' +
+    '<div class="paper-stars"></div>';
+  header.querySelector('.paper-title').textContent = p.title;
+  header.querySelector('.paper-authors').textContent = p.authors;
+  header.querySelector('.paper-stars').textContent = stars(p.stars);
+  header.querySelector('.paper-stars').title = p.stars + '/5';
+
+  var swRow = document.createElement('div');
+  swRow.className = 'switcher-row';
+  swRow.innerHTML = '<span class="switcher-label">\u9605\u8bfb\u96be\u5ea6</span><div class="switcher"></div>';
+  var sw = swRow.querySelector('.switcher');
+  [['expert', '\u4e13\u4e1a\u7248'], ['general', '\u901a\u7528\u7248'], ['lazy', '\u61d2\u4eba\u7248']].forEach(function(pair) {
+    var btn = document.createElement('button');
+    btn.className = 'diff-btn' + (pair[0] === 'lazy' ? ' active' : '');
+    btn.textContent = pair[1];
+    btn.addEventListener('click', function() { switchLevel(sw, p, idx, pair[0]); });
+    sw.appendChild(btn);
+  });
+
+  var body = document.createElement('div');
+  body.className = 'paper-body';
+  var sumEl = document.createElement('div');
+  sumEl.className = 'summary-text';
+  sumEl.id = 'sum' + idx;
+  sumEl.textContent = p.lazy;
+  body.appendChild(sumEl);
+
+  var footer = document.createElement('div');
+  footer.className = 'paper-footer';
+  var link = document.createElement('a');
+  link.className = 'arxiv-link';
+  link.href = 'https://arxiv.org/abs/' + p.arxiv_id;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.textContent = 'arxiv.org/abs/' + p.arxiv_id;
+  var badge = document.createElement('span');
+  badge.className = 'rec-badge';
+  badge.textContent = '\u63a8\u8350\u6307\u6570 ' + p.stars + '/5';
+  footer.appendChild(link);
+  footer.appendChild(badge);
+
+  card.appendChild(header);
+  card.appendChild(swRow);
+  card.appendChild(body);
+  card.appendChild(footer);
+  return card;
+}
+
+function switchLevel(sw, p, idx, level) {
+  sw.querySelectorAll('.diff-btn').forEach(function(b) { b.classList.remove('active'); });
+  sw.querySelectorAll('.diff-btn').forEach(function(b) {
+    if ((level === 'expert' && b.textContent === '\u4e13\u4e1a\u7248') ||
+        (level === 'general' && b.textContent === '\u901a\u7528\u7248') ||
+        (level === 'lazy' && b.textContent === '\u61d2\u4eba\u7248')) {
+      b.classList.add('active');
+    }
+  });
+  var el = document.getElementById('sum' + idx);
+  el.classList.add('fade');
+  var text = level === 'expert' ? p.expert : level === 'general' ? p.general : p.lazy;
+  setTimeout(function() {
+    el.textContent = text;
+    el.classList.remove('fade');
+  }, 180);
+}
+
+function init() {
+  var list = document.getElementById('papers-list');
+  PAPERS.forEach(function(p, i) { list.appendChild(buildCard(p, i)); });
+
+  var d = new Date();
+  document.getElementById('today-date').textContent =
+    d.getFullYear() + ' \u5e74 ' + (d.getMonth() + 1) + ' \u6708 ' + d.getDate() + ' \u65e5';
+}
+
+init();
+</script>
+</body>
+</html>

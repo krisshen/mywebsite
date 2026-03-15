@@ -1,0 +1,133 @@
+[
+    {
+        "id": "2603.12267v1",
+        "title": "EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation",
+        "score": 9.2,
+        "reason": "Innovation in adaptive video tokenization, significantly improving efficiency and quality in visual autoregressive generation.",
+        "categories": [
+            "cs.CV"
+        ],
+        "published": "2026-03-12T17:59:59Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12267v1",
+        "abstract": "Autoregressive (AR) video generative models rely on video tokenizers that compress pixels into discrete token sequences. The length of these token sequences is crucial for balancing reconstruction quality against downstream generation computational cost. Traditional video tokenizers apply a uniform token assignment across temporal blocks of different videos, often wasting tokens on simple, static, or repetitive segments while underserving dynamic or complex ones. To address this inefficiency, we introduce EVATok, a framework to produce Efficient Video Adaptive Tokenizers. Our framework estimates optimal token assignments for each video to achieve the best quality-cost trade-off, develops lightweight routers for fast prediction of these optimal assignments, and trains adaptive tokenizers that encode videos based on the assignments predicted by routers. We demonstrate that EVATok delivers substantial improvements in efficiency and overall quality for video reconstruction and downstream AR generation. Enhanced by our advanced training recipe that integrates video semantic encoders, EVATok achieves superior reconstruction and state-of-the-art class-to-video generation on UCF-101, with at least 24.4% savings in average token usage compared to the prior state-of-the-art LARP and our fixed-length baseline."
+    },
+    {
+        "id": "2603.12265v1",
+        "title": "OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams",
+        "score": 9.1,
+        "reason": "Introduces a unified streaming visual backbone for interactive and embodied agents, mastering multiple tasks frame-by-frame.",
+        "categories": [
+            "cs.CV"
+        ],
+        "published": "2026-03-12T17:59:55Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12265v1",
+        "abstract": "Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceives, reconstructs, and acts from diverse visual inputs. By incorporating causal spatiotemporal attention and 3D rotary positional embeddings (3D-RoPE), our model supports efficient, frame-by-frame online processing of video streams via a persistent KV-cache. We pre-train OmniStream using a synergistic multi-task framework coupling static and temporal representation learning, streaming geometric reconstruction, and vision-language alignment on 29 datasets. Extensive evaluations show that, even with a strictly frozen backbone, OmniStream achieves consistently competitive performance with specialized experts across image and video probing, streaming geometric reconstruction, complex video and spatial reasoning, as well as robotic manipulation (unseen at training). Rather than pursuing benchmark-specific dominance, our work demonstrates the viability of training a single, versatile vision backbone that generalizes across semantic, spatial, and temporal reasoning, i.e., a more meaningful step toward general-purpose visual understanding for interactive and embodied agents."
+    },
+    {
+        "id": "2603.12262v1",
+        "title": "Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously",
+        "authors": [
+            "Yiran Guan",
+            "Liang Yin",
+            "et al."
+        ],
+        "score": 9.0,
+        "reason": "Enables 'thinking while watching' in VideoLLMs, effectively amortizing reasoning latency over playback for real-time response.",
+        "categories": [
+            "cs.CV"
+        ],
+        "published": "2026-03-12T17:59:51Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12262v1",
+        "abstract": "Online Video Large Language Models (VideoLLMs) play a critical role in supporting responsive, real-time interaction. Existing methods focus on streaming perception, lacking a synchronized logical reasoning stream. However, directly applying test-time scaling methods incurs unacceptable response latency. To address this trade-off, we propose Video Streaming Thinking (VST), a novel paradigm for streaming video understanding. It supports a thinking while watching mechanism, which activates reasoning over incoming video clips during streaming. This design improves timely comprehension and coherent cognition while preserving real-time responsiveness by amortizing LLM reasoning latency over video playback. Furthermore, we introduce a comprehensive post-training pipeline that integrates VST-SFT, which structurally adapts the offline VideoLLM to causal streaming reasoning, and VST-RL, which provides end-to-end improvement through self-exploration in a multi-turn video interaction environment. Additionally, we devise an automated training-data synthesis pipeline that uses video knowledge graphs to generate high-quality streaming QA pairs, with an entity-relation grounded streaming Chain-of-Thought to enforce multi-evidence reasoning and sustained attention to the video stream. Extensive evaluations show that VST-7B performs strongly on online benchmarks, e.g. 79.5% on StreamingBench and 59.3% on OVO-Bench. Meanwhile, VST remains competitive on offline long-form or reasoning benchmarks. Compared with Video-R1, VST responds 15.7 times faster and achieves +5.4% improvement on VideoHolmes, demonstrating higher efficiency and strong generalization across diverse video understanding tasks."
+    },
+    {
+        "id": "2603.12255v1",
+        "title": "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training",
+        "score": 8.9,
+        "reason": "Uses Test-Time Training (TTT) to adapt models for spatial evidence in unbounded video streams, focusing on global 3D spatial organization.",
+        "categories": [
+            "cs.CV",
+            "cs.LG"
+        ],
+        "published": "2026-03-12T17:58:58Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12255v1",
+        "abstract": "Humans perceive and understand real-world spaces through a stream of visual observations. Therefore, the ability to streamingly maintain and update spatial evidence from potentially unbounded video streams is essential for spatial intelligence. The core challenge is not simply longer context windows but how spatial information is selected, organized, and retained over time. In this paper, we propose Spatial-TTT towards streaming visual-based spatial intelligence with test-time training (TTT), which adapts a subset of parameters (fast weights) to capture and organize spatial evidence over long-horizon scene videos. Specifically, we design a hybrid architecture and adopt large-chunk updates parallel with sliding-window attention for efficient spatial video processing. To further promote spatial awareness, we introduce a spatial-predictive mechanism applied to TTT layers with 3D spatiotemporal convolution, which encourages the model to capture geometric correspondence and temporal continuity across frames. Beyond architecture design, we construct a dataset with dense 3D spatial descriptions, which guides the model to update its fast weights to memorize and organize global 3D spatial signals in a structured manner. Extensive experiments demonstrate that Spatial-TTT improves long-horizon spatial understanding and achieves state-of-the-art performance on video spatial benchmarks."
+    },
+    {
+        "id": "2603.12252v1",
+        "title": "EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models",
+        "score": 8.8,
+        "reason": "Integrates Chain-of-Thought reasoning into diffusion models, allowing progressive decomposition of complex instructions.",
+        "categories": [
+            "cs.CV",
+            "cs.CL"
+        ],
+        "published": "2026-03-12T17:58:48Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12252v1",
+        "abstract": "Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibits insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for MLLMs to provide accurate guidance for complex tasks. (ii) The guidance remains invariant during the decoding process. Invariant guidance during decoding prevents DiT from progressively decomposing complex instructions into actionable denoising steps, even with correct MLLM encodings. To this end, we propose Endogenous Chain-of-Thought (EndoCoT), a novel framework that first activates MLLMs' reasoning potential by iteratively refining latent thought states through an iterative thought guidance module, and then bridges these states to the DiT's denoising process. Second, a terminal thought grounding module is applied to ensure the reasoning trajectory remains grounded in textual supervision by aligning the final state with ground-truth answers. With these two components, the MLLM text encoder delivers meticulously reasoned guidance, enabling the DiT to execute it progressively and ultimately solve complex tasks in a step-by-step manner. Extensive evaluations across diverse benchmarks (e.g., Maze, TSP, VSP, and Sudoku) achieve an average accuracy of 92.1%, outperforming the strongest baseline by 8.3 percentage points."
+    },
+    {
+        "id": "2603.12250v1",
+        "title": "DVD: Deterministic Video Depth Estimation with Generative Priors",
+        "score": 8.7,
+        "reason": "Adapts pre-trained video diffusion models into deterministic depth regressors, achieving SOTA results with minimal data.",
+        "categories": [
+            "cs.CV"
+        ],
+        "published": "2026-03-12T17:58:06Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12250v1",
+        "abstract": "Existing video depth estimation faces a fundamental trade-off: generative models suffer from stochastic geometric hallucinations and scale drift, while discriminative models demand massive labeled datasets to resolve semantic ambiguities. To break this impasse, we present DVD, the first framework to deterministically adapt pre-trained video diffusion models into single-pass depth regressors. Specifically, DVD features three core designs: (i) repurposing the diffusion timestep as a structural anchor to balance global stability with high-frequency details; (ii) latent manifold rectification (LMR) to mitigate regression-induced over-smoothing, enforcing differential constraints to restore sharp boundaries and coherent motion; and (iii) global affine coherence, an inherent property bounding inter-window divergence, which enables seamless long-video inference without requiring complex temporal alignment. Extensive experiments demonstrate that DVD achieves state-of-the-art zero-shot performance across benchmarks. Furthermore, DVD successfully unlocks the profound geometric priors implicit in video foundation models using 163x less task-specific data than leading baselines."
+    },
+    {
+        "id": "2603.12145v1",
+        "title": "Automatic Generation of High-Performance RL Environments",
+        "score": 9.5,
+        "reason": "Unprecedented engineering value, translating RL environments into high-performance JAX/Rust implementations with 20,000x+ speedups.",
+        "categories": [
+            "cs.LG",
+            "cs.AI",
+            "cs.SE"
+        ],
+        "published": "2026-03-12T16:45:47Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12145v1",
+        "abstract": "Translating complex reinforcement learning (RL) environments into high-performance implementations has traditionally required months of specialized engineering. We present a reusable recipe - a generic prompt template, hierarchical verification, and iterative agent-assisted repair - that produces semantically equivalent high-performance environments for <$10 in compute cost. We demonstrate three distinct workflows across five environments. Direct translation: EmuRust (1.5x PPO speedup via Rust parallelism) and PokeJAX, the first GPU-parallel Pokemon battle simulator (500M SPS random action, 15.2M SPS PPO; 22,320x over reference). Translation verified against existing performance implementations: throughput parity with MJX and 5x over Brax at matched GPU batch sizes. New environment creation: TCGJax, the first deployable JAX Pokemon TCG engine, synthesized from a web-extracted specification. At 200M parameters, the environment overhead drops below 4% of training time. Hierarchical verification confirms semantic equivalence for all five environments; cross-backend policy transfer confirms zero sim-to-sim gap."
+    },
+    {
+        "id": "2603.12038v1",
+        "title": "Slow-Fast Inference: Training-Free Inference Acceleration via Within-Sentence Support Stability",
+        "score": 9.4,
+        "reason": "Massive throughput improvement (up to 14.4x) for long-context models through semantic-aware memory reuse, without any training.",
+        "categories": [
+            "cs.LG",
+            "cs.AI"
+        ],
+        "published": "2026-03-12T15:14:48Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12038v1",
+        "abstract": "Long-context autoregressive decoding remains expensive because each decoding step must repeatedly process a growing history. We observe a consistent pattern during decoding: within a sentence, and more generally within a short semantically coherent span, the dominant attention support often remains largely stable. Motivated by this observation, we propose Slow-Fast Inference (SFI), a training-free decoding framework that decouples generation into frequent low-cost fast steps and occasional dense-attention slow steps. Fast steps reuse a compact sparse memory for efficient decoding. Slow steps are triggered near semantic boundaries. At slow steps, the model revisits the broader context and uses the Selector to refresh the selected memory for subsequent fast steps. Across the evaluated context lengths, SFI delivers approximately 1.6x-14.4x higher decoding throughput while generally maintaining quality on par with the full-KV baseline across long-context and long-CoT settings. Because SFI is training-free and applies directly to existing checkpoints, it offers a practical path to reducing inference cost for contemporary autoregressive reasoning models in long-context, long-horizon, and agentic workloads."
+    },
+    {
+        "id": "2603.12248v1",
+        "title": "Matching Features, Not Tokens: Energy-Based Fine-Tuning of Language Models",
+        "score": 8.6,
+        "reason": "Introduces EBFT, a feature-matching objective that targets sequence-level statistics of the completion distribution, outperforming SFT.",
+        "categories": [
+            "cs.LG"
+        ],
+        "published": "2026-03-12T17:57:50Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12248v1",
+        "abstract": "Cross-entropy (CE) training provides dense and scalable supervision for language models, but it optimizes next-token prediction under teacher forcing rather than sequence-level behavior under model rollouts. We introduce a feature-matching objective for language-model fine-tuning that targets sequence-level statistics of the completion distribution, providing dense semantic feedback without requiring a task-specific verifier or preference model. To optimize this objective efficiently, we propose energy-based fine-tuning (EBFT), which uses strided block-parallel sampling to generate multiple rollouts from nested prefixes concurrently, batches feature extraction over these rollouts, and uses the resulting embeddings to perform an on-policy policy-gradient update. We present a theoretical perspective connecting EBFT to KL-regularized feature-matching and energy-based modeling. Empirically, across Q&A coding, unstructured coding, and translation, EBFT matches RLVR and outperforms SFT on downstream accuracy."
+    },
+    {
+        "id": "2603.12201v1",
+        "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
+        "score": 8.5,
+        "reason": "Reduces sparse attention indexer computation by 75% with negligible quality loss, significantly speeding up long-context workloads.",
+        "categories": [
+            "cs.CL",
+            "cs.LG"
+        ],
+        "published": "2026-03-12T17:27:21Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.12201v1",
+        "abstract": "Long-context agentic workflows have emerged as a defining use case for large language models, making attention efficiency critical for both inference speed and serving cost. Sparse attention addresses this challenge effectively, and DeepSeek Sparse Attention (DSA) is a representative production-grade solution: a lightweight lightning indexer selects the top-k most relevant tokens per query, reducing core attention from O(L^2) to O(Lk). However, the indexer itself retains O(L^2) complexity and must run independently at every layer, despite the fact that the resulting top-k selections are highly similar across consecutive layers. We present IndexCache, which exploits this cross-layer redundancy by partitioning layers into a small set of Full layers that run their own indexers and a majority of Shared layers that simply reuse the nearest Full layer's top-k indices. Experimental results on a 30B DSA model show that IndexCache can remove 75% of indexer computations with negligible quality degradation, achieving up to 1.82x prefill speedup and 1.48x decode speedup compared to standard DSA."
+    }
+]
