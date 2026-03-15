@@ -165,7 +165,7 @@ footer:
 include:
   - .htaccess
   - _pages
-  - paper-radar/_next
+  - _next
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
