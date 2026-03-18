@@ -10,17 +10,29 @@ interface PaperCardProps {
 }
 
 function StarRating({ score }: { score: number }) {
+    const normalizedScore = Math.max(0, Math.min(5, score / 2))
+
     return (
-        <div className="flex gap-0.5" aria-label={`评分 ${score} 颗星`}>
-            {Array.from({ length: 5 }).map((_, i) => (
-                <span
-                    key={i}
-                    className={`text-base leading-none transition-colors ${i < score ? 'text-[#c0392b]' : 'text-[#d1d1ce]'
-                        }`}
-                >
-                    ★
-                </span>
-            ))}
+        <div className="flex items-center gap-1.5" aria-label={`评分 ${score} / 10`}>
+            <div className="flex gap-0.5" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => {
+                    const fill = Math.max(0, Math.min(1, normalizedScore - i))
+                    return (
+                        <span key={i} className="relative text-base leading-none text-[#d1d1ce]">
+                            <span>★</span>
+                            {fill > 0 ? (
+                                <span
+                                    className="absolute inset-y-0 left-0 overflow-hidden text-[#c0392b]"
+                                    style={{ width: `${fill * 100}%` }}
+                                >
+                                    ★
+                                </span>
+                            ) : null}
+                        </span>
+                    )
+                })}
+            </div>
+            <span className="text-sm font-medium text-[#6b7280]">{score.toFixed(1)}</span>
         </div>
     )
 }
@@ -29,6 +41,14 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
     const [mode, setMode] = useState<SummaryMode>(globalMode)
     const [visible, setVisible] = useState(true)
     const prevGlobalMode = useRef(globalMode)
+    const fadeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+    function clearFadeTimeout() {
+        if (fadeTimeoutRef.current) {
+            clearTimeout(fadeTimeoutRef.current)
+            fadeTimeoutRef.current = null
+        }
+    }
 
     // Sync with global mode changes
     useEffect(() => {
@@ -38,11 +58,15 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
         }
     }, [globalMode])
 
+    useEffect(() => clearFadeTimeout, [])
+
     function triggerFade(newMode: SummaryMode) {
+        clearFadeTimeout()
         setVisible(false)
-        setTimeout(() => {
+        fadeTimeoutRef.current = setTimeout(() => {
             setMode(newMode)
             setVisible(true)
+            fadeTimeoutRef.current = null
         }, 150)
     }
 

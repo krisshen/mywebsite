@@ -125,6 +125,20 @@ def sync_to_ts(top_10_file: str, filtered_file: str, output_ts: str, summaries: 
     
     paper_map = {p["id"]: p for p in filtered_papers}
     
+    generated_at = datetime.now().astimezone()
+    generated_date_label = generated_at.strftime("%Y年%-m月%-d日%A")
+    weekday_map = {
+        "Monday": "星期一",
+        "Tuesday": "星期二",
+        "Wednesday": "星期三",
+        "Thursday": "星期四",
+        "Friday": "星期五",
+        "Saturday": "星期六",
+        "Sunday": "星期日",
+    }
+    for english, chinese in weekday_map.items():
+        generated_date_label = generated_date_label.replace(english, chinese)
+
     final_papers = []
     for p_scored in top_10:
         p_id = p_scored["id"]
@@ -165,6 +179,8 @@ def sync_to_ts(top_10_file: str, filtered_file: str, output_ts: str, summaries: 
     # Generate the .ts file
     ts_content = "export type SummaryMode = 'expert' | 'general' | 'lazy'\n\n"
     ts_content += "export type Paper = {\n    id: string\n    title: string\n    authors: string\n    year: string\n    arxivUrl: string\n    recommendationScore: number\n    summaries: {\n        expert: string\n        general: string\n        lazy: string\n    }\n}\n\n"
+    ts_content += f"export const generatedYear = '{generated_at.year}';\n"
+    ts_content += f"export const generatedDateLabel = {json.dumps(generated_date_label, ensure_ascii=False)};\n\n"
     ts_content += f"export const totalFilteredCount = {len(filtered_papers)};\n\n"
     ts_content += "export const papers: Paper[] = " + json.dumps(final_papers, indent=4, ensure_ascii=False) + ";\n"
     

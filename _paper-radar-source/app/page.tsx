@@ -1,23 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { papers, SummaryMode, totalFilteredCount } from '@/data/papers'
+import { generatedDateLabel, generatedYear, papers, SummaryMode, totalFilteredCount } from '@/data/papers'
 import PaperCard from '@/components/PaperCard'
 import ModeSwitcher from '@/components/ModeSwitcher'
 
-function useCurrentDate() {
-    const now = new Date()
-    return now.toLocaleDateString('zh-CN', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        weekday: 'long',
-    })
-}
-
 export default function Home() {
     const [globalMode, setGlobalMode] = useState<SummaryMode>('general')
-    const dateString = useCurrentDate()
 
     return (
         <main className="min-h-screen bg-[#f5f5f3]">
@@ -46,7 +35,7 @@ export default function Home() {
                     {/* Date badge */}
                     <div className="inline-flex items-center gap-2 bg-white border border-[#e2e2df] rounded-full px-4 py-1.5 text-sm text-[#6b7280] shadow-sm">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#c0392b] animate-pulse" />
-                        {dateString}
+                        {generatedDateLabel}
                     </div>
                 </div>
             </header>
@@ -104,7 +93,7 @@ export default function Home() {
                         每天用 AI 帮你精读前沿论文 · 不需要博士学位
                     </p>
                     <p className="text-xs text-[#c8c8c5] mt-4">
-                        © {new Date().getFullYear()} PaperRadar · 数据来自 arXiv
+                        © {generatedYear} PaperRadar · 数据来自 arXiv
                     </p>
                 </footer>
             </div>

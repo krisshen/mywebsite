@@ -14,6 +14,9 @@ export type Paper = {
     }
 }
 
+export const generatedYear = '2026';
+export const generatedDateLabel = "2026年3月19日星期四";
+
 export const totalFilteredCount = 209;
 
 export const papers: Paper[] = [
