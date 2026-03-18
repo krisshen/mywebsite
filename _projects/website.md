@@ -2,7 +2,7 @@
 title: "Project - My Website"
 toc: true
 toc_sticky: true
-last_modified_at: 2019-10-11
+last_modified_at: 2026-03-19
 ---
 
 ## Introduction
@@ -53,19 +53,21 @@ Website code is in minimal-mistakes Jekyll theme, there're 3 ways to install thi
     Because minimal-mistakes requires Jekyll and Bundler.
 3. cd to my repository's folder and run below command to get all dependencies installed:
    ```
-   bundle
-   #or bundle install
+   BUNDLE_FORCE_RUBY_PLATFORM=true bundle install --path vendor/bundle
    ```
+   - `--path vendor/bundle` keeps the gems inside the repository for local development instead of trying to write into the system Ruby gem directory.
+   - `BUNDLE_FORCE_RUBY_PLATFORM=true` helps older Ruby versions avoid incompatible prebuilt native gems and build the Ruby platform variant locally.
 4. Run following command to start up a local host:
    ```
-   bundle exec jekyll serve
+   bundle exec jekyll serve --host 127.0.0.1 --port 4000
    ```
    - or run this command to start up a live reload local host:
    ```
-   bundle exec jekyll serve --livereload
+   bundle exec jekyll serve --host 127.0.0.1 --port 4000 --livereload
    ```
    - note: if on Windows, above command may throw error asking for 'wdm', add this to .gemspec file, also
    may need to re-install Ruby eventmachine library [reference](https://stackoverflow.com/questions/30682575/unable-to-load-the-eventmachine-c-extension-to-use-the-pure-ruby-reactor)
+   - note: on some machines `--livereload` may fail if the livereload port is already in use. In that case, run the normal serve command without `--livereload`.
 5. By default, the local host will be served at: http://127.0.0.1:4000
 6. Visit local host from browser, a default page should be shown.
 
