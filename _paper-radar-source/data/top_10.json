@@ -1,133 +1,125 @@
 [
     {
-        "id": "2603.12267v1",
-        "title": "EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation",
-        "score": 9.2,
-        "reason": "Innovation in adaptive video tokenization, significantly improving efficiency and quality in visual autoregressive generation.",
-        "categories": [
-            "cs.CV"
-        ],
-        "published": "2026-03-12T17:59:59Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12267v1",
-        "abstract": "Autoregressive (AR) video generative models rely on video tokenizers that compress pixels into discrete token sequences. The length of these token sequences is crucial for balancing reconstruction quality against downstream generation computational cost. Traditional video tokenizers apply a uniform token assignment across temporal blocks of different videos, often wasting tokens on simple, static, or repetitive segments while underserving dynamic or complex ones. To address this inefficiency, we introduce EVATok, a framework to produce Efficient Video Adaptive Tokenizers. Our framework estimates optimal token assignments for each video to achieve the best quality-cost trade-off, develops lightweight routers for fast prediction of these optimal assignments, and trains adaptive tokenizers that encode videos based on the assignments predicted by routers. We demonstrate that EVATok delivers substantial improvements in efficiency and overall quality for video reconstruction and downstream AR generation. Enhanced by our advanced training recipe that integrates video semantic encoders, EVATok achieves superior reconstruction and state-of-the-art class-to-video generation on UCF-101, with at least 24.4% savings in average token usage compared to the prior state-of-the-art LARP and our fixed-length baseline."
-    },
-    {
-        "id": "2603.12265v1",
-        "title": "OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams",
-        "score": 9.1,
-        "reason": "Introduces a unified streaming visual backbone for interactive and embodied agents, mastering multiple tasks frame-by-frame.",
-        "categories": [
-            "cs.CV"
-        ],
-        "published": "2026-03-12T17:59:55Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12265v1",
-        "abstract": "Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceives, reconstructs, and acts from diverse visual inputs. By incorporating causal spatiotemporal attention and 3D rotary positional embeddings (3D-RoPE), our model supports efficient, frame-by-frame online processing of video streams via a persistent KV-cache. We pre-train OmniStream using a synergistic multi-task framework coupling static and temporal representation learning, streaming geometric reconstruction, and vision-language alignment on 29 datasets. Extensive evaluations show that, even with a strictly frozen backbone, OmniStream achieves consistently competitive performance with specialized experts across image and video probing, streaming geometric reconstruction, complex video and spatial reasoning, as well as robotic manipulation (unseen at training). Rather than pursuing benchmark-specific dominance, our work demonstrates the viability of training a single, versatile vision backbone that generalizes across semantic, spatial, and temporal reasoning, i.e., a more meaningful step toward general-purpose visual understanding for interactive and embodied agents."
-    },
-    {
-        "id": "2603.12262v1",
-        "title": "Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously",
-        "authors": [
-            "Yiran Guan",
-            "Liang Yin",
-            "et al."
-        ],
-        "score": 9.0,
-        "reason": "Enables 'thinking while watching' in VideoLLMs, effectively amortizing reasoning latency over playback for real-time response.",
-        "categories": [
-            "cs.CV"
-        ],
-        "published": "2026-03-12T17:59:51Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12262v1",
-        "abstract": "Online Video Large Language Models (VideoLLMs) play a critical role in supporting responsive, real-time interaction. Existing methods focus on streaming perception, lacking a synchronized logical reasoning stream. However, directly applying test-time scaling methods incurs unacceptable response latency. To address this trade-off, we propose Video Streaming Thinking (VST), a novel paradigm for streaming video understanding. It supports a thinking while watching mechanism, which activates reasoning over incoming video clips during streaming. This design improves timely comprehension and coherent cognition while preserving real-time responsiveness by amortizing LLM reasoning latency over video playback. Furthermore, we introduce a comprehensive post-training pipeline that integrates VST-SFT, which structurally adapts the offline VideoLLM to causal streaming reasoning, and VST-RL, which provides end-to-end improvement through self-exploration in a multi-turn video interaction environment. Additionally, we devise an automated training-data synthesis pipeline that uses video knowledge graphs to generate high-quality streaming QA pairs, with an entity-relation grounded streaming Chain-of-Thought to enforce multi-evidence reasoning and sustained attention to the video stream. Extensive evaluations show that VST-7B performs strongly on online benchmarks, e.g. 79.5% on StreamingBench and 59.3% on OVO-Bench. Meanwhile, VST remains competitive on offline long-form or reasoning benchmarks. Compared with Video-R1, VST responds 15.7 times faster and achieves +5.4% improvement on VideoHolmes, demonstrating higher efficiency and strong generalization across diverse video understanding tasks."
-    },
-    {
-        "id": "2603.12255v1",
-        "title": "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training",
-        "score": 8.9,
-        "reason": "Uses Test-Time Training (TTT) to adapt models for spatial evidence in unbounded video streams, focusing on global 3D spatial organization.",
+        "id": "2603.15620v1",
+        "title": "Towards Generalizable Robotic Manipulation in Dynamic Environments",
+        "score": 9.7,
+        "reason": "Strong benchmark+dynamics-aware VLA architecture; practical robotics impact.",
         "categories": [
             "cs.CV",
-            "cs.LG"
+            "cs.RO"
         ],
-        "published": "2026-03-12T17:58:58Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12255v1",
-        "abstract": "Humans perceive and understand real-world spaces through a stream of visual observations. Therefore, the ability to streamingly maintain and update spatial evidence from potentially unbounded video streams is essential for spatial intelligence. The core challenge is not simply longer context windows but how spatial information is selected, organized, and retained over time. In this paper, we propose Spatial-TTT towards streaming visual-based spatial intelligence with test-time training (TTT), which adapts a subset of parameters (fast weights) to capture and organize spatial evidence over long-horizon scene videos. Specifically, we design a hybrid architecture and adopt large-chunk updates parallel with sliding-window attention for efficient spatial video processing. To further promote spatial awareness, we introduce a spatial-predictive mechanism applied to TTT layers with 3D spatiotemporal convolution, which encourages the model to capture geometric correspondence and temporal continuity across frames. Beyond architecture design, we construct a dataset with dense 3D spatial descriptions, which guides the model to update its fast weights to memorize and organize global 3D spatial signals in a structured manner. Extensive experiments demonstrate that Spatial-TTT improves long-horizon spatial understanding and achieves state-of-the-art performance on video spatial benchmarks."
+        "published": "2026-03-16T17:59:57Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15620v1",
+        "abstract": "Vision-Language-Action (VLA) models excel in static manipulation but struggle in dynamic environments with moving targets. This performance gap primarily stems from a scarcity of dynamic manipulation datasets and the reliance of mainstream VLAs on single-frame observations, restricting their spatiotemporal reasoning capabilities. To address this, we introduce DOMINO, a large-scale dataset and benchmark for generalizable dynamic manipulation, featuring 35 tasks with hierarchical complexities, over 110K expert trajectories, and a multi-dimensional evaluation suite. Through comprehensive experiments, we systematically evaluate existing VLAs on dynamic tasks, explore effective training strategies for dynamic awareness, and validate the generalizability of dynamic data. Furthermore, we propose PUMA, a dynamics-aware VLA architecture. By integrating scene-centric historical optical flow and specialized world queries to implicitly forecast object-centric future states, PUMA couples history-aware perception with short-horizon prediction. Results demonstrate that PUMA achieves state-of-the-art performance, yielding a 6.3% absolute improvement in success rate over baselines. Moreover, we show that training on dynamic data fosters robust spatiotemporal representations that transfer to static tasks. All code and data are available at https://github.com/H-EmbodVis/DOMINO."
     },
     {
-        "id": "2603.12252v1",
-        "title": "EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models",
-        "score": 8.8,
-        "reason": "Integrates Chain-of-Thought reasoning into diffusion models, allowing progressive decomposition of complex instructions.",
-        "categories": [
-            "cs.CV",
-            "cs.CL"
-        ],
-        "published": "2026-03-12T17:58:48Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12252v1",
-        "abstract": "Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibits insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for MLLMs to provide accurate guidance for complex tasks. (ii) The guidance remains invariant during the decoding process. Invariant guidance during decoding prevents DiT from progressively decomposing complex instructions into actionable denoising steps, even with correct MLLM encodings. To this end, we propose Endogenous Chain-of-Thought (EndoCoT), a novel framework that first activates MLLMs' reasoning potential by iteratively refining latent thought states through an iterative thought guidance module, and then bridges these states to the DiT's denoising process. Second, a terminal thought grounding module is applied to ensure the reasoning trajectory remains grounded in textual supervision by aligning the final state with ground-truth answers. With these two components, the MLLM text encoder delivers meticulously reasoned guidance, enabling the DiT to execute it progressively and ultimately solve complex tasks in a step-by-step manner. Extensive evaluations across diverse benchmarks (e.g., Maze, TSP, VSP, and Sudoku) achieve an average accuracy of 92.1%, outperforming the strongest baseline by 8.3 percentage points."
-    },
-    {
-        "id": "2603.12250v1",
-        "title": "DVD: Deterministic Video Depth Estimation with Generative Priors",
-        "score": 8.7,
-        "reason": "Adapts pre-trained video diffusion models into deterministic depth regressors, achieving SOTA results with minimal data.",
-        "categories": [
-            "cs.CV"
-        ],
-        "published": "2026-03-12T17:58:06Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12250v1",
-        "abstract": "Existing video depth estimation faces a fundamental trade-off: generative models suffer from stochastic geometric hallucinations and scale drift, while discriminative models demand massive labeled datasets to resolve semantic ambiguities. To break this impasse, we present DVD, the first framework to deterministically adapt pre-trained video diffusion models into single-pass depth regressors. Specifically, DVD features three core designs: (i) repurposing the diffusion timestep as a structural anchor to balance global stability with high-frequency details; (ii) latent manifold rectification (LMR) to mitigate regression-induced over-smoothing, enforcing differential constraints to restore sharp boundaries and coherent motion; and (iii) global affine coherence, an inherent property bounding inter-window divergence, which enables seamless long-video inference without requiring complex temporal alignment. Extensive experiments demonstrate that DVD achieves state-of-the-art zero-shot performance across benchmarks. Furthermore, DVD successfully unlocks the profound geometric priors implicit in video foundation models using 163x less task-specific data than leading baselines."
-    },
-    {
-        "id": "2603.12145v1",
-        "title": "Automatic Generation of High-Performance RL Environments",
-        "score": 9.5,
-        "reason": "Unprecedented engineering value, translating RL environments into high-performance JAX/Rust implementations with 20,000x+ speedups.",
-        "categories": [
-            "cs.LG",
-            "cs.AI",
-            "cs.SE"
-        ],
-        "published": "2026-03-12T16:45:47Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12145v1",
-        "abstract": "Translating complex reinforcement learning (RL) environments into high-performance implementations has traditionally required months of specialized engineering. We present a reusable recipe - a generic prompt template, hierarchical verification, and iterative agent-assisted repair - that produces semantically equivalent high-performance environments for <$10 in compute cost. We demonstrate three distinct workflows across five environments. Direct translation: EmuRust (1.5x PPO speedup via Rust parallelism) and PokeJAX, the first GPU-parallel Pokemon battle simulator (500M SPS random action, 15.2M SPS PPO; 22,320x over reference). Translation verified against existing performance implementations: throughput parity with MJX and 5x over Brax at matched GPU batch sizes. New environment creation: TCGJax, the first deployable JAX Pokemon TCG engine, synthesized from a web-extracted specification. At 200M parameters, the environment overhead drops below 4% of training time. Hierarchical verification confirms semantic equivalence for all five environments; cross-backend policy transfer confirms zero sim-to-sim gap."
-    },
-    {
-        "id": "2603.12038v1",
-        "title": "Slow-Fast Inference: Training-Free Inference Acceleration via Within-Sentence Support Stability",
-        "score": 9.4,
-        "reason": "Massive throughput improvement (up to 14.4x) for long-context models through semantic-aware memory reuse, without any training.",
-        "categories": [
-            "cs.LG",
-            "cs.AI"
-        ],
-        "published": "2026-03-12T15:14:48Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12038v1",
-        "abstract": "Long-context autoregressive decoding remains expensive because each decoding step must repeatedly process a growing history. We observe a consistent pattern during decoding: within a sentence, and more generally within a short semantically coherent span, the dominant attention support often remains largely stable. Motivated by this observation, we propose Slow-Fast Inference (SFI), a training-free decoding framework that decouples generation into frequent low-cost fast steps and occasional dense-attention slow steps. Fast steps reuse a compact sparse memory for efficient decoding. Slow steps are triggered near semantic boundaries. At slow steps, the model revisits the broader context and uses the Selector to refresh the selected memory for subsequent fast steps. Across the evaluated context lengths, SFI delivers approximately 1.6x-14.4x higher decoding throughput while generally maintaining quality on par with the full-KV baseline across long-context and long-CoT settings. Because SFI is training-free and applies directly to existing checkpoints, it offers a practical path to reducing inference cost for contemporary autoregressive reasoning models in long-context, long-horizon, and agentic workloads."
-    },
-    {
-        "id": "2603.12248v1",
-        "title": "Matching Features, Not Tokens: Energy-Based Fine-Tuning of Language Models",
-        "score": 8.6,
-        "reason": "Introduces EBFT, a feature-matching objective that targets sequence-level statistics of the completion distribution, outperforming SFT.",
-        "categories": [
-            "cs.LG"
-        ],
-        "published": "2026-03-12T17:57:50Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12248v1",
-        "abstract": "Cross-entropy (CE) training provides dense and scalable supervision for language models, but it optimizes next-token prediction under teacher forcing rather than sequence-level behavior under model rollouts. We introduce a feature-matching objective for language-model fine-tuning that targets sequence-level statistics of the completion distribution, providing dense semantic feedback without requiring a task-specific verifier or preference model. To optimize this objective efficiently, we propose energy-based fine-tuning (EBFT), which uses strided block-parallel sampling to generate multiple rollouts from nested prefixes concurrently, batches feature extraction over these rollouts, and uses the resulting embeddings to perform an on-policy policy-gradient update. We present a theoretical perspective connecting EBFT to KL-regularized feature-matching and energy-based modeling. Empirically, across Q&A coding, unstructured coding, and translation, EBFT matches RLVR and outperforms SFT on downstream accuracy."
-    },
-    {
-        "id": "2603.12201v1",
-        "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
-        "score": 8.5,
-        "reason": "Reduces sparse attention indexer computation by 75% with negligible quality loss, significantly speeding up long-context workloads.",
+        "id": "2603.15619v1",
+        "title": "Mixture-of-Depths Attention",
+        "score": 9.6,
+        "reason": "Novel LLM depth-scaling primitive with near-FlashAttention efficiency.",
         "categories": [
             "cs.CL",
+            "cs.AI"
+        ],
+        "published": "2026-03-16T17:59:55Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15619v1",
+        "abstract": "Scaling depth is a key driver for large language models (LLMs). Yet, as LLMs become deeper, they often suffer from signal degradation: informative features formed in shallow layers are gradually diluted by repeated residual updates, making them harder to recover in deeper layers. We introduce mixture-of-depths attention (MoDA), a mechanism that allows each attention head to attend to sequence KV pairs at the current layer and depth KV pairs from preceding layers. We further describe a hardware-efficient algorithm for MoDA that resolves non-contiguous memory-access patterns, achieving 97.3% of FlashAttention-2's efficiency at a sequence length of 64K. Experiments on 1.5B-parameter models demonstrate that MoDA consistently outperforms strong baselines. Notably, it improves average perplexity by 0.2 across 10 validation benchmarks and increases average performance by 2.11% on 10 downstream tasks, with a negligible 3.7% FLOPs computational overhead. We also find that combining MoDA with post-norm yields better performance than using it with pre-norm. These results suggest that MoDA is a promising primitive for depth scaling. Code is released at https://github.com/hustvl/MoDA ."
+    },
+    {
+        "id": "2603.15618v1",
+        "title": "Look Before Acting: Enhancing Vision Foundation Representations for Vision-Language-Action Models",
+        "score": 9.3,
+        "reason": "Useful vision enhancement design for VLA models with strong real/sim gains.",
+        "categories": [
+            "cs.CV"
+        ],
+        "published": "2026-03-16T17:59:54Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15618v1",
+        "abstract": "Vision-Language-Action (VLA) models have recently emerged as a promising paradigm for robotic manipulation, in which reliable action prediction critically depends on accurately interpreting and integrating visual observations conditioned on language instructions. Although recent works have sought to enhance the visual capabilities of VLA models, most approaches treat the LLM backbone as a black box, providing limited insight into how visual information is grounded into action generation. Therefore, we perform a systematic analysis of multiple VLA models across different action-generation paradigms and observe that sensitivity to visual tokens progressively decreases in deeper layers during action generation. Motivated by this observation, we propose \\textbf{DeepVision-VLA}, built on a \\textbf{Vision-Language Mixture-of-Transformers (VL-MoT)} framework. This framework enables shared attention between the vision foundation model and the VLA backbone, injecting multi-level visual features from the vision expert into deeper layers of the VLA backbone to enhance visual representations for precise and complex manipulation. In addition, we introduce \\textbf{Action-Guided Visual Pruning (AGVP)}, which leverages shallow-layer attention to prune irrelevant visual tokens while preserving task-relevant ones, reinforcing critical visual cues for manipulation with minimal computational overhead. DeepVision-VLA outperforms prior state-of-the-art methods by 9.0\\% and 7.5\\% on simulated and real-world tasks, respectively, providing new insights for the design of visually enhanced VLA models."
+    },
+    {
+        "id": "2603.15617v1",
+        "title": "HorizonMath: Measuring AI Progress Toward Mathematical Discovery with Automatic Verification",
+        "score": 9.8,
+        "reason": "Potentially very high-impact benchmark for math discovery with automatic verification.",
+        "categories": [
             "cs.LG"
         ],
-        "published": "2026-03-12T17:27:21Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.12201v1",
-        "abstract": "Long-context agentic workflows have emerged as a defining use case for large language models, making attention efficiency critical for both inference speed and serving cost. Sparse attention addresses this challenge effectively, and DeepSeek Sparse Attention (DSA) is a representative production-grade solution: a lightweight lightning indexer selects the top-k most relevant tokens per query, reducing core attention from O(L^2) to O(Lk). However, the indexer itself retains O(L^2) complexity and must run independently at every layer, despite the fact that the resulting top-k selections are highly similar across consecutive layers. We present IndexCache, which exploits this cross-layer redundancy by partitioning layers into a small set of Full layers that run their own indexers and a majority of Shared layers that simply reuse the nearest Full layer's top-k indices. Experimental results on a 30B DSA model show that IndexCache can remove 75% of indexer computations with negligible quality degradation, achieving up to 1.82x prefill speedup and 1.48x decode speedup compared to standard DSA."
+        "published": "2026-03-16T17:59:53Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15617v1",
+        "abstract": "Can AI make progress on important, unsolved mathematical problems? Large language models are now capable of sophisticated mathematical and scientific reasoning, but whether they can perform novel research is still widely debated and underexplored. We introduce HorizonMath, a benchmark of over 100 predominantly unsolved problems spanning 8 domains in computational and applied mathematics, paired with an open-source evaluation framework for automated verification. Our benchmark targets a class of problems where discovery is hard, requiring meaningful mathematical insight, but verification is computationally efficient and simple. Because these solutions are unknown, HorizonMath is immune to data contamination, and most state-of-the-art models score near 0%. Existing research-level benchmarks instead rely on formal proof verification or manual review, both of which are expensive to scale. Using this platform, we find two problems for which GPT 5.4 Pro proposes solutions that improve on the best-known published results, representing potential novel contributions (pending expert review). We release HorizonMath as an open challenge and a growing community resource, where correct solutions to problems in the unsolved problem classes could constitute novel results in the mathematical literature."
+    },
+    {
+        "id": "2603.15614v1",
+        "title": "Tri-Prompting: Video Diffusion with Unified Control over Scene, Subject, and Motion",
+        "score": 9.2,
+        "reason": "Unified controllable video diffusion with clear creator-facing utility.",
+        "categories": [
+            "cs.CV"
+        ],
+        "published": "2026-03-16T17:59:05Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15614v1",
+        "abstract": "Recent video diffusion models have made remarkable strides in visual quality, yet precise, fine-grained control remains a key bottleneck that limits practical customizability for content creation. For AI video creators, three forms of control are crucial: (i) scene composition, (ii) multi-view consistent subject customization, and (iii) camera-pose or object-motion adjustment. Existing methods typically handle these dimensions in isolation, with limited support for multi-view subject synthesis and identity preservation under arbitrary pose changes. This lack of a unified architecture makes it difficult to support versatile, jointly controllable video. We introduce Tri-Prompting, a unified framework and two-stage training paradigm that integrates scene composition, multi-view subject consistency, and motion control. Our approach leverages a dual-condition motion module driven by 3D tracking points for background scenes and downsampled RGB cues for foreground subjects. To ensure a balance between controllability and visual realism, we further propose an inference ControlNet scale schedule. Tri-Prompting supports novel workflows, including 3D-aware subject insertion into any scenes and manipulation of existing subjects in an image. Experimental results demonstrate that Tri-Prompting significantly outperforms specialized baselines such as Phantom and DaS in multi-view subject identity, 3D consistency, and motion accuracy."
+    },
+    {
+        "id": "2603.15611v1",
+        "title": "Code-A1: Adversarial Evolving of Code LLM and Test LLM via Reinforcement Learning",
+        "score": 9.5,
+        "reason": "Compelling adversarial RL setup for code and test model co-evolution.",
+        "categories": [
+            "cs.CL"
+        ],
+        "published": "2026-03-16T17:58:13Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15611v1",
+        "abstract": "Reinforcement learning for code generation relies on verifiable rewards from unit test pass rates. Yet high-quality test suites are scarce, existing datasets offer limited coverage, and static rewards fail to adapt as models improve. Recent self-play methods unify code and test generation in a single model, but face a inherent dilemma: white-box access leads to self-collusion where the model produces trivial tests for easy rewards, yet black-box restriction yields generic tests that miss implementation-specific bugs. We introduce Code-A1, an adversarial co-evolution framework that jointly optimizes a Code LLM and a Test LLM with opposing objectives. The Code LLM is rewarded for passing more tests, while the Test LLM is rewarded for exposing more defects. This architectural separation eliminates self-collusion risks and safely enables white-box test generation, where the Test LLM can inspect candidate code to craft targeted adversarial tests. We further introduce a Mistake Book mechanism for experience replay and a composite reward balancing test validity with adversarial difficulty. Experiments on Qwen2.5-Coder models demonstrate that Code-A1 achieves code generation performance matching or exceeding models trained on human-annotated tests, while significantly improving test generation capability."
+    },
+    {
+        "id": "2603.15599v1",
+        "title": "SmartSearch: How Ranking Beats Structure for Conversational Memory Retrieval",
+        "score": 9.1,
+        "reason": "Strong engineering result showing ranking beats structure for memory retrieval.",
+        "categories": [
+            "cs.LG"
+        ],
+        "published": "2026-03-16T17:53:21Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15599v1",
+        "abstract": "Recent conversational memory systems invest heavily in LLM-based structuring at ingestion time and learned retrieval policies at query time. We show that neither is necessary. SmartSearch retrieves from raw, unstructured conversation history using a fully deterministic pipeline: NER-weighted substring matching for recall, rule-based entity discovery for multi-hop expansion, and a CrossEncoder+ColBERT rank fusion stage -- the only learned component -- running on CPU in ~650ms. Oracle analysis on two benchmarks identifies a compilation bottleneck: retrieval recall reaches 98.6%, but without intelligent ranking only 22.5% of gold evidence survives truncation to the token budget. With score-adaptive truncation and no per-dataset tuning, SmartSearch achieves 93.5% on LoCoMo and 88.4% on LongMemEval-S, exceeding all known memory systems under the same evaluation protocol on both benchmarks while using 8.5x fewer tokens than full-context baselines."
+    },
+    {
+        "id": "2603.15594v1",
+        "title": "OpenSeeker: Democratizing Frontier Search Agents by Fully Open-Sourcing Training Data",
+        "score": 9.4,
+        "reason": "Open search-agent data/model release with frontier-level benchmark results.",
+        "categories": [
+            "cs.AI",
+            "cs.CL"
+        ],
+        "published": "2026-03-16T17:52:04Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15594v1",
+        "abstract": "Deep search capabilities have become an indispensable competency for frontier Large Language Model (LLM) agents, yet the development of high-performance search agents remains dominated by industrial giants due to a lack of transparent, high-quality training data. This persistent data scarcity has fundamentally hindered the progress of the broader research community in developing and innovating within this domain. To bridge this gap, we introduce OpenSeeker, the first fully open-source search agent (i.e., model and data) that achieves frontier-level performance through two core technical innovations: (1) Fact-grounded scalable controllable QA synthesis, which reverse-engineers the web graph via topological expansion and entity obfuscation to generate complex, multi-hop reasoning tasks with controllable coverage and complexity. (2) Denoised trajectory synthesis, which employs a retrospective summarization mechanism to denoise the trajectory, therefore promoting the teacher LLMs to generate high-quality actions. Experimental results demonstrate that OpenSeeker, trained (a single training run) on only 11.7k synthesized samples, achieves state-of-the-art performance across multiple benchmarks including BrowseComp, BrowseComp-ZH, xbench-DeepSearch, and WideSearch. Notably, trained with simple SFT, OpenSeeker significantly outperforms the second-best fully open-source agent DeepDive (e.g., 29.5% v.s. 15.3% on BrowseComp), and even surpasses industrial competitors such as Tongyi DeepResearch (trained via extensive continual pre-training, SFT, and RL) on BrowseComp-ZH (48.4% v.s. 46.7%). We fully open-source the complete training dataset and the model weights to democratize frontier search agent research and foster a more transparent, collaborative ecosystem."
+    },
+    {
+        "id": "2603.15569v1",
+        "title": "Mamba-3: Improved Sequence Modeling using State Space Principles",
+        "score": 9.5,
+        "reason": "Important sequence-modeling advance pushing the efficiency/quality frontier.",
+        "categories": [
+            "cs.LG"
+        ],
+        "published": "2026-03-16T17:30:08Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15569v1",
+        "abstract": "Scaling inference-time compute has emerged as an important driver of LLM performance, making inference efficiency a central focus of model design alongside model quality. While the current Transformer-based models deliver strong model quality, their quadratic compute and linear memory make inference expensive. This has spurred the development of sub-quadratic models with reduced linear compute and constant memory requirements. However, many recent linear models trade off model quality and capability for algorithmic efficiency, failing on tasks such as state tracking. Moreover, their theoretically linear inference remains hardware-inefficient in practice. Guided by an inference-first perspective, we introduce three core methodological improvements inspired by the state space model (SSM) viewpoint of linear models. We combine: (1) a more expressive recurrence derived from SSM discretization, (2) a complex-valued state update rule that enables richer state tracking, and (3) a multi-input, multi-output (MIMO) formulation for better model performance without increasing decode latency. Together with architectural refinements, our Mamba-3 model achieves significant gains across retrieval, state-tracking, and downstream language modeling tasks. At the 1.5B scale, Mamba-3 improves average downstream accuracy by 0.6 percentage points compared to the next best model (Gated DeltaNet), with Mamba-3's MIMO variant further improving accuracy by another 1.2 points for a total 1.8 point gain. Across state-size experiments, Mamba-3 achieves comparable perplexity to Mamba-2 despite using half of its predecessor's state size. Our evaluations demonstrate Mamba-3's ability to advance the performance-efficiency Pareto frontier."
+    },
+    {
+        "id": "2603.15557v1",
+        "title": "Anatomy of a Lie: A Multi-Stage Diagnostic Framework for Tracing Hallucinations in Vision-Language Models",
+        "score": 9.0,
+        "reason": "Practical and interpretable framework for diagnosing VLM hallucinations.",
+        "categories": [
+            "cs.CV"
+        ],
+        "published": "2026-03-16T17:20:38Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.15557v1",
+        "abstract": "Vision-Language Models (VLMs) frequently \"hallucinate\" - generate plausible yet factually incorrect statements - posing a critical barrier to their trustworthy deployment. In this work, we propose a new paradigm for diagnosing hallucinations, recasting them from static output errors into dynamic pathologies of a model's computational cognition. Our framework is grounded in a normative principle of computational rationality, allowing us to model a VLM's generation as a dynamic cognitive trajectory. We design a suite of information-theoretic probes that project this trajectory onto an interpretable, low-dimensional Cognitive State Space. Our central discovery is a governing principle we term the geometric-information duality: a cognitive trajectory's geometric abnormality within this space is fundamentally equivalent to its high information-theoretic surprisal. Hallucination detection is counts as a geometric anomaly detection problem. Evaluated across diverse settings - from rigorous binary QA (POPE) and comprehensive reasoning (MME) to unconstrained open-ended captioning (MS-COCO) - our framework achieves state-of-the-art performance. Crucially, it operates with high efficiency under weak supervision and remains highly robust even when calibration data is heavily contaminated. This approach enables a causal attribution of failures, mapping observable errors to distinct pathological states: perceptual instability (measured by Perceptual Entropy), logical-causal failure (measured by Inferential Conflict), and decisional ambiguity (measured by Decision Entropy). Ultimately, this opens a path toward building AI systems whose reasoning is transparent, auditable, and diagnosable by design."
     }
 ]
