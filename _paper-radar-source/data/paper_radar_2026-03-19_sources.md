@@ -1,0 +1,92 @@
+# PaperRadar Daily Curated Sources (2026-03-19)
+
+## 1. Unified Spatio-Temporal Token Scoring for Efficient Video VLMs
+- ID: 2603.18004v1
+- Score: 9.7
+- Categories: cs.CV, cs.AI, cs.LG
+- PDF: https://arxiv.org/pdf/2603.18004v1
+
+### Abstract
+Token pruning is essential for enhancing the computational efficiency of vision-language models (VLMs), particularly for video-based tasks where temporal redundancy is prevalent. Prior approaches typically prune tokens either (1) within the vision transformer (ViT) exclusively for unimodal perception tasks such as action recognition and object segmentation, without adapting to downstream vision-language tasks; or (2) only within the LLM while leaving the ViT output intact, often requiring complex text-conditioned token selection mechanisms. In this paper, we introduce Spatio-Temporal Token Scoring (STTS), a simple and lightweight module that prunes vision tokens across both the ViT and the LLM without text conditioning or token merging, and is fully compatible with end-to-end training. By learning how to score temporally via an auxiliary loss and spatially via LLM downstream gradients, aided by our efficient packing algorithm, STTS prunes 50% of vision tokens throughout the entire architecture, resulting in a 62% improvement in efficiency during both training and inference with only a 0.7% drop in average performance across 13 short and long video QA tasks. Efficiency gains increase with more sampled frames per video. Applying test-time scaling for long-video QA further yields performance gains of 0.5-1% compared to the baseline. Overall, STTS represents a novel, simple yet effective technique for unified, architecture-wide vision token pruning.
+
+## 2. Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models
+- ID: 2603.18002v1
+- Score: 9.6
+- Categories: cs.CV, cs.AI, cs.CL
+- PDF: https://arxiv.org/pdf/2603.18002v1
+
+### Abstract
+Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching models to reason in 3D space. We introduce Loc3R-VLM, a framework that equips 2D Vision-Language Models with advanced 3D understanding capabilities from monocular video input. Inspired by human spatial cognition, Loc3R-VLM relies on two joint objectives: global layout reconstruction to build a holistic representation of the scene structure, and explicit situation modeling to anchor egocentric perspective. These objectives provide direct spatial supervision that grounds both perception and language in a 3D context. To ensure geometric consistency and metric-scale alignment, we leverage lightweight camera pose priors extracted from a pre-trained 3D foundation model. Loc3R-VLM achieves state-of-the-art performance in language-based localization and outperforms existing 2D- and video-based approaches on situated and general 3D question-answering benchmarks, demonstrating that our spatial supervision framework enables strong 3D understanding. Project page: https://kevinqu7.github.io/loc3r-vlm
+
+## 3. AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse
+- ID: 2603.18000v1
+- Score: 9.5
+- Categories: cs.AI
+- PDF: https://arxiv.org/pdf/2603.18000v1
+
+### Abstract
+Building LLM-based agents has become increasingly important. Recent works on LLM-based agent self-evolution primarily record successful experiences as textual prompts or reflections, which cannot reliably guarantee efficient task re-execution in complex scenarios. We propose AgentFactory, a new self-evolution paradigm that preserves successful task solutions as executable subagent code rather than textual experience. Crucially, these subagents are continuously refined based on execution feedback, becoming increasingly robust and efficient as more tasks are encountered. Saved subagents are pure Python code with standardized documentation, enabling portability across any Python-capable system. We demonstrate that AgentFactory enables continuous capability accumulation: its library of executable subagents grows and improves over time, progressively reducing the effort required for similar tasks without manual intervention. Our implementation is open-sourced at https://github.com/zzatpku/AgentFactory, and our demonstration video is available at https://youtu.be/iKSsuAXJHW0.
+
+## 4. Toward Scalable Automated Repository-Level Datasets for Software Vulnerability Detection
+- ID: 2603.17974v1
+- Score: 9.1
+- Categories: cs.SE, cs.AI
+- PDF: https://arxiv.org/pdf/2603.17974v1
+
+### Abstract
+Software vulnerabilities continue to grow in volume and remain difficult to detect in practice. Although learning-based vulnerability detection has progressed, existing benchmarks are largely function-centric and fail to capture realistic, executable, interprocedural settings. Recent repo-level security benchmarks demonstrate the importance of realistic environments, but their manual curation limits scale. This doctoral research proposes an automated benchmark generator that injects realistic vulnerabilities into real-world repositories and synthesizes reproducible proof-of-vulnerability (PoV) exploits, enabling precisely labeled datasets for training and evaluating repo-level vulnerability detection agents. We further investigate an adversarial co-evolution loop between injection and detection agents to improve robustness under realistic constraints.
+
+## 5. TDAD: Test-Driven Agentic Development - Reducing Code Regressions in AI Coding Agents via Graph-Based Impact Analysis
+- ID: 2603.17973v1
+- Score: 9.8
+- Categories: cs.SE, cs.AI
+- PDF: https://arxiv.org/pdf/2603.17973v1
+
+### Abstract
+AI coding agents can resolve real-world software issues, yet they frequently introduce regressions, breaking tests that previously passed. Current benchmarks focus almost exclusively on resolution rate, leaving regression behavior under-studied. This paper presents TDAD (Test-Driven Agentic Development), an open-source tool and benchmark methodology that combines abstract-syntax-tree (AST) based code-test graph construction with weighted impact analysis to surface the tests most likely affected by a proposed change. Evaluated on SWE-bench Verified with two local models (Qwen3-Coder 30B on 100 instances and Qwen3.5-35B-A3B on 25 instances), TDAD's GraphRAG workflow reduced test-level regressions by 70% (6.08% to 1.82%) and improved resolution from 24% to 32% when deployed as an agent skill. A surprising finding is that TDD prompting alone increased regressions (9.94%), revealing that smaller models benefit more from contextual information (which tests to verify) than from procedural instructions (how to do TDD). An autonomous auto-improvement loop raised resolution from 12% to 60% on a 10-instance subset with 0% regression. These findings suggest that for AI agent tool design, surfacing contextual information outperforms prescribing procedural workflows. All code, data, and logs are publicly available at https://github.com/pepealonso95/TDAD.
+
+## 6. Beyond Muon: MUD (MomentUm Decorrelation) for Faster Transformer Training
+- ID: 2603.17970v1
+- Score: 9.4
+- Categories: cs.LG, math.NA, math.OC
+- PDF: https://arxiv.org/pdf/2603.17970v1
+
+### Abstract
+Orthogonalized-momentum optimizers such as Muon improve transformer training by approximately whitening/orthogonalizing matrix-valued momentum updates via a short polar-decomposition iteration. However, polar-factor approximations typically require multiple large matrix multiplications, and the resulting overhead can be substantial and hardware-dependent. We introduce MUD (MomentUm Decorrelation), a complementary whitening approach that replaces Muon's polar update with a triangular (Cholesky-like) whitening surrogate inspired by classical Gram--Schmidt and Gauss-Seidel ideas. We show that row-orthonormal matrices are fixed points of the MUD map, relate the inner step to symmetric Gauss-Seidel preconditioning of the Gram matrix, and prove quadratic local convergence near the fixed point. In terms of time-to-perplexity, MUD yields consistent 10-50\% wall-clock improvements over tuned AdamW and Muon in time-to-perplexity, typically converging slightly slower per step than Muon but with substantially lower optimizer overhead -- relative to Muon, MUD improves peak tokens/s by roughly $1.3-2.6\times$ across most settings and up to nearly $3\times$ on GPT-2 large on an A100. We also demonstrate training a ESM-2 150M protein language model, where MUD matches Muon-level validation perplexity in significantly less wall-clock time.
+
+## 7. VideoAtlas: Navigating Long-Form Video in Logarithmic Compute
+- ID: 2603.17948v1
+- Score: 9.3
+- Categories: cs.CV, cs.AI
+- PDF: https://arxiv.org/pdf/2603.17948v1
+
+### Abstract
+Extending language models to video introduces two challenges: representation, where existing methods rely on lossy approximations, and long-context, where caption- or agent-based pipelines collapse video into text and lose visual fidelity. To overcome this, we introduce \textbf{VideoAtlas}, a task-agnostic environment to represent video as a hierarchical grid that is simultaneously lossless, navigable, scalable, caption- and preprocessing-free. An overview of the video is available at a glance, and any region can be recursively zoomed into, with the same visual representation used uniformly for the video, intermediate investigations, and the agent's memory, eliminating lossy text conversion end-to-end. This hierarchical structure ensures access depth grows only logarithmically with video length. For long-context, Recursive Language Models (RLMs) recently offered a powerful solution for long text, but extending them to visual domain requires a structured environment to recurse into, which \textbf{VideoAtlas} provides. \textbf{VideoAtlas} as a Markov Decision Process unlocks Video-RLM: a parallel Master-Worker architecture where a Master coordinates global exploration while Workers concurrently drill into assigned regions to accumulate lossless visual evidence. We demonstrate three key findings: (1)~logarithmic compute growth with video duration, further amplified by a 30-60\% multimodal cache hit rate arising from the grid's structural reuse. (2)~environment budgeting, where bounding the maximum exploration depth provides a principled compute-accuracy hyperparameter. (3)~emergent adaptive compute allocation that scales with question granularity. When scaling from 1-hour to 10-hour benchmarks, Video-RLM remains the most duration-robust method with minimal accuracy degradation, demonstrating that structured environment navigation is a viable and scalable paradigm for video understanding.
+
+## 8. Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing
+- ID: 2603.17942v1
+- Score: 9.2
+- Categories: cs.CL
+- PDF: https://arxiv.org/pdf/2603.17942v1
+
+### Abstract
+Large language models (LLMs) exhibit latent multi-token prediction (MTP) capabilities despite being trained solely for next-token generation. We propose a simple, training-free MTP approach that probes an LLM using on-the-fly mask tokens drawn from its embedding space, enabling parallel prediction of future tokens without modifying model weights or relying on auxiliary draft models. Our method constructs a speculative token tree by sampling top-K candidates from mask-token logits and applies a lightweight pruning strategy to retain high-probability continuations. During decoding, candidate predictions are verified in parallel, resulting in lossless generation while substantially reducing the number of model calls and improving token throughput. Across benchmarks, our probing-based MTP consistently outperforms existing training-free baselines, increasing acceptance length by approximately 12\% on LLaMA3 and 8--12\% on Qwen3, and achieving throughput gains of up to 15--19\%. Finally, we provide theoretical insights and empirical evidence showing that decoder layers naturally align mask-token representations with next-token states, enabling accurate multi-step prediction without retraining or auxiliary models.
+
+## 9. scicode-lint: Detecting Methodology Bugs in Scientific Python Code with LLM-Generated Patterns
+- ID: 2603.17893v1
+- Score: 9.0
+- Categories: cs.SE, cs.AI, cs.LG
+- PDF: https://arxiv.org/pdf/2603.17893v1
+
+### Abstract
+Methodology bugs in scientific Python code produce plausible but incorrect results that traditional linters and static analysis tools cannot detect. Several research groups have built ML-specific linters, demonstrating that detection is feasible. Yet these tools share a sustainability problem: dependency on specific pylint or Python versions, limited packaging, and reliance on manual engineering for every new pattern. As AI-generated code increases the volume of scientific software, the need for automated methodology checking (such as detecting data leakage, incorrect cross-validation, and missing random seeds) grows. We present scicode-lint, whose two-tier architecture separates pattern design (frontier models at build time) from execution (small local model at runtime). Patterns are generated, not hand-coded; adapting to new library versions costs tokens, not engineering hours. On Kaggle notebooks with human-labeled ground truth, preprocessing leakage detection reaches 65% precision at 100% recall; on 38 published scientific papers applying AI/ML, precision is 62% (LLM-judged) with substantial variation across pattern categories; on a held-out paper set, precision is 54%. On controlled tests, scicode-lint achieves 97.7% accuracy across 66 patterns.
+
+## 10. DebugLM: Learning Traceable Training Data Provenance for LLMs
+- ID: 2603.17884v1
+- Score: 9.4
+- Categories: cs.CL
+- PDF: https://arxiv.org/pdf/2603.17884v1
+
+### Abstract
+Large language models (LLMs) are trained through multi-stage pipelines over heterogeneous data sources, yet developers lack a principled way to pinpoint the specific data responsible for an observed behavior. This lack of observability reduces debugging to reactive patching and makes failures prone to recur under distribution shift or subsequent model updates. To address this limitation, we propose DebugLM, a framework that equips LLMs with built-in data provenance, enabling them to explicitly trace the origins of their behaviors to specific training data sources. Specifically, the model learns to associate its responses with unique provenance tags that indicate the responsible dataset, empowering developers to precisely identify where undesirable behaviors are learned. Building on this capability, DebugLM further supports targeted test-time remediation, enabling developers to selectively trigger targeted refusal for specified data sources without retraining or modifying model parameters. Experiments demonstrate that DebugLM provides accurate behavior tracing in multi-stage training pipelines and effective test-time remediation while preserving the general utility of the model.
+
