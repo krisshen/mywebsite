@@ -13,11 +13,45 @@
 
 <!-- For all browsers -->
 <script>
+  window.themeToggleConfig = {
+    defaultTheme: "{{ site.minimal_mistakes_skin | default: 'default' }}",
+    lightTheme: "air",
+    themeHrefTemplate: "{{ '/assets/css/theme-THEME.css' | relative_url }}",
+    themes: [
+      { id: "default", label: "Default", tone: "light" },
+      { id: "air", label: "Air", tone: "light" },
+      { id: "aqua", label: "Aqua", tone: "light" },
+      { id: "contrast", label: "Contrast", tone: "dark" },
+      { id: "dark", label: "Dark", tone: "dark" },
+      { id: "dirt", label: "Dirt", tone: "light" },
+      { id: "mint", label: "Mint", tone: "light" },
+      { id: "neon", label: "Neon", tone: "dark" },
+      { id: "plum", label: "Plum", tone: "dark" },
+      { id: "sunrise", label: "Sunrise", tone: "light" }
+    ]
+  };
+
   (function () {
+    var config = window.themeToggleConfig || {};
     var storageKey = "theme";
     var root = document.documentElement;
     var supportsMatchMedia = typeof window.matchMedia === "function";
+    var themes = config.themes || [];
+    var validThemes = {};
     var savedTheme = null;
+
+    themes.forEach(function (theme) {
+      validThemes[theme.id] = theme;
+    });
+
+    function normalizeTheme(theme) {
+      if (theme === "light") return config.lightTheme || "air";
+      return validThemes[theme] ? theme : null;
+    }
+
+    function getThemeTone(theme) {
+      return validThemes[theme] ? validThemes[theme].tone || "light" : "light";
+    }
 
     try {
       savedTheme = localStorage.getItem(storageKey);
@@ -26,16 +60,14 @@
     }
 
     var systemTheme = supportsMatchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark";
-    var theme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : systemTheme;
-    var href = theme === "light"
-      ? "{{ '/assets/css/light.css' | relative_url }}"
-      : "{{ '/assets/css/main.css' | relative_url }}";
+      ? (config.lightTheme || "air")
+      : (config.defaultTheme || "default");
+    var theme = normalizeTheme(savedTheme) || systemTheme;
+    var href = (config.themeHrefTemplate || "").replace("THEME", theme);
     var link = document.createElement("link");
 
     root.setAttribute("data-theme", theme);
-    root.style.colorScheme = theme;
+    root.style.colorScheme = getThemeTone(theme);
 
     link.id = "theme-stylesheet";
     link.rel = "stylesheet";
@@ -45,9 +77,9 @@
   })();
 </script>
 <noscript>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/theme-' | append: site.minimal_mistakes_skin | append: '.css' | relative_url }}">
 </noscript>
-<link rel="preload" as="style" href="{{ '/assets/css/light.css' | relative_url }}">
+<link rel="preload" as="style" href="{{ '/assets/css/theme-air.css' | relative_url }}">
 
 <!--[if IE ]>
   <style>

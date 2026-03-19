@@ -35,9 +35,24 @@
           </svg>
         </button>
         {% endif %}
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Activate light mode" aria-pressed="false" title="Activate light mode">
-          <span class="theme-toggle__icon" aria-hidden="true">☾</span>
-        </button>
+        {% assign theme_options = "default:Default,air:Air,aqua:Aqua,contrast:Contrast,dark:Dark,dirt:Dirt,mint:Mint,neon:Neon,plum:Plum,sunrise:Sunrise" | split: "," %}
+        <div class="theme-toggle-group">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-menu" title="Change theme">
+            <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+          </button>
+          <div id="theme-menu" class="theme-menu" hidden>
+            <p class="theme-menu__note">Click to swap themes. Hold or press ↓ to pick any skin.</p>
+            <div class="theme-menu__options" role="list">
+              {% for option in theme_options %}
+                {% assign parts = option | split: ":" %}
+                <button class="theme-menu__option" type="button" data-theme="{{ parts[0] }}" aria-pressed="false">
+                  <span class="theme-menu__swatch theme-menu__swatch--{{ parts[0] }}" aria-hidden="true"></span>
+                  <span class="theme-menu__label">{{ parts[1] }}</span>
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
