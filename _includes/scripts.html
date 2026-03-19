@@ -11,6 +11,7 @@
   <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
   <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
 {% endif %}
+<script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
 
 {% if site.search == true or page.layout == "search" %}
   {%- assign search_provider = site.search_provider | default: "lunr" -%}

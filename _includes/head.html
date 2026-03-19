@@ -12,7 +12,42 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<script>
+  (function () {
+    var storageKey = "theme";
+    var root = document.documentElement;
+    var supportsMatchMedia = typeof window.matchMedia === "function";
+    var savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem(storageKey);
+    } catch (error) {
+      savedTheme = null;
+    }
+
+    var systemTheme = supportsMatchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
+    var theme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : systemTheme;
+    var href = theme === "light"
+      ? "{{ '/assets/css/light.css' | relative_url }}"
+      : "{{ '/assets/css/main.css' | relative_url }}";
+    var link = document.createElement("link");
+
+    root.setAttribute("data-theme", theme);
+    root.style.colorScheme = theme;
+
+    link.id = "theme-stylesheet";
+    link.rel = "stylesheet";
+    link.href = href;
+
+    document.head.appendChild(link);
+  })();
+</script>
+<noscript>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</noscript>
+<link rel="preload" as="style" href="{{ '/assets/css/light.css' | relative_url }}">
 
 <!--[if IE ]>
   <style>
