@@ -1,0 +1,36 @@
+/* ==========================================================================
+   THEME TOGGLE
+   ========================================================================== */
+
+.theme-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 0.25rem;
+  border: 1px solid rgba($primary-color, 0.18);
+  border-radius: 999px;
+  background-color: rgba($background-color, 0.92);
+  color: $primary-color;
+  cursor: pointer;
+  -webkit-transition: $global-transition;
+  transition: $global-transition;
+
+  &:hover {
+    color: $link-color-hover;
+    border-color: rgba($primary-color, 0.35);
+    background-color: mix(#fff, $background-color, 85%);
+  }
+}
+
+.theme-toggle__icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
