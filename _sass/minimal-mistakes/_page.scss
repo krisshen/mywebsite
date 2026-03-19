@@ -221,7 +221,43 @@
   padding-top: 1em;
   border-top: 1px solid $border-color;
 
+  .btn {
+    &--twitter {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &--twitter:visited,
+    &--twitter:hover {
+      color: #fff;
+    }
+
+    &--twitter:hover {
+      background-color: #111;
+    }
+  }
+
+  .share-icon {
+    display: none;
+  }
+
   @include breakpoint(max-width $small) {
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 3.25rem;
+      min-height: 3rem;
+      padding: 0.75rem;
+    }
+
+    .share-icon {
+      display: block;
+      width: 1.35rem;
+      height: 1.35rem;
+      flex-shrink: 0;
+    }
+
     .btn span {
       border: 0;
       clip: rect(0 0 0 0);
