@@ -15,139 +15,139 @@ export type Paper = {
 }
 
 export const generatedYear = '2026';
-export const generatedDateLabel = "2026年3月19日星期四";
+export const generatedDateLabel = "2026年3月21日星期六";
 
-export const totalFilteredCount = 220;
+export const totalFilteredCount = 207;
 
 export const papers: Paper[] = [
     {
-        "id": "2603.18004v1",
-        "title": "Unified Spatio-Temporal Token Scoring for Efficient Video VLMs",
-        "authors": "Jianrui Zhang, Yue Yang, Rohun Tripathi, Winson Han, Ranjay Krishna, Christopher Clark, Yong Jae Lee, Sangho Lee",
+        "id": "2603.19235v1",
+        "title": "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding",
+        "authors": "Xianjin Wu, Dingkang Liang, Tianrui Feng, Kui Xia, Yumeng Zhang, Xiaofan Li, Xiao Tan, Xiang Bai",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.18004v1",
-        "recommendationScore": 9.7,
-        "summaries": {
-            "expert": "引入STTS模块，通过学习空间显著性（下游梯度导向）与时间冗余性（辅助损失导向）对Token进行联合打分剪枝。设计高效Packing算法解决非均匀剪枝导致的张量稀疏问题。在ViT和LLM端同步实现50%剪枝，效率提升62%的同时任务性能损失仅0.7%。",
-            "general": "视频理解中最烧钱的是算力。STTS能自动“马赛克”掉视频中那些不动的背景和无关紧要的噪点，只留核心信息传给大脑。它不仅在逻辑上减少计算量，更通过内存对齐算法在显卡硬件层面实现了真实的“搬砖减重”，让训练和推理都飞起来。",
-            "lazy": "自动过滤视频里的废话：把不动的地方和杂物全删了，大脑飞速转动，干货一点没丢。"
-        }
-    },
-    {
-        "id": "2603.18002v1",
-        "title": "Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models",
-        "authors": "Kevin Qu, Haozhe Qi, Mihai Dusmanu, Mahdi Rad, Rui Wang, Marc Pollefeys",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.18002v1",
-        "recommendationScore": 9.6,
-        "summaries": {
-            "expert": "提出Loc3R-VLM框架，利用全局布局重建（BEV坐标映射）和显式情境建模（位置/姿态Token）提升模型3D空间感。引入3D基础模型提供轻量级相机姿态先验，支持单目视频输入的米制精度回归。在SQA3D等任务中显著优于纯2D模型及部分依赖点云的3D模型。",
-            "general": "让只会看平面画的模型学会了脑内建模。模型看视频时能自动在脑中画出房间的“鸟瞰图”，从而精准理解“我在哪”、“怎么走能到门边”这类复杂的空间指令。这对于需要进行第一视角交互的机器人导航或AR场景非常有应用价值。",
-            "lazy": "教AI学会了“脑内制图”：看一眼视频就能分清东南西北，转个身还记得身后桌上的杯子。"
-        }
-    },
-    {
-        "id": "2603.18000v1",
-        "title": "AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse",
-        "authors": "Zhang Zhang, Shuqi Lu, Hongjin Qian, Di He, Zheng Liu",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.18000v1",
+        "arxivUrl": "https://arxiv.org/abs/2603.19235v1",
         "recommendationScore": 9.5,
         "summaries": {
-            "expert": "提出AgentFactory框架，采用Install-Self-Evolve-Deploy全生命周期管理。核心策略是将任务解法保存为纯Python子代理代码（代码化技能），而非脆弱的文本反思。通过执行反馈驱动代码持续迭代改进。实验证明随着技能库累积，模型处理相似任务的Token成本显著下降。",
-            "general": "解决了大模型Agent“过目即忘”、相似任务总要从头思考的问题。它能将成功的操作自动写成Python脚本存进技能包。以后遇到同类任务直接调包运行，甚至能把这些成熟的脚本导出给其他系统使用，实现了Agent能力的工程化累积。",
-            "lazy": "做完一次任务就给自己写个脚本存好：以后遇到类似的直接跑代码，干活越来越利索。"
+            "expert": "VEGA-3D 提出了一种利用视频生成模型隐式 3D 先验进行场景理解的范式转换。该方法将预训练的视频扩散模型重新定位为'潜在世界模拟器'，通过从中间噪声水平提取时空特征，并通过令牌级自适应门控融合机制与语义表示集成，从而在无需显式 3D 监督的情况下为多模态大语言模型提供丰富的几何线索。",
+            "general": "这篇论文提出了一个有趣的观点：视频生成模型为了生成连贯的视频，已经学会了强大的 3D 结构先验和物理规律。VEGA-3D 框架利用这些隐式知识来增强视觉语言模型的 3D 理解能力，而不需要额外的 3D 标注数据。这种方法在 3D 场景理解、空间推理和具身操作等基准测试中都取得了优异表现。",
+            "lazy": "这篇论文发现，会'生成视频'的 AI 其实已经偷偷学会了 3D 空间感。作者开发了一个工具，让这些 AI 把它们隐含的 3D 知识拿出来，帮助其他 AI 更好地理解空间和物体。"
         }
     },
     {
-        "id": "2603.17974v1",
-        "title": "Toward Scalable Automated Repository-Level Datasets for Software Vulnerability Detection",
-        "authors": "Amine Lbath",
+        "id": "2603.19234v1",
+        "title": "Matryoshka Gaussian Splatting",
+        "authors": "Zhilin Guo, Boqiao Zhang, Hakan Aktas, Kyle Fogarty, Jeffrey Hu, Nursena Koprucu Aslan, Wenzhao Li, Canberk Baykal, Albert Miao, Josef Bengtson, Chenliang Zhou, Weihao Xia, Cristina Nader Vasconcelos. Cengiz Oztireli",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.17974v1",
-        "recommendationScore": 9.1,
-        "summaries": {
-            "expert": "提出一种自动化漏洞基准生成器，利用AI Agent工作流在真实代码库中注入漏洞并同步合成可执行的PoV利用脚本。引入注入与检测Agent的对抗演化机制。旨在解决现有基准缺乏库级别（repo-level）上下文和可复现证据的问题，为训练更鲁棒的安全检测模型提供地基。",
-            "general": "现有的漏洞扫描题库大多太老且不带实战演示。该项目模拟黑客思维，在真实开源代码里制造漏洞并附带“攻击Demo”和详细标签。这为安全工程师研发企业级自动化防御和漏洞定位系统提供了高质量、大规模的训练素材，填补了工业界的数据空白。",
-            "lazy": "让AI玩漏洞“捉迷藏”：一个负责藏BUG并写“外挂”演示，一个负责找，专门产出高质量安全题库。"
-        }
-    },
-    {
-        "id": "2603.17973v1",
-        "title": "TDAD: Test-Driven Agentic Development - Reducing Code Regressions in AI Coding Agents via Graph-Based Impact Analysis",
-        "authors": "Pepe Alonso",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.17973v1",
-        "recommendationScore": 9.8,
-        "summaries": {
-            "expert": "提出TDAD框架，利用AST解析构建代码-测试依赖图，并通过加权影响分析定位风险点。引入自改进闭环迭代工具逻辑。在SWE-bench Verified评估中，将代码回归率降低了70%，同时通过优化Prompt上下文密度将问题解决率从24%提升至32%。",
-            "general": "解决了AI编程助手在修BUG时经常顺手写出新BUG的问题。TDAD不只是教模型做TDD，而是自动分析代码“家谱”，直接告诉AI“改这行可能弄坏那几个功能”。这种基于依赖图的精准上下文注入，对提升AI Agent在复杂项目中的工程交付质量效果显著。",
-            "lazy": "改代码前先查“家谱”：自动告诉AI哪些功能可能会坏，把回归错误扼杀在摇篮里。"
-        }
-    },
-    {
-        "id": "2603.17970v1",
-        "title": "Beyond Muon: MUD (MomentUm Decorrelation) for Faster Transformer Training",
-        "authors": "Ben S. Southworth, Stephen Thomas",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.17970v1",
-        "recommendationScore": 9.4,
-        "summaries": {
-            "expert": "提出MUD优化器，通过基于Cholesky分解思想的三角白化代理取代Muon中昂贵的极分解迭代。证明了行正交矩阵为该映射的固定点及局部二次收敛性。在GPT-2训练中，MUD显著降低了优化器单步开销，使墙钟训练时间缩短10-50%，且吞吐量提升1.3-2.6倍。",
-            "general": "Muon优化器虽然能加速训练但计算负担重。MUD通过更轻巧的数学算法实现了类似的白化加速效果，大幅提升了每秒处理的令牌数。对于需要在大规模集群上缩短大模型训练周期、优化算力ROI的团队来说，这是一个高性价比的算法升级方案。",
-            "lazy": "大模型训练的“瘦身方案”：把复杂的数学优化算得又快又准，训练总时长直接砍掉一半。"
-        }
-    },
-    {
-        "id": "2603.17948v1",
-        "title": "VideoAtlas: Navigating Long-Form Video in Logarithmic Compute",
-        "authors": "Mohamed Eltahir, Ali Habibullah, Yazan Alshoibi, Lama Ayash, Tanveer Hussain, Naeemullah Khan",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.17948v1",
+        "arxivUrl": "https://arxiv.org/abs/2603.19234v1",
         "recommendationScore": 9.3,
         "summaries": {
-            "expert": "将长视频理解建模为分层网格导航环境，引入Master-Worker agent架构（Video-RLM）。Master负责全局规划与不确定性分析，Worker并发执行递归缩放动作以获取无损视觉证据。实验证明其计算开销随视频时长对数级增长，在10小时超长视频任务中展现出极强的鲁棒性。",
-            "general": "解决了长视频处理时均匀采样丢失细节或文本转换导致视觉失真的问题。模型能像操作地图一样处理视频：先看缩略图寻找线索，再针对性点开高清片段。方案实现了显存占用的解耦，让中端显卡也能精准分析超长视频中的瞬时事件。",
-            "lazy": "像刷地图一样刷视频：先看缩略图再放大看细节。看10小时的视频，算力消耗却一点也不慌。"
+            "expert": "Matryoshka Gaussian Splatting 为标准 3DGS 管线引入了连续细节层次（LoD）能力，同时不牺牲全容量渲染质量。其核心创新是随机预算训练：每次迭代采样随机 splat 预算，同时优化对应的前缀和完整集合。这种方法只需两次前向传播，无需架构修改。",
+            "general": "3D 高斯溅射（3DGS）是一种很酷的 3D 场景表示方法，但它通常只能以固定质量渲染。这个工作让 3DGS 可以像俄罗斯套娃一样，根据需要灵活调整渲染质量——需要快速预览时用少量高斯点，需要高质量时用全部高斯点。这种灵活的质量-速度权衡对实际部署非常有价值。",
+            "lazy": "这个技术让 3D 渲染可以'按需调速'。想快速预览就用低画质，想看细节就用高画质，而且不需要准备多个版本的模型，一个模型就能搞定所有需求。"
         }
     },
     {
-        "id": "2603.17942v1",
-        "title": "Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing",
-        "authors": "Raghavv Goel, Mukul Gagrani, Mingu Lee, Chris Lott",
+        "id": "2603.19232v1",
+        "title": "Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens",
+        "authors": "Yuqing Wang, Chuofan Ma, Zhijie Lin, Yao Teng, Lijun Yu, Shuai Wang, Jiaming Han, Jiashi Feng, Yi Jiang, Xihui Liu",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.17942v1",
-        "recommendationScore": 9.2,
-        "summaries": {
-            "expert": "提出一种无需训练的多令牌预测（MTP）方法，通过在嵌入空间合成掩码令牌探测模型内部预测潜力。引入动态令牌树扩展和轻量级剪枝规则优化计算Block效率。理论证明了掩码令牌与真实令牌状态的对齐能力，在Llama3和Qwen3上实现15-19%的吞吐量提升。",
-            "general": "相比传统需要训练草稿模型的加速方案，该方法直接利用模型自身的向量空间“占位符”并行预测未来内容。无需任何重训即可实现即插即用，显著降低了推理部署的显存成本并加速了生成过程，对资源受限的边缘端大模型应用极具实用价值。",
-            "lazy": "零成本加速秘籍：靠在向量空间“插队”占座，让模型学会一次猜后面好几个词，生成速度起飞。"
-        }
-    },
-    {
-        "id": "2603.17893v1",
-        "title": "scicode-lint: Detecting Methodology Bugs in Scientific Python Code with LLM-Generated Patterns",
-        "authors": "Sergey V. Samsonau",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.17893v1",
-        "recommendationScore": 9.0,
-        "summaries": {
-            "expert": "提出两层架构linter，将耗时的检测模式设计（利用前沿模型）与高效的本地执行（Qwen3-8B）分离。通过LLM自动生成针对库文档的检测问题与测试用例，并利用前缀缓存和异步批处理优化吞吐。在38篇真实论文代码上验证，高/中严重程度Bug检测精度达68-72%。",
-            "general": "传统工具难以检测科学计算中的语义逻辑错误（如数据泄露或随机种子缺失）。该工具通过大模型自动生成规则，大幅降低了维护成本。支持本地GPU运行以确保科研代码隐私，并能产出结构化JSON供AI编程助手联动修复，实现了规则设计的自动化与执行的工程化平衡。",
-            "lazy": "专门抓捕那些“结果看着对，逻辑全是坑”的科研代码BUG，规则全自动生成，省心又专业。"
-        }
-    },
-    {
-        "id": "2603.17884v1",
-        "title": "DebugLM: Learning Traceable Training Data Provenance for LLMs",
-        "authors": "Wenjie Jacky Mo, Qin Liu, Xiaofei Wen, Wenxuan Zhou, Zhe Zhao, Muhao Chen",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.17884v1",
+        "arxivUrl": "https://arxiv.org/abs/2603.19232v1",
         "recommendationScore": 9.4,
         "summaries": {
-            "expert": "提出DEBUGLM框架，通过引入辅助训练目标建立模型生成模式与数据集标签（Source Tag）的稳定映射。采用标准与调试双模式训练策略，在调试模式下利用特殊Token触发溯源报告。实验证明在多阶段流水线中能实现超95%的行为归因准确率，并支持免重训的测试时精准修复（Remediation）。",
-            "general": "解决了大模型训练数据源复杂导致难以定位错误来源的问题。通过为数据集打标并进行对齐训练，模型在回答时能通过调试接口“自报家门”。工程师可在不重新训练的情况下，通过在提示词中添加特定Tag来精准屏蔽已知有害数据源的影响，大幅提升了模型的可维护性。",
-            "lazy": "给模型装个“溯源雷达”，出BUG了直接问它跟谁学的，还能一键拉黑带坏它的坏数据。"
+            "expert": "CubiD 是首个针对高维表示的离散生成模型。它在高维离散表示的任何维度、任何位置都可以被掩码和预测，实现了细粒度的掩码生成。在 ImageNet-256 上，CubiD 实现了最先进的离散生成性能，且证明了这些离散化令牌可以同时有效服务于理解和生成任务。",
+            "general": "目前的离散视觉生成方法通常只能处理低维令牌（8-32 维），这限制了它们的语义表达能力。CubiD 突破了这个限制，首次实现了高维离散令牌（768-1024 维）的生成。这意味着同一组令牌既能用于图像理解，也能用于图像生成，为构建统一的多模态架构铺平了道路。",
+            "lazy": "以前 AI 生成图片和理解图片用的是不同的'语言'。这篇论文让它们学会了同一种语言，这样 AI 就能既看得懂图片，又能画出图片，而且用的是同一套内部表示。"
+        }
+    },
+    {
+        "id": "2603.19229v1",
+        "title": "NavTrust: Benchmarking Trustworthiness for Embodied Navigation",
+        "authors": "Huaide Jiang, Yash Chaudhary, Yuping Wang, Zehao Wang, Raghav Sharma, Manan Mehta, Yang Zhou, Lichao Sun, Zhiwen Fan, Zhengzhong Tu, Jiachen Li",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.19229v1",
+        "recommendationScore": 9.2,
+        "summaries": {
+            "expert": "NavTrust 是首个统一的具身导航可信度基准，系统地破坏 RGB、深度和指令等输入模态，在真实场景中评估其对导航性能的影响。该基准评估了七种最先进的方法，揭示了在真实腐蚀条件下的显著性能下降。",
+            "general": "现有的具身导航研究主要在理想条件下评估性能，但真实世界充满了各种干扰：摄像头可能模糊、深度传感器可能不准、指令可能含糊不清。NavTrust 基准专门测试导航系统在这些'脏'条件下的鲁棒性，帮助研究者发现和修复系统的薄弱环节。",
+            "lazy": "这个基准专门给机器人导航系统'找茬'——故意让摄像头变糊、传感器出错、指令说不清楚，然后看机器人还能不能正常工作。这样能帮我们造出更可靠的机器人。"
+        }
+    },
+    {
+        "id": "2603.19227v1",
+        "title": "Bridging Semantic and Kinematic Conditions with Diffusion-based Discrete Motion Tokenizer",
+        "authors": "Chenyang Gu, Mingyuan Zhang, Haozhe Xie, Zhongang Cai, Lei Yang, Ziwei Liu",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.19227v1",
+        "recommendationScore": 9.1,
+        "summaries": {
+            "expert": "该工作提出了一种弥合语义和运动条件的三阶段框架，核心是 MoTok 扩散离散运动令牌化器。MoTok 通过将语义抽象与精细重建解耦，实现了紧凑的单层令牌同时保持运动保真度。在 HumanML3D 上，该方法将轨迹误差从 0.72 cm 降至 0.08 cm。",
+            "general": "运动生成通常需要在语义控制（比如'挥手'）和运动细节（比如手的具体轨迹）之间做权衡。这个工作巧妙地将两者分离：先用离散令牌规划语义动作，再用扩散模型生成精细运动轨迹。这种分离让控制更精确，同时保持了运动的自然流畅。",
+            "lazy": "这个技术让 AI 生成人体运动更精准。以前 AI 可能只知道'要挥手'，但现在它能精确控制手挥多高、多快、什么轨迹，而且动作看起来很自然。"
+        }
+    },
+    {
+        "id": "2603.19228v1",
+        "title": "SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing",
+        "authors": "Xinyao Zhang, Wenkai Dong, Yuxin Song, Bo Fang, Qi Zhang, Jing Wang, Fan Chen, Hui Zhang, Haocheng Feng, Yu Lu, Hang Zhou, Chun Yuan, Jingdong Wang",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.19228v1",
+        "recommendationScore": 9.3,
+        "summaries": {
+            "expert": "SAMA 将视频编辑分解为语义锚定和运动建模两个阶段。语义锚定通过联合预测稀疏锚帧的语义令牌和视频潜在变量来建立可靠的视觉锚点。运动对齐则通过在运动中心视频恢复前置任务（立方体修复、速度扰动、管状洗牌）上预训练同一骨干网络来内化时间动态。",
+            "general": "现有的视频编辑方法通常需要外部先验（如 VLM 特征）来保持质量和一致性，但这限制了泛化能力。SAMA 的创新在于让模型自己学会语义和运动的分离表示，无需外部辅助就能实现高质量编辑。更有趣的是，仅靠预训练阶段就能获得不错的零样本视频编辑能力。",
+            "lazy": "这个视频编辑 AI 不需要额外的'助手'来帮忙，它自己学会了把视频拆成'要改什么'和'怎么动'两部分。这样改出来的视频既符合指令，又保持了原来的运动感觉。"
+        }
+    },
+    {
+        "id": "2603.19226v1",
+        "title": "Under One Sun: Multi-Object Generative Perception of Materials and Illumination",
+        "authors": "Nobuo Yoshii, Xinran Nicole Han, Ryo Kawahara, Todd Zickler, Ko Nishino",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.19226v1",
+        "recommendationScore": 9.0,
+        "summaries": {
+            "expert": "该方法引入多对象生成感知（MultiGP），通过利用同一场景中所有物体共享同一光照这一共识来解决固有的辐射度量解缠难题。关键技术创新包括：级联端到端架构、协调引导确保扩散收敛到单一一致光照估计、轴向注意力促进不同反射率物体之间的'交流'，以及纹理提取 ControlNet。",
+            "general": "从单张图片中分离出材质、纹理和光照是一个极度困难的问题。这个工作的巧妙之处在于利用了'同一场景的物体共享光照'这一物理约束。通过让多个物体'互相参考'，系统能更准确地推断每个物体的真实材质和纹理，同时估计出场景的整体光照。",
+            "lazy": "这个 AI 能从一张照片里看出物体的真实颜色和材质，还能知道当时的光线是什么样的。秘诀是让照片里的不同物体'互相作证'，这样推断结果更准确。"
+        }
+    },
+    {
+        "id": "2603.19225v1",
+        "title": "FinTradeBench: A Financial Reasoning Benchmark for LLMs",
+        "authors": "Yogesh Agrawal, Aniruddha Dutta, Md Mahadi Hasan, Santu Karmaker, Aritra Dutta",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.19225v1",
+        "recommendationScore": 9.1,
+        "summaries": {
+            "expert": "FinTradeBench 是首个整合公司基本面和交易信号的金融推理基准，包含 1400 个问题，涵盖纳斯达克 100 家公司十年的历史数据。基准分为三类推理：基本面聚焦、交易信号聚焦以及需要跨信号推理的混合问题。",
+            "general": "现有的金融 AI 评测主要关注公司财报等基本面数据，很少考虑股票的市场交易表现。FinTradeBench 将两者结合起来，测试 AI 能否综合分析公司的'内在价值'和'市场表现'来做出更全面的投资判断。这对评估 LLM 在真实金融决策中的能力很有价值。",
+            "lazy": "这个基准考 AI 做投资分析的能力。它不只看公司财报好不好，还要看股票在市场上表现怎么样，然后让 AI 综合判断该不该投资。这比只看一方面更接近真实的投资决策。"
+        }
+    },
+    {
+        "id": "2603.19224v1",
+        "title": "EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing",
+        "authors": "Yang Fu, Yike Zheng, Ziyun Dai, Henghui Ding",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.19224v1",
+        "recommendationScore": 9.2,
+        "summaries": {
+            "expert": "EffectErase 引入了 VOR（Video Object Removal）大规模数据集，包含 60K 高质量视频对，涵盖五种效果类型。该方法将视频对象插入视为逆辅助任务，在互惠学习方案中训练，包含任务感知区域引导和插入-移除一致性目标。",
+            "general": "视频去物不仅要移除物体本身，还要消除它产生的各种视觉效果（变形、阴影、反射等）。现有的数据集很少系统地涵盖这些效果。VOR 数据集填补了这个空白，而 EffectErase 方法通过让模型同时学习'添加效果'和'移除效果'，获得了更好的效果消除能力。",
+            "lazy": "这个技术能从视频里完美地'擦掉'一个物体，连它的影子和反光都擦得干干净净。秘诀是让 AI 同时学习怎么'加特效'和'去特效'，这样去得更彻底。"
+        }
+    },
+    {
+        "id": "2603.19220v1",
+        "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
+        "authors": "Zhuolin Yang, Zihan Liu, Yang Chen, Wenliang Dai, Boxin Wang, Sheng-Chieh Lin, Chankyu Lee, Yangyi Chen, Dongfu Jiang, Jiafan He, Renjie Pi, Grace Lam, Nayeon Lee, Alexander Bukharin, Mohammad Shoeybi, Bryan Catanzaro, Wei Ping",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.19220v1",
+        "recommendationScore": 9.5,
+        "summaries": {
+            "expert": "Nemotron-Cascade 2 是一个开放的 30B MoE 模型（3B 激活参数），在数学和编码推理性能上接近前沿开放模型。它是第二个在 2025 年 IMO、IOI 和 ICPC 世界总决赛中达到金牌级性能的开放权重 LLM，以 20 倍更少的参数展示了极高的智能密度。",
+            "general": "这个模型的亮点是用很少的参数实现了极强的推理能力。它只有 30B 参数（其中每次只激活 3B），但在国际数学和信息学奥林匹克竞赛中都达到了金牌水平。这说明模型设计和训练方法的改进可以大幅提升'智能密度'，让小模型也能有大智慧。",
+            "lazy": "这是一个'小而精'的 AI 模型。虽然它比很多大模型小得多，但在数学和编程竞赛中却能拿金牌。这证明了模型不一定要大才能聪明，训练方法得当，小模型也能很强。"
         }
     }
 ];
