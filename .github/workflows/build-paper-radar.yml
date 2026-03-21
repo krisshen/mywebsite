@@ -1,0 +1,40 @@
+name: Build Paper Radar on Data Changes
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '_paper-radar-source/data/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        working-directory: _paper-radar-source
+        run: npm ci
+      
+      - name: Build
+        working-directory: _paper-radar-source
+        run: npm run build
+      
+      - name: Copy built assets to paper-radar folder
+        run: |
+          rm -rf paper-radar/*
+          cp -r _paper-radar-source/out/* paper-radar/
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add paper-radar/
+          git commit -m "chore: rebuild paper-radar assets" -a || true
+          git push
