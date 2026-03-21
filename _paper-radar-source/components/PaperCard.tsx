@@ -103,21 +103,21 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
 
             <div className="p-6 sm:p-8">
                 {/* Header row */}
-                <div className="flex items-start justify-between gap-4 mb-5">
-                    <div className="flex items-start gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                         {/* Issue number */}
                         <span
                             className="
-                text-4xl font-bold leading-none select-none
+                text-2xl sm:text-4xl font-bold leading-none select-none
                 text-[#e8e8e6] group-hover:text-[#f0d0cd]
                 transition-colors duration-300
-                font-serif shrink-0 mt-1
+                font-serif shrink-0 sm:mt-1
               "
                             style={{ fontFamily: 'Georgia, serif' }}
                         >
                             {paper.id}
                         </span>
-                        <div>
+                        <div className="flex-1">
                             <h2
                                 className="text-lg sm:text-xl font-semibold text-[#1a1a1a] leading-snug mb-1"
                                 style={{ fontFamily: 'Georgia, serif' }}
@@ -130,7 +130,7 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
                         </div>
                     </div>
                     {/* Star rating */}
-                    <div className="shrink-0 mt-1">
+                    <div className="shrink-0 sm:mt-1">
                         <StarRating score={paper.recommendationScore} />
                     </div>
                 </div>

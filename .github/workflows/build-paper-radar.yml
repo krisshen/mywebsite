@@ -7,6 +7,9 @@ on:
       - master
     paths:
       - '_paper-radar-source/data/**'
+      - '_paper-radar-source/components/**'
+      - '_paper-radar-source/app/**'
+      - '_paper-radar-source/contexts/**'
 
 jobs:
   build:
