@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import LanguageSwitchButton from '@/components/LanguageSwitchButton'
 
 export const metadata: Metadata = {
-    title: 'PaperRadar — 每天精选 AI 论文',
-    description: '每天从海量 AI 论文中精选 3–5 篇，提供专业版、通用版、懒人版三种阅读难度，让任何人都能读懂 AI 论文。',
+    title: 'PaperRadar — Daily AI Paper Digest',
+    description: 'Curating 5–10 papers daily, making AI research accessible to everyone',
 }
 
 export default function RootLayout({
@@ -21,7 +23,12 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
             </head>
-            <body>{children}</body>
+            <body>
+                <LanguageProvider>
+                    <LanguageSwitchButton />
+                    {children}
+                </LanguageProvider>
+            </body>
         </html>
     )
 }

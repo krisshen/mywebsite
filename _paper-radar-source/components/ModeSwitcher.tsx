@@ -1,6 +1,7 @@
 'use client'
 
 import { SummaryMode } from '@/data/papers'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface ModeSwitcherProps {
     currentMode: SummaryMode
@@ -8,10 +9,10 @@ interface ModeSwitcherProps {
     variant?: 'global' | 'card'
 }
 
-const modes: { key: SummaryMode; label: string; emoji: string }[] = [
-    { key: 'expert', label: '专业版', emoji: '🎓' },
-    { key: 'general', label: '通用版', emoji: '📖' },
-    { key: 'lazy', label: '懒人版', emoji: '⚡' },
+const modesConfig: { key: SummaryMode; emoji: string; zh: string; en: string }[] = [
+    { key: 'expert', emoji: '🎓', zh: '专业版', en: 'Expert' },
+    { key: 'general', emoji: '📖', zh: '通用版', en: 'General' },
+    { key: 'lazy', emoji: '⚡', zh: '懒人版', en: 'Lazy' },
 ]
 
 export default function ModeSwitcher({
@@ -20,13 +21,19 @@ export default function ModeSwitcher({
     variant = 'card',
 }: ModeSwitcherProps) {
     const isGlobal = variant === 'global'
+    const { language } = useLanguage()
+
+    const getLabel = (key: SummaryMode): string => {
+        const mode = modesConfig.find(m => m.key === key)
+        return language === 'en' ? (mode?.en || key) : (mode?.zh || key)
+    }
 
     return (
         <div
             className={`inline-flex rounded-full border border-[#e2e2df] overflow-hidden ${isGlobal ? 'bg-white shadow-sm' : 'bg-[#f5f5f3]'
                 }`}
         >
-            {modes.map((mode) => {
+            {modesConfig.map((mode) => {
                 const isActive = currentMode === mode.key
                 return (
                     <button
@@ -48,7 +55,7 @@ export default function ModeSwitcher({
             `}
                     >
                         <span className="hidden sm:inline">{mode.emoji}</span>
-                        <span>{mode.label}</span>
+                        <span>{getLabel(mode.key)}</span>
                     </button>
                 )
             })}
