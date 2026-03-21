@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Paper, SummaryMode } from '@/data/papers'
+import { Paper, SummaryMode, getSummaryText } from '@/data/papers'
 import ModeSwitcher from './ModeSwitcher'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface PaperCardProps {
     paper: Paper
@@ -13,7 +14,7 @@ function StarRating({ score }: { score: number }) {
     const normalizedScore = Math.max(0, Math.min(5, score / 2))
 
     return (
-        <div className="flex items-center gap-1.5" aria-label={`评分 ${score} / 10`}>
+        <div className="flex items-center gap-1.5" aria-label={`Rating ${score} / 10`}>
             <div className="flex gap-0.5" aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => {
                     const fill = Math.max(0, Math.min(1, normalizedScore - i))
@@ -42,6 +43,7 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
     const [visible, setVisible] = useState(true)
     const prevGlobalMode = useRef(globalMode)
     const fadeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+    const { t, language } = useLanguage()
 
     function clearFadeTimeout() {
         if (fadeTimeoutRef.current) {
@@ -75,10 +77,14 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
         triggerFade(newMode)
     }
 
-    const modeLabels: Record<SummaryMode, string> = {
-        expert: '专业版',
-        general: '通用版',
-        lazy: '懒人版',
+    // Get mode label based on current language
+    const getModeLabel = (m: SummaryMode): string => {
+        const translations: Record<SummaryMode, { zh: string; en: string }> = {
+            expert: { zh: '专业版', en: 'Expert' },
+            general: { zh: '通用版', en: 'General' },
+            lazy: { zh: '懒人版', en: 'Lazy' },
+        }
+        return language === 'en' ? translations[m].en : translations[m].zh
     }
 
     return (
@@ -132,7 +138,7 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
                 {/* Mode switcher */}
                 <div className="flex items-center gap-3 mb-4">
                     <span className="text-xs text-[#9ca3af] uppercase tracking-widest font-medium hidden sm:block">
-                        阅读模式
+                        {t('card.readingMode')}
                     </span>
                     <ModeSwitcher
                         currentMode={mode}
@@ -153,7 +159,7 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
                     data-mode={mode}
                 >
                     <p className={visible ? 'summary-fade' : ''}>
-                        {paper.summaries[mode]}
+                        {getSummaryText(paper.summaries[mode], language)}
                     </p>
                 </div>
 
@@ -161,7 +167,7 @@ export default function PaperCard({ paper, globalMode }: PaperCardProps) {
                 <div className="mt-4 flex items-center justify-between">
                     <span className="inline-flex items-center gap-1 text-xs text-[#9ca3af] bg-[#f5f5f3] px-2.5 py-1 rounded-full border border-[#e8e8e6]">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#c0392b]" />
-                        {modeLabels[mode]}
+                        {getModeLabel(mode)}
                     </span>
                     <a
                         href={paper.arxivUrl}
