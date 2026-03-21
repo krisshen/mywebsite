@@ -28,19 +28,22 @@ This workflow guides the AI assistant and the user through the daily process of 
 8. **Generate Summaries**: Use the following prompt in the NotebookLM query:
 
 > **NotebookLM Prompt**:
-> "Please generate multi-level Chinese summaries for the 10 papers I just added. 
+> "Please generate multi-level summaries in BOTH Chinese AND English for the 10 papers I just added. 
 > For each paper, provide:
-> 1. Expert Mode summary (Technical, for researchers)
-> 2. General Mode summary (Clear, for software engineers)
-> 3. Lazy Mode summary (Simple, for non-technical people)
+> 1. Expert Mode summary (Technical, for researchers) - in both Chinese and English
+> 2. General Mode summary (Clear, for software engineers) - in both Chinese and English
+> 3. Lazy Mode summary (Simple, for non-technical people) - in both Chinese and English
 > 
 > Output format for each paper:
 > [Paper Title]
-> Expert: ...
-> General: ...
-> Lazy: ...
+> Expert (Chinese): ...
+> Expert (English): ...
+> General (Chinese): ...
+> General (English): ...
+> Lazy (Chinese): ...
+> Lazy (English): ...
 > 
-> Please use professional but accessible Chinese."
+> Please use professional but accessible language in both languages."
 
 ## 4. Final Sync & Visuals
 9. **Update Database**: Sync the generated summaries into `data/papers.ts` using the new script:

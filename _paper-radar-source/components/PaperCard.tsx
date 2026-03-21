@@ -1,14 +1,13 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Paper, SummaryMode } from '@/data/papers'
+import { Paper, SummaryMode, getSummaryText } from '@/data/papers'
 import ModeSwitcher from './ModeSwitcher'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 interface PaperCardProps {
     paper: Paper
     globalMode: SummaryMode
-    modeLabels?: Record<SummaryMode, { zh: string; en: string }>
 }
 
 function StarRating({ score }: { score: number }) {
@@ -39,12 +38,12 @@ function StarRating({ score }: { score: number }) {
     )
 }
 
-export default function PaperCard({ paper, globalMode, modeLabels: propModeLabels }: PaperCardProps) {
+export default function PaperCard({ paper, globalMode }: PaperCardProps) {
     const [mode, setMode] = useState<SummaryMode>(globalMode)
     const [visible, setVisible] = useState(true)
     const prevGlobalMode = useRef(globalMode)
     const fadeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
 
     function clearFadeTimeout() {
         if (fadeTimeoutRef.current) {
@@ -78,18 +77,14 @@ export default function PaperCard({ paper, globalMode, modeLabels: propModeLabel
         triggerFade(newMode)
     }
 
-    // Use prop labels if available, otherwise use translation based on current language
+    // Get mode label based on current language
     const getModeLabel = (m: SummaryMode): string => {
-        if (propModeLabels) {
-            return propModeLabels[m].zh
-        }
-        // Use translation function or default
         const translations: Record<SummaryMode, { zh: string; en: string }> = {
             expert: { zh: '专业版', en: 'Expert' },
             general: { zh: '通用版', en: 'General' },
             lazy: { zh: '懒人版', en: 'Lazy' },
         }
-        return translations[m].zh
+        return language === 'en' ? translations[m].en : translations[m].zh
     }
 
     return (
@@ -164,7 +159,7 @@ export default function PaperCard({ paper, globalMode, modeLabels: propModeLabel
                     data-mode={mode}
                 >
                     <p className={visible ? 'summary-fade' : ''}>
-                        {paper.summaries[mode]}
+                        {getSummaryText(paper.summaries[mode], language)}
                     </p>
                 </div>
 

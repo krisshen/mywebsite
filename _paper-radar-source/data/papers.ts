@@ -1,5 +1,11 @@
 export type SummaryMode = 'expert' | 'general' | 'lazy'
 
+// Support both legacy string format and new bilingual format
+export type SummaryContent = string | {
+    zh: string
+    en: string
+}
+
 export type Paper = {
     id: string
     title: string
@@ -8,10 +14,18 @@ export type Paper = {
     arxivUrl: string
     recommendationScore: number
     summaries: {
-        expert: string
-        general: string
-        lazy: string
+        expert: SummaryContent
+        general: SummaryContent
+        lazy: SummaryContent
     }
+}
+
+// Helper function to get summary text based on language
+export function getSummaryText(summary: SummaryContent, language: 'zh' | 'en'): string {
+    if (typeof summary === 'string') {
+        return summary // Legacy format - return as is
+    }
+    return summary[language]
 }
 
 export const generatedYear = '2026';
