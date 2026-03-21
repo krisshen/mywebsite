@@ -8,6 +8,7 @@ on:
     paths:
       - '_paper-radar-source/data/**'
       - '_paper-radar-source/components/**'
+      - '_paper-radar-source/app/**'
 
 jobs:
   build:
