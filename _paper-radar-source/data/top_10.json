@@ -1,92 +1,92 @@
 [
     {
-        "id": "2603.19235v1",
-        "title": "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding",
+        "id": "2603.24517v1",
+        "title": "AVO: Agentic Variation Operators for Autonomous Evolutionary Search",
+        "score": 9.6,
+        "reason": "Agentic evolutionary search discovers GPU attention kernels that beat cuDNN and FlashAttention-4 on NVIDIA Blackwell.",
+        "categories": ["cs.LG"],
+        "published": "2026-03-25T16:55:04Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24517v1"
+    },
+    {
+        "id": "2603.24511v1",
+        "title": "Claudini: Autoresearch Discovers State-of-the-Art Adversarial Attack Algorithms for LLMs",
         "score": 9.5,
-        "reason": "Novel paradigm shift leveraging video generation models' implicit 3D knowledge for scene understanding without explicit 3D supervision.",
-        "categories": ["cs.CV", "cs.RO"],
-        "published": "2026-03-19T17:59:58Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19235v1"
+        "reason": "A concrete demonstration that autonomous research agents can discover stronger LLM jailbreak and prompt injection algorithms than existing baselines.",
+        "categories": ["cs.LG", "cs.AI", "cs.CR"],
+        "published": "2026-03-25T16:50:56Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24511v1"
     },
     {
-        "id": "2603.19234v1",
-        "title": "Matryoshka Gaussian Splatting",
-        "score": 9.3,
-        "reason": "Continuous level-of-detail for 3DGS with stochastic budget training, enabling flexible speed-quality trade-off from a single model.",
-        "categories": ["cs.CV", "cs.GR"],
-        "published": "2026-03-19T17:59:56Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19234v1"
-    },
-    {
-        "id": "2603.19232v1",
-        "title": "Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens",
+        "id": "2603.24587v1",
+        "title": "DreamerAD: Efficient Reinforcement Learning via Latent World Model for Autonomous Driving",
         "score": 9.4,
-        "reason": "First discrete generation model for high-dimensional representations, enabling unified understanding and generation with same tokens.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-19T17:59:55Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19232v1"
+        "reason": "Compresses diffusion-based world-model sampling from 100 steps to 1 step and turns latent-space RL into a practical autonomous driving training pipeline.",
+        "categories": ["cs.LG", "cs.RO"],
+        "published": "2026-03-25T17:57:09Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24587v1"
     },
     {
-        "id": "2603.19229v1",
-        "title": "NavTrust: Benchmarking Trustworthiness for Embodied Navigation",
-        "score": 9.2,
-        "reason": "First unified benchmark for embodied navigation robustness under RGB-Depth corruptions and instruction variations.",
-        "categories": ["cs.RO", "cs.AI", "cs.CV"],
-        "published": "2026-03-19T17:59:51Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19229v1"
+        "id": "2603.24533v1",
+        "title": "UI-Voyager: A Self-Evolving GUI Agent Learning via Failed Experience",
+        "score": 9.4,
+        "reason": "A 4B GUI agent that learns from failed experience and surpasses human-level performance on AndroidWorld.",
+        "categories": ["cs.LG", "cs.AI", "cs.CV"],
+        "published": "2026-03-25T17:10:29Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24533v1"
     },
     {
-        "id": "2603.19227v1",
-        "title": "Bridging Semantic and Kinematic Conditions with Diffusion-based Discrete Motion Tokenizer",
-        "score": 9.1,
-        "reason": "Novel three-stage framework combining semantic planning with kinematic control, reducing trajectory error by 10x.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-19T17:59:51Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19227v1"
-    },
-    {
-        "id": "2603.19228v1",
-        "title": "SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing",
+        "id": "2603.24579v1",
+        "title": "MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination",
         "score": 9.3,
-        "reason": "Factorized approach achieving state-of-the-art video editing without paired training data, competitive with commercial systems.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-19T17:59:51Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19228v1"
+        "reason": "Uses information-asymmetric multi-agent verification to reduce hallucinations and make smaller models compete with stronger closed systems.",
+        "categories": ["cs.CL"],
+        "published": "2026-03-25T17:54:10Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24579v1"
     },
     {
-        "id": "2603.19226v1",
-        "title": "Under One Sun: Multi-Object Generative Perception of Materials and Illumination",
-        "score": 9.0,
-        "reason": "Novel multi-object generative inverse rendering leveraging shared illumination for better material decomposition.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-19T17:59:45Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19226v1"
+        "id": "2603.24581v1",
+        "title": "Latent-WAM: Latent World Action Modeling for End-to-End Autonomous Driving",
+        "score": 9.3,
+        "reason": "A compact latent world planner that pushes state of the art on NAVSIM v2 and HUGSIM with much lower data and compute requirements.",
+        "categories": ["cs.CV", "cs.RO"],
+        "published": "2026-03-25T17:56:07Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24581v1"
     },
     {
-        "id": "2603.19225v1",
-        "title": "FinTradeBench: A Financial Reasoning Benchmark for LLMs",
-        "score": 9.1,
-        "reason": "First benchmark integrating company fundamentals and trading signals for comprehensive financial reasoning evaluation.",
-        "categories": ["cs.CE", "cs.AI", "cs.CL"],
-        "published": "2026-03-19T17:59:41Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19225v1"
-    },
-    {
-        "id": "2603.19224v1",
-        "title": "EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing",
+        "id": "2603.24584v1",
+        "title": "TAG: Target-Agnostic Guidance for Stable Object-Centric Inference in Vision-Language-Action Models",
         "score": 9.2,
-        "reason": "Novel effect-aware video object removal with large-scale VOR dataset and reciprocal learning scheme.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-19T17:59:22Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19224v1"
+        "reason": "A simple inference-time guidance method that materially improves object grounding robustness in cluttered robotic manipulation settings.",
+        "categories": ["cs.CV", "cs.RO"],
+        "published": "2026-03-25T17:56:32Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24584v1"
     },
     {
-        "id": "2603.19220v1",
-        "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
-        "score": 9.5,
-        "reason": "Open 30B MoE model achieving Gold Medal-level performance on IMO, IOI, and ICPC with remarkable intelligence density.",
-        "categories": ["cs.CL", "cs.AI", "cs.LG"],
-        "published": "2026-03-19T17:58:52Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.19220v1"
+        "id": "2603.24576v1",
+        "title": "Chameleon: Episodic Memory for Long-Horizon Robotic Manipulation",
+        "score": 9.2,
+        "reason": "Introduces geometry-grounded episodic memory for robots and shows stronger long-horizon control under perceptual aliasing.",
+        "categories": ["cs.RO", "cs.AI", "cs.CV"],
+        "published": "2026-03-25T17:52:43Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24576v1"
+    },
+    {
+        "id": "2603.24575v1",
+        "title": "VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models",
+        "score": 9.1,
+        "reason": "Tackles high-fidelity figure-to-SVG conversion with a strong dataset, benchmark, and a model that approaches frontier proprietary systems.",
+        "categories": ["cs.CV", "cs.AI"],
+        "published": "2026-03-25T17:52:23Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24575v1"
+    },
+    {
+        "id": "2603.24543v1",
+        "title": "Analysing the Safety Pitfalls of Steering Vectors",
+        "score": 9.1,
+        "reason": "Shows that activation steering can sharply change jailbreak success rates, making the controllability-versus-safety tradeoff concrete.",
+        "categories": ["cs.CR", "cs.CL"],
+        "published": "2026-03-25T17:16:11Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.24543v1"
     }
 ]

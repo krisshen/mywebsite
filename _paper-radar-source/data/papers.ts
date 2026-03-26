@@ -23,145 +23,235 @@ export type Paper = {
 // Helper function to get summary text based on language
 export function getSummaryText(summary: SummaryContent, language: 'zh' | 'en'): string {
     if (typeof summary === 'string') {
-        return summary // Legacy format - return as is
+        return summary
     }
-    return summary[language]
+    return summary[language] || summary.zh || summary.en
 }
 
 export const generatedYear = '2026';
-export const generatedDateLabel = "2026年3月21日星期六";
+export const generatedDateLabel = "2026年3月26日星期四";
 
-export const totalFilteredCount = 207;
+export const totalFilteredCount = 213;
 
 export const papers: Paper[] = [
     {
-        "id": "2603.19235v1",
-        "title": "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding",
-        "authors": "Xianjin Wu, Dingkang Liang, Tianrui Feng, Kui Xia, Yumeng Zhang, Xiaofan Li, Xiao Tan, Xiang Bai",
+        "id": "2603.24517v1",
+        "title": "AVO: Agentic Variation Operators for Autonomous Evolutionary Search",
+        "authors": "Terry Chen, Zhifan Ye, Bing Xu, Zihao Ye, Timmy Liu, Ali Hassani, Tianqi Chen, Andrew Kerr, Haicheng Wu, Yang Xu, Yu-Jung Chen, Hanfeng Chen, Aditya Kane, Ronny Krashinsky, Ming-Yu Liu, Vinod Grover, Luis Ceze, Roger Bringmann, John Tran, Wei Liu, Fung Xie, Michael Lightstone, Humphrey Shi",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19235v1",
+        "arxivUrl": "https://arxiv.org/abs/2603.24517v1",
+        "recommendationScore": 9.6,
+        "summaries": {
+            "expert": {
+                "zh": "AVO 将传统进化搜索中的固定变异与交叉算子替换为自驱动的编码智能体循环。智能体可以查看当前谱系、领域知识和执行反馈，自主提出、修复、批判并验证实现改动。在 NVIDIA Blackwell GPU 上，它发现的注意力内核在多种配置下超过了 cuDNN 和 FlashAttention-4，说明智能体已经可以直接参与底层高性能算子的发明。",
+                "en": "Agentic Variation Operators (AVO) replace traditional mutation and crossover with self-directed agent loops that use lineage history and execution feedback to propose and verify implementation edits. Evaluated on NVIDIA Blackwell GPUs, AVO discovered attention kernels that outperform cuDNN by up to 3.5% and FlashAttention-4 by up to 10.5%. The results show that agentic search can directly discover performance-critical low-level kernels rather than merely generating candidates for humans to refine."
+            },
+            "general": {
+                "zh": "这篇论文把进化搜索里的“变异器”换成了会写代码的智能体。结果是它能自动找到比当前顶级专家实现还快的 GPU 注意力内核，展示了 AI 自主优化系统代码的真实潜力。",
+                "en": "This study presents a new evolutionary search method where AI agents act as the optimization engine instead of fixed heuristics. In practice, that lets the system discover GPU kernels that beat strong expert-engineered baselines on modern hardware."
+            },
+            "lazy": {
+                "zh": "这相当于让 AI 自己当内核工程师，结果它真的把顶级手写 GPU 代码卷赢了。",
+                "en": "AI basically got promoted to kernel engineer and started beating elite hand-tuned GPU code."
+            }
+        }
+    },
+    {
+        "id": "2603.24511v1",
+        "title": "Claudini: Autoresearch Discovers State-of-the-Art Adversarial Attack Algorithms for LLMs",
+        "authors": "Alexander Panfilov, Peter Romov, Igor Shilov, Yves-Alexandre de Montjoye, Jonas Geiping, Maksym Andriushchenko",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.24511v1",
         "recommendationScore": 9.5,
         "summaries": {
-            "expert": "VEGA-3D 提出了一种利用视频生成模型隐式 3D 先验进行场景理解的范式转换。该方法将预训练的视频扩散模型重新定位为'潜在世界模拟器'，通过从中间噪声水平提取时空特征，并通过令牌级自适应门控融合机制与语义表示集成，从而在无需显式 3D 监督的情况下为多模态大语言模型提供丰富的几何线索。",
-            "general": "这篇论文提出了一个有趣的观点：视频生成模型为了生成连贯的视频，已经学会了强大的 3D 结构先验和物理规律。VEGA-3D 框架利用这些隐式知识来增强视觉语言模型的 3D 理解能力，而不需要额外的 3D 标注数据。这种方法在 3D 场景理解、空间推理和具身操作等基准测试中都取得了优异表现。",
-            "lazy": "这篇论文发现，会'生成视频'的 AI 其实已经偷偷学会了 3D 空间感。作者开发了一个工具，让这些 AI 把它们隐含的 3D 知识拿出来，帮助其他 AI 更好地理解空间和物体。"
+            "expert": {
+                "zh": "Claudini 使用由 Claude Code 驱动的 autoresearch 流水线，从现有白盒攻击方法出发迭代改进，对抗性地搜索新的越狱与提示注入算法。论文报告这些自动发现的算法在多项评测上超过了 30 多种已有方法，并在迁移到 Meta-SecAlign-70B 时达到 100% 攻击成功率。这表明增量式安全研究与红队攻击设计已经开始具备可自动化的条件。",
+                "en": "This paper introduces Claudini, an autoresearch pipeline powered by Claude Code that autonomously discovers novel white-box adversarial attack algorithms for LLMs. Starting from existing attacks such as GCG, the system iteratively improves them and produces methods that outperform more than 30 prior baselines. The reported transfer results, including 100% attack success against Meta-SecAlign-70B, show that parts of red-team research are already automatable."
+            },
+            "general": {
+                "zh": "这项工作展示了 AI 智能体不仅能写代码，还能自己做安全研究，自动发明新的大模型攻击方法。更关键的是，这些新方法比现有的人类设计方案更强，说明自动化红队研究正在变成现实。",
+                "en": "Researchers used an AI agent not just to code, but to run its own adversarial research loop and invent stronger jailbreak attacks. The important takeaway is that the automatically discovered attacks beat prior human-designed methods, which makes automated safety testing much more real."
+            },
+            "lazy": {
+                "zh": "AI 已经不只是会用攻击工具，它开始自己发明更狠的新攻击了。",
+                "en": "AI is no longer just using attack tools, it is starting to invent nastier ones on its own."
+            }
         }
     },
     {
-        "id": "2603.19234v1",
-        "title": "Matryoshka Gaussian Splatting",
-        "authors": "Zhilin Guo, Boqiao Zhang, Hakan Aktas, Kyle Fogarty, Jeffrey Hu, Nursena Koprucu Aslan, Wenzhao Li, Canberk Baykal, Albert Miao, Josef Bengtson, Chenliang Zhou, Weihao Xia, Cristina Nader Vasconcelos. Cengiz Oztireli",
+        "id": "2603.24587v1",
+        "title": "DreamerAD: Efficient Reinforcement Learning via Latent World Model for Autonomous Driving",
+        "authors": "Pengxuan Yang, Yupeng Zheng, Deheng Qian, Zebin Xing, Qichao Zhang, Linbo Wang, Yichen Zhang, Shaoyu Guo, Zhongpu Xia, Qiang Chen, Junyu Han, Lingyun Xu, Yifeng Pan, Dongbin Zhao",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19234v1",
-        "recommendationScore": 9.3,
-        "summaries": {
-            "expert": "Matryoshka Gaussian Splatting 为标准 3DGS 管线引入了连续细节层次（LoD）能力，同时不牺牲全容量渲染质量。其核心创新是随机预算训练：每次迭代采样随机 splat 预算，同时优化对应的前缀和完整集合。这种方法只需两次前向传播，无需架构修改。",
-            "general": "3D 高斯溅射（3DGS）是一种很酷的 3D 场景表示方法，但它通常只能以固定质量渲染。这个工作让 3DGS 可以像俄罗斯套娃一样，根据需要灵活调整渲染质量——需要快速预览时用少量高斯点，需要高质量时用全部高斯点。这种灵活的质量-速度权衡对实际部署非常有价值。",
-            "lazy": "这个技术让 3D 渲染可以'按需调速'。想快速预览就用低画质，想看细节就用高画质，而且不需要准备多个版本的模型，一个模型就能搞定所有需求。"
-        }
-    },
-    {
-        "id": "2603.19232v1",
-        "title": "Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens",
-        "authors": "Yuqing Wang, Chuofan Ma, Zhijie Lin, Yao Teng, Lijun Yu, Shuai Wang, Jiaming Han, Jiashi Feng, Yi Jiang, Xihui Liu",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19232v1",
+        "arxivUrl": "https://arxiv.org/abs/2603.24587v1",
         "recommendationScore": 9.4,
         "summaries": {
-            "expert": "CubiD 是首个针对高维表示的离散生成模型。它在高维离散表示的任何维度、任何位置都可以被掩码和预测，实现了细粒度的掩码生成。在 ImageNet-256 上，CubiD 实现了最先进的离散生成性能，且证明了这些离散化令牌可以同时有效服务于理解和生成任务。",
-            "general": "目前的离散视觉生成方法通常只能处理低维令牌（8-32 维），这限制了它们的语义表达能力。CubiD 突破了这个限制，首次实现了高维离散令牌（768-1024 维）的生成。这意味着同一组令牌既能用于图像理解，也能用于图像生成，为构建统一的多模态架构铺平了道路。",
-            "lazy": "以前 AI 生成图片和理解图片用的是不同的'语言'。这篇论文让它们学会了同一种语言，这样 AI 就能既看得懂图片，又能画出图片，而且用的是同一套内部表示。"
+            "expert": {
+                "zh": "DreamerAD 把自动驾驶强化学习的世界模型搬到潜空间中，通过 shortcut forcing 将扩散采样从 100 步压缩到 1 步，并在潜表示上训练自回归稠密奖励模型完成细粒度信用分配。它还用 Gaussian vocabulary sampling 约束 GRPO 的探索过程，避免生成物理上不合理的驾驶轨迹。在 NavSim v2 上，该方法达到 87.7 EPDMS，证明潜空间世界模型可以把效率、可解释性和驾驶性能一起拉起来。",
+                "en": "DreamerAD moves autonomous-driving world-model RL into latent space and compresses diffusion sampling from 100 steps to 1 via shortcut forcing. It also adds an autoregressive dense reward model over latent states plus Gaussian vocabulary sampling to keep exploration physically plausible. On NavSim v2, the method reaches 87.7 EPDMS, showing that latent world models can make RL both fast and effective for driving."
+            },
+            "general": {
+                "zh": "这篇论文想解决的是自动驾驶强化学习太慢、太贵的问题。作者把扩散世界模型大幅压缩到几乎一步生成，同时保留对驾驶场景的理解能力，让自动驾驶策略能更快地在“想象环境”里训练出来。",
+                "en": "This system speeds up self-driving training by making the model imagine future driving scenes much more efficiently. The result is a reinforcement-learning pipeline that is far faster than diffusion-heavy alternatives while still modeling the world well enough to train strong driving policies."
+            },
+            "lazy": {
+                "zh": "DreamerAD 把自动驾驶世界模型加速到像开了涡轮，让强化学习终于能在潜空间里高速练车。",
+                "en": "DreamerAD puts a turbo on world-model training so autonomous-driving RL can finally practice at speed."
+            }
         }
     },
     {
-        "id": "2603.19229v1",
-        "title": "NavTrust: Benchmarking Trustworthiness for Embodied Navigation",
-        "authors": "Huaide Jiang, Yash Chaudhary, Yuping Wang, Zehao Wang, Raghav Sharma, Manan Mehta, Yang Zhou, Lichao Sun, Zhiwen Fan, Zhengzhong Tu, Jiachen Li",
+        "id": "2603.24533v1",
+        "title": "UI-Voyager: A Self-Evolving GUI Agent Learning via Failed Experience",
+        "authors": "Zichuan Lin, Feiyu Liu, Yijun Yang, Jiafei Lyu, Yiming Gao, Yicheng Liu, Zhicong Lu, Yangbin Yu, Mingyu Yang, Junyou Li, Deheng Ye, Jie Jiang",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19229v1",
-        "recommendationScore": 9.2,
+        "arxivUrl": "https://arxiv.org/abs/2603.24533v1",
+        "recommendationScore": 9.4,
         "summaries": {
-            "expert": "NavTrust 是首个统一的具身导航可信度基准，系统地破坏 RGB、深度和指令等输入模态，在真实场景中评估其对导航性能的影响。该基准评估了七种最先进的方法，揭示了在真实腐蚀条件下的显著性能下降。",
-            "general": "现有的具身导航研究主要在理想条件下评估性能，但真实世界充满了各种干扰：摄像头可能模糊、深度传感器可能不准、指令可能含糊不清。NavTrust 基准专门测试导航系统在这些'脏'条件下的鲁棒性，帮助研究者发现和修复系统的薄弱环节。",
-            "lazy": "这个基准专门给机器人导航系统'找茬'——故意让摄像头变糊、传感器出错、指令说不清楚，然后看机器人还能不能正常工作。这样能帮我们造出更可靠的机器人。"
+            "expert": {
+                "zh": "UI-Voyager 提出一个两阶段自进化 GUI 智能体训练框架，先通过 Rejection Fine-Tuning 在自主循环中不断积累高质量经验，再用 Group Relative Self-Distillation 从群组轨迹中定位关键分叉点，为失败轨迹构造致密监督。这个设计直接针对长程 GUI 任务中的稀疏奖励和模糊归因问题。在 AndroidWorld 上，4B 模型达到 81.0% Pass@1，超过多项近期基线并越过人类水平。",
+                "en": "UI-Voyager uses a two-stage self-evolving training pipeline: Rejection Fine-Tuning to autonomously improve data and policy quality, then Group Relative Self-Distillation to identify key fork points and repair failed trajectories with dense supervision. The design directly targets sparse rewards and weak credit assignment in long-horizon GUI tasks. On AndroidWorld, a 4B model reaches 81.0% Pass@1, surpassing both recent baselines and reported human-level performance."
+            },
+            "general": {
+                "zh": "这是一种能从失败操作里持续学习的手机 GUI 智能体。它不依赖昂贵的人类标注，而是通过反复试错和自蒸馏自己变强，最终在 AndroidWorld 这类复杂任务上超过了人类表现。",
+                "en": "This paper introduces a mobile GUI agent that improves itself by learning from its own failed attempts. Instead of relying on expensive manual labels, it uses autonomous trial-and-error plus distillation to get better at long multi-step app tasks."
+            },
+            "lazy": {
+                "zh": "它不是少犯错，而是靠认真复盘每次翻车，最后把手机自动化做到比人还稳。",
+                "en": "It gets good at phone automation the hard way: by studying every crash and turning failure into training data."
+            }
         }
     },
     {
-        "id": "2603.19227v1",
-        "title": "Bridging Semantic and Kinematic Conditions with Diffusion-based Discrete Motion Tokenizer",
-        "authors": "Chenyang Gu, Mingyuan Zhang, Haozhe Xie, Zhongang Cai, Lei Yang, Ziwei Liu",
+        "id": "2603.24579v1",
+        "title": "MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination",
+        "authors": "Zhuo Li, Yupeng Zhang, Pengyu Cheng, Jiajun Song, Mengyu Zhou, Hao Li, Shujie Hu, Yu Qin, Erchao Zhao, Xiaoxi Jiang, Guanjun Jiang",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19227v1",
-        "recommendationScore": 9.1,
-        "summaries": {
-            "expert": "该工作提出了一种弥合语义和运动条件的三阶段框架，核心是 MoTok 扩散离散运动令牌化器。MoTok 通过将语义抽象与精细重建解耦，实现了紧凑的单层令牌同时保持运动保真度。在 HumanML3D 上，该方法将轨迹误差从 0.72 cm 降至 0.08 cm。",
-            "general": "运动生成通常需要在语义控制（比如'挥手'）和运动细节（比如手的具体轨迹）之间做权衡。这个工作巧妙地将两者分离：先用离散令牌规划语义动作，再用扩散模型生成精细运动轨迹。这种分离让控制更精确，同时保持了运动的自然流畅。",
-            "lazy": "这个技术让 AI 生成人体运动更精准。以前 AI 可能只知道'要挥手'，但现在它能精确控制手挥多高、多快、什么轨迹，而且动作看起来很自然。"
-        }
-    },
-    {
-        "id": "2603.19228v1",
-        "title": "SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing",
-        "authors": "Xinyao Zhang, Wenkai Dong, Yuxin Song, Bo Fang, Qi Zhang, Jing Wang, Fan Chen, Hui Zhang, Haocheng Feng, Yu Lu, Hang Zhou, Chun Yuan, Jingdong Wang",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19228v1",
+        "arxivUrl": "https://arxiv.org/abs/2603.24579v1",
         "recommendationScore": 9.3,
         "summaries": {
-            "expert": "SAMA 将视频编辑分解为语义锚定和运动建模两个阶段。语义锚定通过联合预测稀疏锚帧的语义令牌和视频潜在变量来建立可靠的视觉锚点。运动对齐则通过在运动中心视频恢复前置任务（立方体修复、速度扰动、管状洗牌）上预训练同一骨干网络来内化时间动态。",
-            "general": "现有的视频编辑方法通常需要外部先验（如 VLM 特征）来保持质量和一致性，但这限制了泛化能力。SAMA 的创新在于让模型自己学会语义和运动的分离表示，无需外部辅助就能实现高质量编辑。更有趣的是，仅靠预训练阶段就能获得不错的零样本视频编辑能力。",
-            "lazy": "这个视频编辑 AI 不需要额外的'助手'来帮忙，它自己学会了把视频拆成'要改什么'和'怎么动'两部分。这样改出来的视频既符合指令，又保持了原来的运动感觉。"
+            "expert": {
+                "zh": "MARCH 用 Solver、Proposer 和 Checker 三个智能体构成带信息不对称的自检管线，把回答拆成原子命题后再独立核验，从机制上削弱 LLM-as-a-judge 常见的自我确认偏差。作者再用多智能体强化学习联合优化整个流程，使各代理共同朝事实一致性演化。结果表明，一个 8B 模型加上 MARCH 后就能在幻觉控制上逼近强闭源模型。",
+                "en": "MARCH builds a self-check pipeline with Solver, Proposer, and Checker agents, using deliberate information asymmetry to break the self-confirmation bias common in LLM-as-a-judge setups. The Proposer decomposes answers into atomic claims, and the Checker verifies those claims without seeing the original full response. Multi-agent reinforcement learning then co-optimizes the full pipeline to reduce hallucinations in RAG settings."
+            },
+            "general": {
+                "zh": "这篇论文的核心点不是再找一个模型来“审判”原模型，而是把核查过程拆成多个相互制衡的代理。这样一来，模型在 RAG 场景下更难顺着自己的错误一路编下去，事实可靠性明显更高。",
+                "en": "Instead of asking one model to judge another in a loosely defined way, this paper splits verification across specialized agents with different roles. That structure makes it much harder for the system to blindly reinforce its own mistakes, so factual reliability improves."
+            },
+            "lazy": {
+                "zh": "一个 AI 胡说时最怕什么？怕另外两个 AI 拿着证据分头来查它。",
+                "en": "The fastest way to stop one AI from bluffing is to send two other AIs in with receipts."
+            }
         }
     },
     {
-        "id": "2603.19226v1",
-        "title": "Under One Sun: Multi-Object Generative Perception of Materials and Illumination",
-        "authors": "Nobuo Yoshii, Xinran Nicole Han, Ryo Kawahara, Todd Zickler, Ko Nishino",
+        "id": "2603.24581v1",
+        "title": "Latent-WAM: Latent World Action Modeling for End-to-End Autonomous Driving",
+        "authors": "Linbo Wang, Yupeng Zheng, Qiang Chen, Shiwei Li, Yichen Zhang, Zebin Xing, Qichao Zhang, Xiang Li, Deheng Qian, Pengxuan Yang, Yihang Dong, Ce Hao, Xiaoqing Ye, Junyu han, Yifeng Pan, Dongbin Zhao",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19226v1",
-        "recommendationScore": 9.0,
+        "arxivUrl": "https://arxiv.org/abs/2603.24581v1",
+        "recommendationScore": 9.3,
         "summaries": {
-            "expert": "该方法引入多对象生成感知（MultiGP），通过利用同一场景中所有物体共享同一光照这一共识来解决固有的辐射度量解缠难题。关键技术创新包括：级联端到端架构、协调引导确保扩散收敛到单一一致光照估计、轴向注意力促进不同反射率物体之间的'交流'，以及纹理提取 ControlNet。",
-            "general": "从单张图片中分离出材质、纹理和光照是一个极度困难的问题。这个工作的巧妙之处在于利用了'同一场景的物体共享光照'这一物理约束。通过让多个物体'互相参考'，系统能更准确地推断每个物体的真实材质和纹理，同时估计出场景的整体光照。",
-            "lazy": "这个 AI 能从一张照片里看出物体的真实颜色和材质，还能知道当时的光线是什么样的。秘诀是让照片里的不同物体'互相作证'，这样推断结果更准确。"
+            "expert": {
+                "zh": "Latent-WAM 面向端到端自动驾驶规划，结合空间感知压缩世界编码器与动态潜世界模型，把多视角图像压缩为紧凑的场景 token，再用因果 Transformer 自回归预测未来世界状态。相比已有世界模型，它在空间理解、动态建模和计算预算之间给出了更均衡的设计。在 NAVSIM v2 和 HUGSIM 上，它以 1.04 亿参数达到新的 SOTA，说明小而强的潜世界规划器是可行路径。",
+                "en": "Latent-WAM combines a Spatial-Aware Compressive World Encoder with a Dynamic Latent World Model to compress multi-view visual input into compact scene tokens and autoregressively predict future world states. The architecture is designed to preserve geometry and dynamics without the heavy cost of larger world-model planners. On NAVSIM v2 and HUGSIM, it sets new state of the art with only 104M parameters, which makes the compact-planner thesis credible."
+            },
+            "general": {
+                "zh": "这项工作关注的是怎样用更紧凑的世界表示做更强的自动驾驶规划。作者把场景几何和时间动态一起编码进潜表示里，让模型在不依赖大算力和大数据的情况下，也能做出更好的未来轨迹决策。",
+                "en": "This framework tries to make self-driving planning better by building a smaller but more structured internal model of the world. By encoding both geometry and motion dynamics into a latent representation, it plans strong trajectories without depending on huge models or datasets."
+            },
+            "lazy": {
+                "zh": "Latent-WAM 像是给自动驾驶装了一个更会压缩、也更会预判未来的小脑。",
+                "en": "Latent-WAM is like giving a self-driving system a smaller brain that is oddly better at compressing and predicting the future."
+            }
         }
     },
     {
-        "id": "2603.19225v1",
-        "title": "FinTradeBench: A Financial Reasoning Benchmark for LLMs",
-        "authors": "Yogesh Agrawal, Aniruddha Dutta, Md Mahadi Hasan, Santu Karmaker, Aritra Dutta",
+        "id": "2603.24584v1",
+        "title": "TAG: Target-Agnostic Guidance for Stable Object-Centric Inference in Vision-Language-Action Models",
+        "authors": "Jiaying Zhou, Zhihao Zhan, Ruifeng Zhai, Qinhan Lyu, Hao Liu, Keze Wang, Liang Lin, Guangrun Wang",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19225v1",
-        "recommendationScore": 9.1,
-        "summaries": {
-            "expert": "FinTradeBench 是首个整合公司基本面和交易信号的金融推理基准，包含 1400 个问题，涵盖纳斯达克 100 家公司十年的历史数据。基准分为三类推理：基本面聚焦、交易信号聚焦以及需要跨信号推理的混合问题。",
-            "general": "现有的金融 AI 评测主要关注公司财报等基本面数据，很少考虑股票的市场交易表现。FinTradeBench 将两者结合起来，测试 AI 能否综合分析公司的'内在价值'和'市场表现'来做出更全面的投资判断。这对评估 LLM 在真实金融决策中的能力很有价值。",
-            "lazy": "这个基准考 AI 做投资分析的能力。它不只看公司财报好不好，还要看股票在市场上表现怎么样，然后让 AI 综合判断该不该投资。这比只看一方面更接近真实的投资决策。"
-        }
-    },
-    {
-        "id": "2603.19224v1",
-        "title": "EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing",
-        "authors": "Yang Fu, Yike Zheng, Ziyun Dai, Henghui Ding",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19224v1",
+        "arxivUrl": "https://arxiv.org/abs/2603.24584v1",
         "recommendationScore": 9.2,
         "summaries": {
-            "expert": "EffectErase 引入了 VOR（Video Object Removal）大规模数据集，包含 60K 高质量视频对，涵盖五种效果类型。该方法将视频对象插入视为逆辅助任务，在互惠学习方案中训练，包含任务感知区域引导和插入-移除一致性目标。",
-            "general": "视频去物不仅要移除物体本身，还要消除它产生的各种视觉效果（变形、阴影、反射等）。现有的数据集很少系统地涵盖这些效果。VOR 数据集填补了这个空白，而 EffectErase 方法通过让模型同时学习'添加效果'和'移除效果'，获得了更好的效果消除能力。",
-            "lazy": "这个技术能从视频里完美地'擦掉'一个物体，连它的影子和反光都擦得干干净净。秘诀是让 AI 同时学习怎么'加特效'和'去特效'，这样去得更彻底。"
+            "expert": {
+                "zh": "TAG 针对 Vision-Language-Action 模型在杂乱环境中容易抓偏、抓错实例的问题，提出一种推理时引导机制。它对比原始观测和“擦除目标物体”观测下的策略预测，并将差异作为残差信号，增强模型对真正目标证据的依赖。该方法无需改动主干架构，在 LIBERO、LIBERO-Plus 和 VLABench 上都提升了杂乱场景下的稳定性。",
+                "en": "TAG addresses a common VLA failure mode in cluttered scenes by adding an inference-time guidance mechanism rather than changing the model architecture. It compares policy predictions under the original observation and an object-erased observation, then uses the residual as a steering signal to strengthen target-specific evidence. The method improves robustness on LIBERO, LIBERO-Plus, and VLABench without requiring heavy retraining."
+            },
+            "general": {
+                "zh": "很多机器人不是不会动，而是看错了要抓的那个对象。TAG 通过在推理时显式抑制干扰物影响，让现有 VLA 模型在混乱桌面和复杂场景里更不容易抓错东西。",
+                "en": "A lot of robot mistakes in clutter come from choosing the wrong object, not from failing to execute the motion itself. TAG makes existing VLA systems more reliable by suppressing distractor bias at inference time so the robot stays focused on the intended target."
+            },
+            "lazy": {
+                "zh": "TAG 干的事很直接: 让机器人少被旁边那些“长得很像”的东西带偏。",
+                "en": "TAG does one practical thing well: it stops robots from getting baited by the wrong lookalike object."
+            }
         }
     },
     {
-        "id": "2603.19220v1",
-        "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
-        "authors": "Zhuolin Yang, Zihan Liu, Yang Chen, Wenliang Dai, Boxin Wang, Sheng-Chieh Lin, Chankyu Lee, Yangyi Chen, Dongfu Jiang, Jiafan He, Renjie Pi, Grace Lam, Nayeon Lee, Alexander Bukharin, Mohammad Shoeybi, Bryan Catanzaro, Wei Ping",
+        "id": "2603.24576v1",
+        "title": "Chameleon: Episodic Memory for Long-Horizon Robotic Manipulation",
+        "authors": "Xinying Guo, Chenxi Jiang, Hyun Bin Kim, Ying Sun, Yang Xiao, Yuhang Han, Jianfei Yang",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.19220v1",
-        "recommendationScore": 9.5,
+        "arxivUrl": "https://arxiv.org/abs/2603.24576v1",
+        "recommendationScore": 9.2,
         "summaries": {
-            "expert": "Nemotron-Cascade 2 是一个开放的 30B MoE 模型（3B 激活参数），在数学和编码推理性能上接近前沿开放模型。它是第二个在 2025 年 IMO、IOI 和 ICPC 世界总决赛中达到金牌级性能的开放权重 LLM，以 20 倍更少的参数展示了极高的智能密度。",
-            "general": "这个模型的亮点是用很少的参数实现了极强的推理能力。它只有 30B 参数（其中每次只激活 3B），但在国际数学和信息学奥林匹克竞赛中都达到了金牌水平。这说明模型设计和训练方法的改进可以大幅提升'智能密度'，让小模型也能有大智慧。",
-            "lazy": "这是一个'小而精'的 AI 模型。虽然它比很多大模型小得多，但在数学和编程竞赛中却能拿金牌。这证明了模型不一定要大才能聪明，训练方法得当，小模型也能很强。"
+            "expert": {
+                "zh": "Chameleon 受人类情节记忆启发，不再只保留高度语义压缩的历史，而是写入几何对齐的多模态 token，并通过可微记忆栈按目标进行检索。这样模型在遮挡、状态变化和感知混淆下，仍能找回真正有决策价值的过去片段。配套的 Camo-Dataset 也把 episodic recall、空间跟踪和顺序操作纳入同一套真实机器人评测中。",
+                "en": "Chameleon is inspired by episodic memory rather than simple semantic retrieval. It stores geometry-grounded multimodal tokens in a differentiable memory stack so the robot can recall the specific past context that matters for current action selection. That helps it handle perceptual aliasing, occlusion, and long-horizon manipulation better than memory systems that over-compress history."
+            },
+            "general": {
+                "zh": "机器人长任务经常失败，不是因为不会操作，而是因为中途忘了之前发生过什么。Chameleon 给机器人加上更像“情节记忆”的机制，让它在遮挡和状态变化很多的环境里，仍能根据过往线索做出正确动作。",
+                "en": "Robots often fail on long tasks because they forget the important details of what happened earlier. Chameleon gives them a more episode-like memory so they can use past context even when the scene changes or looks ambiguous."
+            },
+            "lazy": {
+                "zh": "这篇论文给机器人补上了记忆力，不再一转头就把前面发生的事忘光。",
+                "en": "This paper gives robots a memory upgrade so they stop forgetting the plot halfway through the task."
+            }
+        }
+    },
+    {
+        "id": "2603.24575v1",
+        "title": "VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models",
+        "authors": "Qijia He, Xunmei Liu, Hammaad Memon, Ziang Li, Zixian Ma, Jaemin Cho, Jason Ren, Daniel S Weld, Ranjay Krishna",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.24575v1",
+        "recommendationScore": 9.1,
+        "summaries": {
+            "expert": {
+                "zh": "VFIG 面向复杂技术图表的 figure-to-SVG 转换，构建了 6.6 万对高质量图表-SVG 样本，并采用先学原子图元、再用强化学习优化全局结构的一套 coarse-to-fine 训练流程。论文还提出 VFIG-BENCH，用结构完整性和布局一致性等指标专门评估复杂矢量化任务。结果显示，VFIG 在开源模型中达到 SOTA，表现已接近顶级闭源系统。",
+                "en": "VFIG tackles figure-to-SVG conversion for complex technical diagrams using a coarse-to-fine curriculum: supervised fine-tuning for atomic primitives followed by reinforcement learning for global structure and topology. The work also introduces VFIG-DATA with 66K high-quality figure-SVG pairs and VFIG-BENCH for evaluating structural integrity. Together, the dataset, benchmark, and model push open-source vectorization much closer to frontier proprietary systems."
+            },
+            "general": {
+                "zh": "把论文图、流程图这类复杂图片重新变成可编辑 SVG 一直很麻烦。VFIG 用视觉语言模型把这件事系统化了，不只是描边，还尽量恢复图形结构、布局关系和可编辑性，对科研绘图和设计工作都很实用。",
+                "en": "Turning a flattened paper figure or diagram back into an editable SVG is usually tedious manual work. VFIG makes that process much more practical by recovering not just shapes, but also structure, layout, and editability for complex figures."
+            },
+            "lazy": {
+                "zh": "VFIG 的目标很朴素也很爽: 把一张“死图”重新救活成能编辑的矢量图。",
+                "en": "VFIG's whole pitch is simple and useful: resurrect a dead image into an editable vector graphic."
+            }
+        }
+    },
+    {
+        "id": "2603.24543v1",
+        "title": "Analysing the Safety Pitfalls of Steering Vectors",
+        "authors": "Yuxiao Li, Alina Fastowski, Efstratios Zaradoukas, Bardh Prenkaj, Gjergji Kasneci",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2603.24543v1",
+        "recommendationScore": 9.1,
+        "summaries": {
+            "expert": {
+                "zh": "这篇论文系统审计了基于 Contrastive Activation Addition 的 steering vector，发现它们与模型内部拒绝行为方向存在重叠，因此会显著改变越狱攻击成功率。实验表明，同一类引导技术在不同方向上可能把 ASR 拉高到 57%，也可能压低 50%。这为“可控性工具为什么会破坏安全性”提供了机制层面的解释。",
+                "en": "This study audits steering vectors derived from Contrastive Activation Addition and finds that they overlap with latent directions associated with refusal behavior. Because of that overlap, steering can significantly change jailbreak success rates, in some cases increasing ASR by 57% and in others decreasing it by 50%. The paper gives a mechanistic explanation for why tools built for controllability can also destabilize safety."
+            },
+            "general": {
+                "zh": "很多人把 steering vector 当作一种无需改权重就能调模型行为的轻量手段，但这篇论文指出它可能顺手把安全边界也改坏了。换句话说，越方便的行为控制工具，可能越需要配套的安全审计。",
+                "en": "Steering vectors are often treated as a lightweight way to alter model behavior without retraining. This paper shows that the same convenience can quietly damage safety boundaries, so controllability methods need explicit auditing rather than blind trust."
+            },
+            "lazy": {
+                "zh": "你以为 steering vector 只是调模型脾气，结果它可能顺便把保险丝也给拧松了。",
+                "en": "You think steering vectors just adjust the model's mood, and then realize they may also be loosening the safety fuse."
+            }
         }
     }
 ];
