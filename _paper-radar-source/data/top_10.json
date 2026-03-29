@@ -1,92 +1,92 @@
 [
     {
-        "id": "2603.24517v1",
-        "title": "AVO: Agentic Variation Operators for Autonomous Evolutionary Search",
-        "score": 9.6,
-        "reason": "Agentic evolutionary search discovers GPU attention kernels that beat cuDNN and FlashAttention-4 on NVIDIA Blackwell.",
-        "categories": ["cs.LG"],
-        "published": "2026-03-25T16:55:04Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24517v1"
-    },
-    {
-        "id": "2603.24511v1",
-        "title": "Claudini: Autoresearch Discovers State-of-the-Art Adversarial Attack Algorithms for LLMs",
+        "id": "2603.25746v1",
+        "title": "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling",
         "score": 9.5,
-        "reason": "A concrete demonstration that autonomous research agents can discover stronger LLM jailbreak and prompt injection algorithms than existing baselines.",
-        "categories": ["cs.LG", "cs.AI", "cs.CR"],
-        "published": "2026-03-25T16:50:56Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24511v1"
+        "reason": "Turns multi-shot video generation into a low-latency streaming problem and makes interactive narrative control practical on a single GPU.",
+        "categories": ["cs.CV"],
+        "published": "2026-03-26T17:59:59Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25746v1"
     },
     {
-        "id": "2603.24587v1",
-        "title": "DreamerAD: Efficient Reinforcement Learning via Latent World Model for Autonomous Driving",
+        "id": "2603.25744v1",
+        "title": "MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models",
         "score": 9.4,
-        "reason": "Compresses diffusion-based world-model sampling from 100 steps to 1 step and turns latent-space RL into a practical autonomous driving training pipeline.",
-        "categories": ["cs.LG", "cs.RO"],
-        "published": "2026-03-25T17:57:09Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24587v1"
+        "reason": "A simple training-free multi-resolution fusion trick that upgrades frozen vision foundation models across tasks and model families.",
+        "categories": ["cs.CV"],
+        "published": "2026-03-26T17:59:58Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25744v1"
     },
     {
-        "id": "2603.24533v1",
-        "title": "UI-Voyager: A Self-Evolving GUI Agent Learning via Failed Experience",
+        "id": "2603.25730v1",
+        "title": "PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference",
         "score": 9.4,
-        "reason": "A 4B GUI agent that learns from failed experience and surpasses human-level performance on AndroidWorld.",
-        "categories": ["cs.LG", "cs.AI", "cs.CV"],
-        "published": "2026-03-25T17:10:29Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24533v1"
-    },
-    {
-        "id": "2603.24579v1",
-        "title": "MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination",
-        "score": 9.3,
-        "reason": "Uses information-asymmetric multi-agent verification to reduce hallucinations and make smaller models compete with stronger closed systems.",
-        "categories": ["cs.CL"],
-        "published": "2026-03-25T17:54:10Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24579v1"
-    },
-    {
-        "id": "2603.24581v1",
-        "title": "Latent-WAM: Latent World Action Modeling for End-to-End Autonomous Driving",
-        "score": 9.3,
-        "reason": "A compact latent world planner that pushes state of the art on NAVSIM v2 and HUGSIM with much lower data and compute requirements.",
-        "categories": ["cs.CV", "cs.RO"],
-        "published": "2026-03-25T17:56:07Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24581v1"
-    },
-    {
-        "id": "2603.24584v1",
-        "title": "TAG: Target-Agnostic Guidance for Stable Object-Centric Inference in Vision-Language-Action Models",
-        "score": 9.2,
-        "reason": "A simple inference-time guidance method that materially improves object grounding robustness in cluttered robotic manipulation settings.",
-        "categories": ["cs.CV", "cs.RO"],
-        "published": "2026-03-25T17:56:32Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24584v1"
-    },
-    {
-        "id": "2603.24576v1",
-        "title": "Chameleon: Episodic Memory for Long-Horizon Robotic Manipulation",
-        "score": 9.2,
-        "reason": "Introduces geometry-grounded episodic memory for robots and shows stronger long-horizon control under perceptual aliasing.",
-        "categories": ["cs.RO", "cs.AI", "cs.CV"],
-        "published": "2026-03-25T17:52:43Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24576v1"
-    },
-    {
-        "id": "2603.24575v1",
-        "title": "VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models",
-        "score": 9.1,
-        "reason": "Tackles high-fidelity figure-to-SVG conversion with a strong dataset, benchmark, and a model that approaches frontier proprietary systems.",
+        "reason": "Pushes long-video diffusion much further with bounded KV-cache growth and large temporal extrapolation from short-video supervision.",
         "categories": ["cs.CV", "cs.AI"],
-        "published": "2026-03-25T17:52:23Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24575v1"
+        "published": "2026-03-26T17:59:05Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25730v1"
     },
     {
-        "id": "2603.24543v1",
-        "title": "Analysing the Safety Pitfalls of Steering Vectors",
+        "id": "2603.25741v1",
+        "title": "Vega: Learning to Drive with Natural Language Instructions",
+        "score": 9.3,
+        "reason": "Combines language-conditioned world modeling and planning for personalized autonomous driving with a sizable new instruction dataset.",
+        "categories": ["cs.CV", "cs.AI", "cs.RO"],
+        "published": "2026-03-26T17:59:56Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25741v1"
+    },
+    {
+        "id": "2603.25719v1",
+        "title": "Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization?",
+        "score": 9.3,
+        "reason": "Shows coordinated general-purpose coding agents can deliver large hardware-design speedups without hardware-specific training.",
+        "categories": ["cs.AI", "cs.AR", "cs.LG"],
+        "published": "2026-03-26T17:57:50Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25719v1"
+    },
+    {
+        "id": "2603.25738v1",
+        "title": "PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow",
+        "score": 9.2,
+        "reason": "Moves beyond image generation into editable PSD-level automation by teaching models a more human design workflow.",
+        "categories": ["cs.CV"],
+        "published": "2026-03-26T17:59:51Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25738v1"
+    },
+    {
+        "id": "2603.25739v1",
+        "title": "MegaFlow: Zero-Shot Large Displacement Optical Flow",
+        "score": 9.2,
+        "reason": "Uses pretrained global vision priors to get strong zero-shot large-displacement motion estimation without heavy task-specific tuning.",
+        "categories": ["cs.CV"],
+        "published": "2026-03-26T17:59:51Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25739v1"
+    },
+    {
+        "id": "2603.25737v1",
+        "title": "Training the Knowledge Base through Evidence Distillation and Write-Back Enrichment",
         "score": 9.1,
-        "reason": "Shows that activation steering can sharply change jailbreak success rates, making the controllability-versus-safety tradeoff concrete.",
-        "categories": ["cs.CR", "cs.CL"],
-        "published": "2026-03-25T17:16:11Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.24543v1"
+        "reason": "Treats the RAG corpus itself as a trainable component and improves retrieval quality by writing distilled evidence back into the index.",
+        "categories": ["cs.AI", "cs.CL", "cs.IR"],
+        "published": "2026-03-26T17:59:49Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25737v1"
+    },
+    {
+        "id": "2603.25720v1",
+        "title": "R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning",
+        "score": 9.1,
+        "reason": "Uses cycle-consistent RL as a dense alignment signal to improve multimodal reasoning without extra labels.",
+        "categories": ["cs.AI", "cs.CV"],
+        "published": "2026-03-26T17:58:04Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25720v1"
+    },
+    {
+        "id": "2603.25723v1",
+        "title": "Natural-Language Agent Harnesses",
+        "score": 9.0,
+        "reason": "Externalizes agent harness logic into portable natural-language artifacts, making controller design easier to transfer and study.",
+        "categories": ["cs.CL", "cs.AI"],
+        "published": "2026-03-26T17:58:15Z",
+        "pdf_url": "https://arxiv.org/pdf/2603.25723v1"
     }
 ]

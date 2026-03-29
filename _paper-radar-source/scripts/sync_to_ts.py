@@ -4,144 +4,144 @@ import os
 from datetime import datetime
 
 SUMMARIES = {
-    "2603.24517v1": {
+    "2603.25746v1": {
         "expert": {
-            "zh": "AVO 将传统进化搜索中的固定变异与交叉算子替换为自驱动的编码智能体循环。智能体可以查看当前谱系、领域知识和执行反馈，自主提出、修复、批判并验证实现改动。在 NVIDIA Blackwell GPU 上，它发现的注意力内核在多种配置下超过了 cuDNN 和 FlashAttention-4，说明智能体已经可以直接参与底层高性能算子的发明。",
-            "en": "Agentic Variation Operators (AVO) replace traditional mutation and crossover with self-directed agent loops that use lineage history and execution feedback to propose and verify implementation edits. Evaluated on NVIDIA Blackwell GPUs, AVO discovered attention kernels that outperform cuDNN by up to 3.5% and FlashAttention-4 by up to 10.5%. The results show that agentic search can directly discover performance-critical low-level kernels rather than merely generating candidates for humans to refine.",
+            "zh": "ShotStream 将多镜头视频生成重构为基于历史上下文的因果式 next-shot 生成问题，并通过分布匹配蒸馏把双向教师模型蒸馏为可流式推理的学生模型。它引入全局与局部双缓存机制，再配合 RoPE 间断指示器，在自回归生成时同时维持镜头间和镜头内的一致性。论文还用两阶段蒸馏缓解误差累积，使系统在单卡上达到 16 FPS，真正把交互式叙事视频生成推到了可实时使用的区间。",
+            "en": "ShotStream reformulates multi-shot video generation as a causal next-shot prediction problem and distills a bidirectional teacher into a streaming-friendly student with distribution-matching distillation. It combines global and local context caches with a RoPE discontinuity indicator to preserve both inter-shot coherence and intra-shot consistency during autoregressive generation. A two-stage distillation scheme further reduces error accumulation, allowing the system to reach 16 FPS on a single GPU and making real-time interactive storytelling technically plausible.",
         },
         "general": {
-            "zh": "这篇论文把进化搜索里的“变异器”换成了会写代码的智能体。结果是它能自动找到比当前顶级专家实现还快的 GPU 注意力内核，展示了 AI 自主优化系统代码的真实潜力。",
-            "en": "This study presents a new evolutionary search method where AI agents act as the optimization engine instead of fixed heuristics. In practice, that lets the system discover GPU kernels that beat strong expert-engineered baselines on modern hardware.",
+            "zh": "这篇论文解决的是“长故事视频很难一边生成一边改”的问题。ShotStream 让用户可以在叙事进行中不断追加指令，同时系统仍能快速生成风格连贯的多镜头视频。",
+            "en": "This paper tackles one of the hardest problems in video generation: keeping long narratives editable while generation is still running. ShotStream lets users keep steering the story as it unfolds, while the model continues producing coherent multi-shot video at low latency.",
         },
         "lazy": {
-            "zh": "这相当于让 AI 自己当内核工程师，结果它真的把顶级手写 GPU 代码卷赢了。",
-            "en": "AI basically got promoted to kernel engineer and started beating elite hand-tuned GPU code.",
+            "zh": "ShotStream 像一个会边听导演喊话边即时出片的 AI 分镜师。",
+            "en": "ShotStream is basically an AI storyboard artist that keeps shooting while the director is still giving notes.",
         },
     },
-    "2603.24511v1": {
+    "2603.25744v1": {
         "expert": {
-            "zh": "Claudini 使用由 Claude Code 驱动的 autoresearch 流水线，从现有白盒攻击方法出发迭代改进，对抗性地搜索新的越狱与提示注入算法。论文报告这些自动发现的算法在多项评测上超过了 30 多种已有方法，并在迁移到 Meta-SecAlign-70B 时达到 100% 攻击成功率。这表明增量式安全研究与红队攻击设计已经开始具备可自动化的条件。",
-            "en": "This paper introduces Claudini, an autoresearch pipeline powered by Claude Code that autonomously discovers novel white-box adversarial attack algorithms for LLMs. Starting from existing attacks such as GCG, the system iteratively improves them and produces methods that outperform more than 30 prior baselines. The reported transfer results, including 100% attack success against Meta-SecAlign-70B, show that parts of red-team research are already automatable.",
+            "zh": "MuRF 是一个训练零开销的多分辨率推理增强方法，它在冻结的视觉基础模型上同时处理多种输入尺度，并将不同尺度的特征融合成统一表示。核心直觉是低分辨率更擅长全局语义，高分辨率更擅长细节精修，而传统单尺度推理浪费了这种互补性。论文证明它不仅适用于 DINOv2，也能迁移到 SigLIP2 等不同家族的视觉模型，说明这更像是一种通用推理范式而不是模型特调技巧。",
+            "en": "MuRF is a training-free multi-resolution inference method that runs a frozen vision foundation model on multiple input scales and fuses the resulting features into a unified representation. The key intuition is that low-resolution inputs capture global semantics while high-resolution inputs preserve fine-grained detail, and single-scale inference throws away that complementarity. The paper shows that the idea transfers across different VFM families, including DINOv2 and SigLIP2, which makes MuRF feel more like a general inference principle than a model-specific hack.",
         },
         "general": {
-            "zh": "这项工作展示了 AI 智能体不仅能写代码，还能自己做安全研究，自动发明新的大模型攻击方法。更关键的是，这些新方法比现有的人类设计方案更强，说明自动化红队研究正在变成现实。",
-            "en": "Researchers used an AI agent not just to code, but to run its own adversarial research loop and invent stronger jailbreak attacks. The important takeaway is that the automatically discovered attacks beat prior human-designed methods, which makes automated safety testing much more real.",
+            "zh": "MuRF 的价值在于它不用重新训练模型，就能让现有视觉大模型“多看几个尺度”后变得更准。对于已经部署好的视觉系统来说，这是一种成本很低但收益很高的升级方式。",
+            "en": "MuRF matters because it improves vision foundation models at inference time without retraining them. For teams already deploying large vision models, that makes it a rare upgrade path that is both simple and potentially high impact.",
         },
         "lazy": {
-            "zh": "AI 已经不只是会用攻击工具，它开始自己发明更狠的新攻击了。",
-            "en": "AI is no longer just using attack tools, it is starting to invent nastier ones on its own.",
+            "zh": "MuRF 的思路很朴素：让视觉模型别只眯着一只眼看图。",
+            "en": "MuRF wins by teaching vision models to stop looking at the world through just one zoom level.",
         },
     },
-    "2603.24587v1": {
+    "2603.25730v1": {
         "expert": {
-            "zh": "DreamerAD 把自动驾驶强化学习的世界模型搬到潜空间中，通过 shortcut forcing 将扩散采样从 100 步压缩到 1 步，并在潜表示上训练自回归稠密奖励模型完成细粒度信用分配。它还用 Gaussian vocabulary sampling 约束 GRPO 的探索过程，避免生成物理上不合理的驾驶轨迹。在 NavSim v2 上，该方法达到 87.7 EPDMS，证明潜空间世界模型可以把效率、可解释性和驾驶性能一起拉起来。",
-            "en": "DreamerAD moves autonomous-driving world-model RL into latent space and compresses diffusion sampling from 100 steps to 1 via shortcut forcing. It also adds an autoregressive dense reward model over latent states plus Gaussian vocabulary sampling to keep exploration physically plausible. On NavSim v2, the method reaches 87.7 EPDMS, showing that latent world models can make RL both fast and effective for driving.",
+            "zh": "PackForcing 针对自回归视频扩散模型在长视频生成中的 KV-cache 线性膨胀问题，提出了 Sink、Mid、Recent 三分区历史管理策略。它对中段历史做大幅时空压缩，并结合动态 top-k 上下文选择和连续 Temporal RoPE 调整，在严格限制显存的同时维持长时一致性。最终系统只用 5 秒短视频监督就能外推出 2 分钟、16 FPS 的长视频生成，说明长上下文视频生成不一定要依赖同等长度的训练样本。",
+            "en": "PackForcing addresses the linear KV-cache growth that makes autoregressive video diffusion impractical for long sequences by partitioning history into Sink, Mid, and Recent token groups. It heavily compresses the middle context, then uses dynamic top-k selection and continuous Temporal RoPE adjustment to keep memory bounded while preserving long-range temporal consistency. The result is a system that can extrapolate from 5-second training clips to 2-minute generation at 16 FPS, which is a strong argument that long-context video generation does not require equally long supervision.",
         },
         "general": {
-            "zh": "这篇论文想解决的是自动驾驶强化学习太慢、太贵的问题。作者把扩散世界模型大幅压缩到几乎一步生成，同时保留对驾驶场景的理解能力，让自动驾驶策略能更快地在“想象环境”里训练出来。",
-            "en": "This system speeds up self-driving training by making the model imagine future driving scenes much more efficiently. The result is a reinforcement-learning pipeline that is far faster than diffusion-heavy alternatives while still modeling the world well enough to train strong driving policies.",
+            "zh": "这项工作把“长视频生成太吃显存”这个核心瓶颈拆开解决了。它让模型只保留最关键的历史信息，因此可以用更小的内存生成更长、更稳定的视频。",
+            "en": "This work directly attacks the memory bottleneck that makes long-video generation so expensive. By keeping only the most useful historical context, it lets the model generate much longer and more stable videos without blowing up compute costs.",
         },
         "lazy": {
-            "zh": "DreamerAD 把自动驾驶世界模型加速到像开了涡轮，让强化学习终于能在潜空间里高速练车。",
-            "en": "DreamerAD puts a turbo on world-model training so autonomous-driving RL can finally practice at speed.",
+            "zh": "PackForcing 的厉害之处在于，它让 AI 学会了怎么“记重点”，所以能把短片练成大片。",
+            "en": "PackForcing teaches video models to remember the important parts, which is how short training turns into long movies.",
         },
     },
-    "2603.24533v1": {
+    "2603.25741v1": {
         "expert": {
-            "zh": "UI-Voyager 提出一个两阶段自进化 GUI 智能体训练框架，先通过 Rejection Fine-Tuning 在自主循环中不断积累高质量经验，再用 Group Relative Self-Distillation 从群组轨迹中定位关键分叉点，为失败轨迹构造致密监督。这个设计直接针对长程 GUI 任务中的稀疏奖励和模糊归因问题。在 AndroidWorld 上，4B 模型达到 81.0% Pass@1，超过多项近期基线并越过人类水平。",
-            "en": "UI-Voyager uses a two-stage self-evolving training pipeline: Rejection Fine-Tuning to autonomously improve data and policy quality, then Group Relative Self-Distillation to identify key fork points and repair failed trajectories with dense supervision. The design directly targets sparse rewards and weak credit assignment in long-horizon GUI tasks. On AndroidWorld, a 4B model reaches 81.0% Pass@1, surpassing both recent baselines and reported human-level performance.",
+            "zh": "Vega 提出统一的 Vision-Language-World-Action 框架，用自回归机制处理视觉与语言输入，再用扩散机制生成未来世界状态和驾驶轨迹。它还配套构建了包含约 10 万个场景的 InstructScene 数据集，把自然语言驾驶指令和对应轨迹明确对齐。相比把语言只当作场景描述的旧方案，Vega 更像是在把自动驾驶规划真正变成可指令化、可个性化的多模态决策问题。",
+            "en": "Vega proposes a unified Vision-Language-World-Action framework that uses autoregressive modeling for visual and language inputs and diffusion modeling for future world prediction and trajectory generation. It is trained with InstructScene, a roughly 100K-scene dataset that explicitly aligns diverse natural-language driving instructions with trajectories. Compared with prior pipelines that use language mostly for description or reasoning, Vega moves autonomous driving much closer to true instruction-conditioned planning.",
         },
         "general": {
-            "zh": "这是一种能从失败操作里持续学习的手机 GUI 智能体。它不依赖昂贵的人类标注，而是通过反复试错和自蒸馏自己变强，最终在 AndroidWorld 这类复杂任务上超过了人类表现。",
-            "en": "This paper introduces a mobile GUI agent that improves itself by learning from its own failed attempts. Instead of relying on expensive manual labels, it uses autonomous trial-and-error plus distillation to get better at long multi-step app tasks.",
+            "zh": "Vega 想解决的是自动驾驶系统“不太会听话”的问题。它不仅看路，还能理解像“开稳一点”或“准备靠右并入”这类自然语言指令，并把这些偏好反映到驾驶决策里。",
+            "en": "Vega is about making self-driving systems more steerable by people. Instead of just understanding the road scene, it also tries to follow natural-language instructions such as drive more cautiously or merge in a certain way.",
         },
         "lazy": {
-            "zh": "它不是少犯错，而是靠认真复盘每次翻车，最后把手机自动化做到比人还稳。",
-            "en": "It gets good at phone automation the hard way: by studying every crash and turning failure into training data.",
+            "zh": "Vega 让自动驾驶从“自己开”进化到“听得懂你怎么想开”。",
+            "en": "Vega pushes autonomous driving from just driving itself to actually understanding how you want it to drive.",
         },
     },
-    "2603.24579v1": {
+    "2603.25719v1": {
         "expert": {
-            "zh": "MARCH 用 Solver、Proposer 和 Checker 三个智能体构成带信息不对称的自检管线，把回答拆成原子命题后再独立核验，从机制上削弱 LLM-as-a-judge 常见的自我确认偏差。作者再用多智能体强化学习联合优化整个流程，使各代理共同朝事实一致性演化。结果表明，一个 8B 模型加上 MARCH 后就能在幻觉控制上逼近强闭源模型。",
-            "en": "MARCH builds a self-check pipeline with Solver, Proposer, and Checker agents, using deliberate information asymmetry to break the self-confirmation bias common in LLM-as-a-judge setups. The Proposer decomposes answers into atomic claims, and the Checker verifies those claims without seeing the original full response. Multi-agent reinforcement learning then co-optimizes the full pipeline to reduce hallucinations in RAG settings.",
+            "zh": "这篇论文把通用代码智能体用于高层次综合优化，提出了一个两阶段 agent factory：先对子内核做分解优化与 ILP 组合，再让多个专家代理在全局候选上继续做跨函数优化。关键点不只是单个代理能优化硬件，而是代理规模化后能系统性地挖出 pragma 重组、循环融合和存储重构等复杂设计空间。实验里平均 8.27 倍加速、困难案例超过 20 倍，说明“代理并行工厂”已经是硬件优化里值得认真对待的工程范式。",
+            "en": "This paper applies general-purpose coding agents to high-level synthesis and organizes them into a two-stage agent factory: sub-kernel decomposition plus ILP-based assembly first, followed by multi-agent global optimization over promising candidates. The important point is not merely that one agent can optimize hardware code, but that scaling coordinated agents can systematically discover pragma recombination, loop fusion, and memory restructuring patterns across a much larger design space. With an average 8.27x speedup and more than 20x on harder kernels, the work makes a serious case for agent parallelism as an engineering paradigm in hardware optimization.",
         },
         "general": {
-            "zh": "这篇论文的核心点不是再找一个模型来“审判”原模型，而是把核查过程拆成多个相互制衡的代理。这样一来，模型在 RAG 场景下更难顺着自己的错误一路编下去，事实可靠性明显更高。",
-            "en": "Instead of asking one model to judge another in a loosely defined way, this paper splits verification across specialized agents with different roles. That structure makes it much harder for the system to blindly reinforce its own mistakes, so factual reliability improves.",
+            "zh": "这项研究说明，通用 AI 编码代理已经不只是在改应用代码，它们开始能在芯片和硬件设计这种更专业的场景里拿到实打实的性能收益。最有意思的是，系统靠的是多代理协作，而不是某个单一“天才代理”。",
+            "en": "This study shows that general AI coding agents are starting to produce meaningful gains in specialized hardware-design tasks, not just ordinary software engineering. The most interesting part is that the gains come from coordinated agent teams rather than from a single magical model.",
         },
         "lazy": {
-            "zh": "一个 AI 胡说时最怕什么？怕另外两个 AI 拿着证据分头来查它。",
-            "en": "The fastest way to stop one AI from bluffing is to send two other AIs in with receipts.",
+            "zh": "一群通用代码代理联手调硬件，结果把速度硬生生卷上去了。",
+            "en": "A team of general coding agents went after hardware optimization and basically brute-forced their way into real speedups.",
         },
     },
-    "2603.24581v1": {
+    "2603.25738v1": {
         "expert": {
-            "zh": "Latent-WAM 面向端到端自动驾驶规划，结合空间感知压缩世界编码器与动态潜世界模型，把多视角图像压缩为紧凑的场景 token，再用因果 Transformer 自回归预测未来世界状态。相比已有世界模型，它在空间理解、动态建模和计算预算之间给出了更均衡的设计。在 NAVSIM v2 和 HUGSIM 上，它以 1.04 亿参数达到新的 SOTA，说明小而强的潜世界规划器是可行路径。",
-            "en": "Latent-WAM combines a Spatial-Aware Compressive World Encoder with a Dynamic Latent World Model to compress multi-view visual input into compact scene tokens and autoregressively predict future world states. The architecture is designed to preserve geometry and dynamics without the heavy cost of larger world-model planners. On NAVSIM v2 and HUGSIM, it sets new state of the art with only 104M parameters, which makes the compact-planner thesis credible.",
+            "zh": "PSDesigner 不是把设计任务简化成一张图的生成，而是试图复现真实设计师的工具链式工作流，包括素材检索、设计文件编辑和操作步骤推断。为此作者构建了带操作轨迹标注的 CreativePSD 数据集，让模型学习如何像设计师一样操作 PSD 文件。这个方向的重要性在于它把“自动设计”从最终像素输出推进到了可编辑、可复用、可继续协作的设计资产层面。",
+            "en": "PSDesigner does not reduce design automation to image generation; it tries to reproduce the actual tool-driven workflow of a human designer, including asset collection, design-file editing, and operation planning. To support that, the authors build CreativePSD, a dataset of PSD files annotated with operation traces so the model can learn procedural design behavior. The significance is that it moves automated design from static output pixels toward editable, reusable design artifacts that can remain inside a real production workflow.",
         },
         "general": {
-            "zh": "这项工作关注的是怎样用更紧凑的世界表示做更强的自动驾驶规划。作者把场景几何和时间动态一起编码进潜表示里，让模型在不依赖大算力和大数据的情况下，也能做出更好的未来轨迹决策。",
-            "en": "This framework tries to make self-driving planning better by building a smaller but more structured internal model of the world. By encoding both geometry and motion dynamics into a latent representation, it plans strong trajectories without depending on huge models or datasets.",
+            "zh": "PSDesigner 更像是一个会真正操作设计软件的设计助理，而不是只会吐图的生成模型。对于广告、电商图和营销物料这类场景，它的价值在于结果可以继续编辑，而不是只能截图保存。",
+            "en": "PSDesigner behaves more like a design assistant that can actually operate professional design files than like a model that only spits out final images. That matters for ads, e-commerce, and creative production, where teams need editable deliverables instead of one-off renders.",
         },
         "lazy": {
-            "zh": "Latent-WAM 像是给自动驾驶装了一个更会压缩、也更会预判未来的小脑。",
-            "en": "Latent-WAM is like giving a self-driving system a smaller brain that is oddly better at compressing and predicting the future.",
+            "zh": "它不是给你一张图就算完，而是想直接把可改的设计稿交到你手里。",
+            "en": "Instead of just handing you a picture, PSDesigner wants to hand you the file the designer would still be editing.",
         },
     },
-    "2603.24584v1": {
+    "2603.25739v1": {
         "expert": {
-            "zh": "TAG 针对 Vision-Language-Action 模型在杂乱环境中容易抓偏、抓错实例的问题，提出一种推理时引导机制。它对比原始观测和“擦除目标物体”观测下的策略预测，并将差异作为残差信号，增强模型对真正目标证据的依赖。该方法无需改动主干架构，在 LIBERO、LIBERO-Plus 和 VLABench 上都提升了杂乱场景下的稳定性。",
-            "en": "TAG addresses a common VLA failure mode in cluttered scenes by adding an inference-time guidance mechanism rather than changing the model architecture. It compares policy predictions under the original observation and an object-erased observation, then uses the residual as a steering signal to strengthen target-specific evidence. The method improves robustness on LIBERO, LIBERO-Plus, and VLABench without requiring heavy retraining.",
+            "zh": "MegaFlow 把大位移光流估计建模为基于预训练 Vision Transformer 特征的全局匹配问题，再辅以轻量级迭代细化提升亚像素精度。相比依赖局部搜索或特定数据域微调的旧方法，这种做法更好地释放了大模型视觉先验在零样本运动估计上的价值。论文同时在光流和长程点跟踪基准上取得强零样本性能，暗示光流和通用运动估计可能正在向统一范式收敛。",
+            "en": "MegaFlow reframes large-displacement optical flow as a global matching problem built on top of pre-trained Vision Transformer features, then uses lightweight iterative refinement to recover sub-pixel accuracy. Unlike prior approaches that rely heavily on local search or domain-specific fine-tuning, it leans into foundation-model priors for zero-shot generalization. Strong results on both optical flow and long-range point tracking suggest that a more unified motion-estimation paradigm may be emerging.",
         },
         "general": {
-            "zh": "很多机器人不是不会动，而是看错了要抓的那个对象。TAG 通过在推理时显式抑制干扰物影响，让现有 VLA 模型在混乱桌面和复杂场景里更不容易抓错东西。",
-            "en": "A lot of robot mistakes in clutter come from choosing the wrong object, not from failing to execute the motion itself. TAG makes existing VLA systems more reliable by suppressing distractor bias at inference time so the robot stays focused on the intended target.",
+            "zh": "这项工作的亮点是它在没有特定场景再训练的情况下，仍然能很好地追踪视频里跨度很大的运动。对于通用视频理解和机器人感知，这种零样本泛化很有价值。",
+            "en": "The main appeal here is that MegaFlow handles large motion without needing to be retrained for every new domain. That kind of zero-shot robustness is useful anywhere motion estimation feeds into larger perception systems.",
         },
         "lazy": {
-            "zh": "TAG 干的事很直接: 让机器人少被旁边那些“长得很像”的东西带偏。",
-            "en": "TAG does one practical thing well: it stops robots from getting baited by the wrong lookalike object.",
+            "zh": "MegaFlow 让 AI 在陌生视频里也能盯住那些跑得飞快的东西。",
+            "en": "MegaFlow helps AI keep track of things that move wildly fast, even in videos it has never seen before.",
         },
     },
-    "2603.24576v1": {
+    "2603.25737v1": {
         "expert": {
-            "zh": "Chameleon 受人类情节记忆启发，不再只保留高度语义压缩的历史，而是写入几何对齐的多模态 token，并通过可微记忆栈按目标进行检索。这样模型在遮挡、状态变化和感知混淆下，仍能找回真正有决策价值的过去片段。配套的 Camo-Dataset 也把 episodic recall、空间跟踪和顺序操作纳入同一套真实机器人评测中。",
-            "en": "Chameleon is inspired by episodic memory rather than simple semantic retrieval. It stores geometry-grounded multimodal tokens in a differentiable memory stack so the robot can recall the specific past context that matters for current action selection. That helps it handle perceptual aliasing, occlusion, and long-horizon manipulation better than memory systems that over-compress history.",
+            "zh": "WriteBack-RAG 的核心观点是：RAG 的知识库不该是一份静态语料，而应该是可被训练和回写的系统组件。它利用标注样本识别有效检索路径，把分散证据蒸馏成更紧凑的知识单元，再把这些单元写回索引，从而在不改生成模型的情况下提升整个 RAG 流水线。跨方法、跨基准都能带来稳定收益，说明这个改进主要发生在语料组织层，而不是特定模型调参层。",
+            "en": "The core argument of WriteBack-RAG is that the corpus in a RAG system should not be treated as static; it should be trainable and writable. The framework identifies successful retrieval evidence, distills it into compact knowledge units, and writes those units back into the index so downstream RAG pipelines improve without changing the generator. The fact that the gains transfer across methods and benchmarks suggests the improvement lives in corpus structure rather than in model-specific tuning.",
         },
         "general": {
-            "zh": "机器人长任务经常失败，不是因为不会操作，而是因为中途忘了之前发生过什么。Chameleon 给机器人加上更像“情节记忆”的机制，让它在遮挡和状态变化很多的环境里，仍能根据过往线索做出正确动作。",
-            "en": "Robots often fail on long tasks because they forget the important details of what happened earlier. Chameleon gives them a more episode-like memory so they can use past context even when the scene changes or looks ambiguous.",
+            "zh": "很多 RAG 系统的问题不在模型本身，而在知识库太碎、太吵、太难检索。WriteBack-RAG 的做法就是先把有用证据提纯，再把整理后的知识写回去，让下一次检索从一开始就站在更好的地基上。",
+            "en": "A lot of RAG failures come less from the model and more from a messy, fragmented knowledge base. WriteBack-RAG cleans and compresses the evidence, then writes it back so future retrieval starts from a better-organized corpus.",
         },
         "lazy": {
-            "zh": "这篇论文给机器人补上了记忆力，不再一转头就把前面发生的事忘光。",
-            "en": "This paper gives robots a memory upgrade so they stop forgetting the plot halfway through the task.",
+            "zh": "它相当于先把知识库整理一遍，再让 AI 去查资料，所以答题自然更稳。",
+            "en": "It basically tidies up the knowledge base before the AI searches it, which is why the answers get better.",
         },
     },
-    "2603.24575v1": {
+    "2603.25720v1": {
         "expert": {
-            "zh": "VFIG 面向复杂技术图表的 figure-to-SVG 转换，构建了 6.6 万对高质量图表-SVG 样本，并采用先学原子图元、再用强化学习优化全局结构的一套 coarse-to-fine 训练流程。论文还提出 VFIG-BENCH，用结构完整性和布局一致性等指标专门评估复杂矢量化任务。结果显示，VFIG 在开源模型中达到 SOTA，表现已接近顶级闭源系统。",
-            "en": "VFIG tackles figure-to-SVG conversion for complex technical diagrams using a coarse-to-fine curriculum: supervised fine-tuning for atomic primitives followed by reinforcement learning for global structure and topology. The work also introduces VFIG-DATA with 66K high-quality figure-SVG pairs and VFIG-BENCH for evaluating structural integrity. Together, the dataset, benchmark, and model push open-source vectorization much closer to frontier proprietary systems.",
+            "zh": "R-C2 把多模态推理里的视觉-文本不一致性直接变成强化学习信号，要求模型在不同模态之间来回做推理并重构答案，从而形成循环一致性约束。这个设计提供了高密度、无标签的奖励，避免只是靠投票或后处理去掩盖模态冲突。实验中最高提升 7.6 个百分点，说明结构一致性本身可以成为多模态模型学习更稳健内部表示的重要驱动。",
+            "en": "R-C2 turns visual-text inconsistency inside multimodal models into a reinforcement-learning signal by forcing the model to reason back and forth across modalities and reconstruct the answer under a cycle-consistency constraint. That yields a dense, label-free reward instead of relying on voting or post hoc aggregation to paper over contradictions. The reported gains of up to 7.6 points suggest that structural consistency itself is a meaningful driver of stronger multimodal internal representations.",
         },
         "general": {
-            "zh": "把论文图、流程图这类复杂图片重新变成可编辑 SVG 一直很麻烦。VFIG 用视觉语言模型把这件事系统化了，不只是描边，还尽量恢复图形结构、布局关系和可编辑性，对科研绘图和设计工作都很实用。",
-            "en": "Turning a flattened paper figure or diagram back into an editable SVG is usually tedious manual work. VFIG makes that process much more practical by recovering not just shapes, but also structure, layout, and editability for complex figures.",
+            "zh": "这篇论文的重点不是让模型多看点数据，而是让它在图像理解和文本理解之间保持逻辑闭环。这样一来，模型面对多模态问题时更不容易自相矛盾。",
+            "en": "This paper is less about feeding the model more data and more about forcing its image-side and text-side reasoning to agree with each other. That makes multimodal answers less self-contradictory and more reliable.",
         },
         "lazy": {
-            "zh": "VFIG 的目标很朴素也很爽: 把一张“死图”重新救活成能编辑的矢量图。",
-            "en": "VFIG's whole pitch is simple and useful: resurrect a dead image into an editable vector graphic.",
+            "zh": "R-C2 逼着 AI 把图像和文字两套脑回路对齐，不许各说各话。",
+            "en": "R-C2 makes the image brain and text brain inside the model stop arguing with each other.",
         },
     },
-    "2603.24543v1": {
+    "2603.25723v1": {
         "expert": {
-            "zh": "这篇论文系统审计了基于 Contrastive Activation Addition 的 steering vector，发现它们与模型内部拒绝行为方向存在重叠，因此会显著改变越狱攻击成功率。实验表明，同一类引导技术在不同方向上可能把 ASR 拉高到 57%，也可能压低 50%。这为“可控性工具为什么会破坏安全性”提供了机制层面的解释。",
-            "en": "This study audits steering vectors derived from Contrastive Activation Addition and finds that they overlap with latent directions associated with refusal behavior. Because of that overlap, steering can significantly change jailbreak success rates, in some cases increasing ASR by 57% and in others decreasing it by 50%. The paper gives a mechanistic explanation for why tools built for controllability can also destabilize safety.",
+            "zh": "Natural-Language Agent Harnesses 试图把通常藏在运行时控制器代码里的 agent harness 抽出来，表达成可编辑、可迁移的自然语言工件。配套的 Intelligent Harness Runtime 则通过显式合同、持久化工件和轻量适配器去执行这些自然语言 harness。这个方向的意义在于，智能体控制逻辑终于可以被当作独立对象来比较、复用和研究，而不再被具体框架实现细节淹没。",
+            "en": "Natural-Language Agent Harnesses tries to externalize agent harness logic that is usually buried in runtime-specific controller code and express it as editable, portable natural-language artifacts. The accompanying Intelligent Harness Runtime executes those harnesses through explicit contracts, durable artifacts, and lightweight adapters. The broader significance is that harness engineering becomes something that can be compared, reused, and studied as an object in its own right instead of being trapped inside implementation details.",
         },
         "general": {
-            "zh": "很多人把 steering vector 当作一种无需改权重就能调模型行为的轻量手段，但这篇论文指出它可能顺手把安全边界也改坏了。换句话说，越方便的行为控制工具，可能越需要配套的安全审计。",
-            "en": "Steering vectors are often treated as a lightweight way to alter model behavior without retraining. This paper shows that the same convenience can quietly damage safety boundaries, so controllability methods need explicit auditing rather than blind trust.",
+            "zh": "很多智能体系统的关键控制逻辑现在都写得很散、很隐蔽、很难迁移。NLAH 的想法是把这些高层行为规则提出来，用更可读也更可共享的方式表达出来。",
+            "en": "A lot of important agent behavior today lives in scattered controller code that is hard to port or inspect. NLAH argues that those high-level rules should be pulled out and expressed in a form humans can read, edit, and share more easily.",
         },
         "lazy": {
-            "zh": "你以为 steering vector 只是调模型脾气，结果它可能顺便把保险丝也给拧松了。",
-            "en": "You think steering vectors just adjust the model's mood, and then realize they may also be loosening the safety fuse.",
+            "zh": "它想把“怎么管 agent”这件事，从一堆暗黑控制代码变成人人看得懂的说明书。",
+            "en": "It wants to turn agent control from hidden controller spaghetti into something closer to an editable instruction manual.",
         },
     },
 }
@@ -258,9 +258,7 @@ export function getSummaryText(summary: SummaryContent, language: 'zh' | 'en'): 
 
 """
     ts_content += f"export const generatedYear = '{generated_at.year}';\n"
-    ts_content += (
-        f"export const generatedDateLabel = {json.dumps(generated_date_label, ensure_ascii=False)};\n\n"
-    )
+    ts_content += f"export const generatedDateLabel = {json.dumps(generated_date_label, ensure_ascii=False)};\n\n"
     ts_content += f"export const totalFilteredCount = {len(filtered_papers)};\n\n"
     ts_content += "export const papers: Paper[] = "
     ts_content += json.dumps(final_papers, indent=4, ensure_ascii=False)
