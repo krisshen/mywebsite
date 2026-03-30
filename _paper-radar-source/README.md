@@ -42,6 +42,56 @@ npm run dev
 ### 数据更新
 所有的论文数据目前存储在 `data/papers.ts`。如需手动添加，请遵循 `Paper` 类型定义。
 
+### 测试 (Testing)
+
+项目使用 **Jest** + **React Testing Library** 进行单元测试和组件测试。
+
+#### 运行测试
+
+```bash
+# 运行所有测试（单次）
+npm test
+
+# 监听模式（文件变更时自动重跑）
+npm run test:watch
+
+# 生成覆盖率报告
+npm run test:coverage
+```
+
+#### 测试文件
+
+所有测试位于 `__tests__/` 目录下：
+
+| 测试文件 | 覆盖内容 |
+|----------|----------|
+| `papers.test.ts` | `getSummaryText()` 函数（纯字符串 / 双语 / 回退逻辑）；论文数据完整性（字段校验、唯一 ID、arXiv URL 格式、评分范围）；模块常量 |
+| `LanguageContext.test.tsx` | 默认语言；`localStorage` 持久化；非法存储值兜底；`useLanguage` 在 Provider 外抛出异常；`t()` 函数对全部 14 个翻译键在中英文下的正确输出；缺失键回退 |
+| `ModeSwitcher.test.tsx` | 三按钮渲染与 Emoji；激活/非激活 CSS 类；`card` 和 `global` 两种变体样式；`onChange` 回调；中英文标签切换 |
+| `LanguageSwitchButton.test.tsx` | 按钮渲染；中英文状态下标签与 `aria-label` 正确性；双向切换（zh→en、en→zh）；切换后写入 `localStorage` |
+| `PaperCard.test.tsx` | 标题 / ID / 作者 / 年份 / arXiv 链接渲染；双语摘要与旧版纯字符串摘要；`StarRating` 边界值（0、8.5、10 及越界分数）；模式切换渐变动画（150 ms）；快速连点时的 timeout 取消逻辑；`globalMode` prop 同步；重复点击当前模式无副作用 |
+
+#### 覆盖率
+
+| 文件 | 语句 | 分支 | 函数 | 行 |
+|------|------|------|------|----|
+| `LanguageSwitchButton.tsx` | 100% | 100% | 100% | 100% |
+| `ModeSwitcher.tsx` | 100% | 88% | 100% | 100% |
+| `PaperCard.tsx` | 100% | 100% | 100% | 100% |
+| `LanguageContext.tsx` | 100% | 100% | 100% | 100% |
+| `papers.ts` | 100% | 100% | 100% | 100% |
+| **合计** | **100%** | **96.8%** | **100%** | **100%** |
+
+> `ModeSwitcher.tsx` 第 28 行有一个未覆盖分支（`|| key` 回退），该代码在实际运行中不可达，因为 `modesConfig` 已覆盖了所有 `SummaryMode` 枚举值。
+
+#### 技术栈
+
+- **Test Runner**: [Jest](https://jestjs.io/) 30
+- **Component Testing**: [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) + [@testing-library/jest-dom](https://github.com/testing-library/jest-dom)
+- **User Interaction**: [@testing-library/user-event](https://testing-library.com/docs/user-event/intro/)
+- **Environment**: `jest-environment-jsdom`
+- **Transformer**: `next/jest`
+
 ### 技术栈
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
