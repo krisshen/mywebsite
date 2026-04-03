@@ -80,7 +80,7 @@ export const papers: Paper[] = [
     },
     {
         "id": "2604.01212v1",
-        "title": "$\\texttt{YC-Bench}$: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
+        "title": "YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
         "authors": "Muyu He, Adit Jain, Anand Kumar, Vincent Tu, Soumyadeep Bakshi, Sachin Patro, Nazneen Rajani",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.01212v1",

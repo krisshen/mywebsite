@@ -217,7 +217,8 @@ def sync_to_ts(top_10_file: str, filtered_file: str, output_ts: str, summaries: 
         final_papers.append(
             {
                 "id": paper_id,
-                "title": source_paper["title"],
+                # Prefer the curated (display-safe) title from top_10.json.
+                "title": curated_paper.get("title") or source_paper["title"],
                 "authors": authors,
                 "year": year,
                 "arxivUrl": source_paper.get("arxiv_url", f"https://arxiv.org/abs/{paper_id}"),

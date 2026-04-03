@@ -19,7 +19,7 @@
     },
     {
         "id": "2604.01212v1",
-        "title": "$\\texttt{YC-Bench}$: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
+        "title": "YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
         "score": 9.5,
         "reason": "A sharp benchmark for long-horizon agent planning that surfaces compounding execution failures rather than just one-shot task success.",
         "categories": ["cs.CL", "cs.AI"],
