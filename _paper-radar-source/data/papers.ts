@@ -29,228 +29,228 @@ export function getSummaryText(summary: SummaryContent, language: 'zh' | 'en'): 
 }
 
 export const generatedYear = '2026';
-export const generatedDateLabel = "2026年3月29日星期日";
+export const generatedDateLabel = "2026年4月3日星期五";
 
-export const totalFilteredCount = 212;
+export const totalFilteredCount = 208;
 
 export const papers: Paper[] = [
     {
-        "id": "2603.25746v1",
-        "title": "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling",
-        "authors": "Yawen Luo, Xiaoyu Shi, Junhao Zhuang, Yutian Chen, Quande Liu, Xintao Wang, Pengfei Wan, Tianfan Xue",
+        "id": "2604.01221v1",
+        "title": "HippoCamp: Benchmarking Contextual Agents on Personal Computers",
+        "authors": "Zhe Yang, Shulin Tian, Kairui Hu, Shuai Liu, Hoang-Nhat Nguyen, Yichi Zhang, Zujin Guo, Mengying Yu, Zinan Zhang, Jingkang Yang, Chen Change Loy, Ziwei Liu",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25746v1",
+        "arxivUrl": "https://arxiv.org/abs/2604.01221v1",
+        "recommendationScore": 9.6,
+        "summaries": {
+            "expert": {
+                "zh": "针对个人电脑文件管理的HippoCamp基准，涵盖42.4GB跨模态文件和密集的轨迹标注。分析显示，多模态感知和证据锚定是当前MLLM在处理海量个人数据时的主要瓶颈。",
+                "en": "HippoCamp is a multimodal file management benchmark featuring 42.4 GB of data across 2K files with 581 QA pairs. It includes 46.1K structured trajectories for failure diagnosis, revealing that multimodal perception and evidence grounding are the primary bottlenecks for personal AI assistants."
+            },
+            "general": {
+                "zh": "测试AI在你的私人电脑里找文件、分析照片和处理文档的能力，这是构建个人助理的必经之路。现状是即便是最强模型在理解个人侧写和长程搜索上也经常翻车。",
+                "en": "AI agents often fail when dealing with a user's real, messy personal files across different formats. HippoCamp provides a realistic environment to test how well agents can search, reason, and manage files on a personal computer."
+            },
+            "lazy": {
+                "zh": "以后想让AI帮你翻电脑里的陈年旧账，这个榜单告诉你哪个智能体最靠谱。",
+                "en": "A massive benchmark testing how well AI actually handles your personal files and photos."
+            }
+        }
+    },
+    {
+        "id": "2604.01220v1",
+        "title": "Universal YOCO for Efficient Depth Scaling",
+        "authors": "Yutao Sun, Li Dong, Tianzhu Ye, Shaohan Huang, Jianyong Wang, Furu Wei",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.01220v1",
         "recommendationScore": 9.5,
         "summaries": {
             "expert": {
-                "zh": "ShotStream 将多镜头视频生成重构为基于历史上下文的因果式 next-shot 生成问题，并通过分布匹配蒸馏把双向教师模型蒸馏为可流式推理的学生模型。它引入全局与局部双缓存机制，再配合 RoPE 间断指示器，在自回归生成时同时维持镜头间和镜头内的一致性。论文还用两阶段蒸馏缓解误差累积，使系统在单卡上达到 16 FPS，真正把交互式叙事视频生成推到了可实时使用的区间。",
-                "en": "ShotStream reformulates multi-shot video generation as a causal next-shot prediction problem and distills a bidirectional teacher into a streaming-friendly student with distribution-matching distillation. It combines global and local context caches with a RoPE discontinuity indicator to preserve both inter-shot coherence and intra-shot consistency during autoregressive generation. A two-stage distillation scheme further reduces error accumulation, allowing the system to reach 16 FPS on a single GPU and making real-time interactive storytelling technically plausible."
+                "zh": "提出YOCO-U架构，将YOCO的解码器-解码器设计与参数共享的递归计算相结合。该架构通过在浅层层进行多次迭代，实现了恒定的全局KV缓存和线性预填充，同时显著增强了模型的表达深度。",
+                "en": "YOCO-U integrates the decoder-decoder architecture of YOCO with recursive computation via a Universal Self-Decoder. This setup performs multiple parameter-shared iterations in shallow efficient-attention layers, maintaining a constant global KV cache and linear pre-filling."
             },
             "general": {
-                "zh": "这篇论文解决的是“长故事视频很难一边生成一边改”的问题。ShotStream 让用户可以在叙事进行中不断追加指令，同时系统仍能快速生成风格连贯的多镜头视频。",
-                "en": "This paper tackles one of the hardest problems in video generation: keeping long narratives editable while generation is still running. ShotStream lets users keep steering the story as it unfolds, while the model continues producing coherent multi-shot video at low latency."
+                "zh": "解决了标准Transformer在扩展推理计算时KV缓存爆炸的痛点，通过架构优化实现了极高的推理效率。它能在不牺牲性能的前提下，让大模型在处理长上下文时更加轻快。",
+                "en": "Standard Transformers face high memory and compute costs when scaling depth due to KV cache growth. This architecture allows for increased model depth and better reasoning through recursion while keeping inference efficient and memory usage constant."
             },
             "lazy": {
-                "zh": "ShotStream 像一个会边听导演喊话边即时出片的 AI 分镜师。",
-                "en": "ShotStream is basically an AI storyboard artist that keeps shooting while the director is still giving notes."
+                "zh": "把大模型变深的同时不让显存炸裂，YOCO-U让推理变得既深邃又省事。",
+                "en": "Recursive computation makes deeper models smarter without eating up more memory."
             }
         }
     },
     {
-        "id": "2603.25744v1",
-        "title": "MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models",
-        "authors": "Bocheng Zou, Mu Cai, Mark Stanley, Dingfu Lu, Yong Jae Lee",
+        "id": "2604.01212v1",
+        "title": "YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
+        "authors": "Muyu He, Adit Jain, Anand Kumar, Vincent Tu, Soumyadeep Bakshi, Sachin Patro, Nazneen Rajani",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25744v1",
+        "arxivUrl": "https://arxiv.org/abs/2604.01212v1",
+        "recommendationScore": 9.5,
+        "summaries": {
+            "expert": {
+                "zh": "推出模拟创业环境的YC-Bench，要求智能体在长达一年的周期内处理员工管理与合同决策等数百轮交互。实验发现Scratchpad的使用是成功的关键指标，而对抗性环境感知仍是当前模型的短板。",
+                "en": "YC-Bench evaluates agents on a simulated one-year startup management task spanning hundreds of turns. Results from 12 models show that scratchpad usage is the best predictor of success, while adversarial client detection is the primary cause of failure."
+            },
+            "general": {
+                "zh": "专门测试AI在真实复杂场景下的长期规划能力，看它们能否在长达几百步的博弈中保持不破产。测试结果揭示了即使是顶尖模型在处理连环错误和资源分配时依然面临严峻挑战。",
+                "en": "Measuring an AI's ability to plan over long periods is difficult. This benchmark tests agents in a complex startup simulation, revealing that most current models still struggle with compounding mistakes and long-term strategic coherence."
+            },
+            "lazy": {
+                "zh": "想看AI当CEO能不能活过一年？这个测试可能会让大多数模型直接“破产”。",
+                "en": "A benchmark that forces AI to run a startup for a year to see if it goes bankrupt."
+            }
+        }
+    },
+    {
+        "id": "2604.01210v1",
+        "title": "CliffSearch: Structured Agentic Co-Evolution over Theory and Code for Scientific Algorithm Discovery",
+        "authors": "Youssef Mroueh, Carlos Fonseca, Brian Belgodere, David Cox",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.01210v1",
         "recommendationScore": 9.4,
         "summaries": {
             "expert": {
-                "zh": "MuRF 是一个训练零开销的多分辨率推理增强方法，它在冻结的视觉基础模型上同时处理多种输入尺度，并将不同尺度的特征融合成统一表示。核心直觉是低分辨率更擅长全局语义，高分辨率更擅长细节精修，而传统单尺度推理浪费了这种互补性。论文证明它不仅适用于 DINOv2，也能迁移到 SigLIP2 等不同家族的视觉模型，说明这更像是一种通用推理范式而不是模型特调技巧。",
-                "en": "MuRF is a training-free multi-resolution inference method that runs a frozen vision foundation model on multiple input scales and fuses the resulting features into a unified representation. The key intuition is that low-resolution inputs capture global semantics while high-resolution inputs preserve fine-grained detail, and single-scale inference throws away that complementarity. The paper shows that the idea transfers across different VFM families, including DINOv2 and SigLIP2, which makes MuRF feel more like a general inference principle than a model-specific hack."
+                "zh": "提出CliffSearch框架，利用LLM智能体执行变异、交叉和评审等进化算子，实现理论与代码的协同演化。该系统引入了基于正确性和独创性的评审门控，确保发现的算法兼具可解释性与性能优化。",
+                "en": "CliffSearch utilizes an agentic evolutionary framework where LLM agents implement operators like crossover and mutation to discover scientific algorithms. The system prioritizes structured artifacts (theory + code) and uses reviewer-gated selection to ensure correctness and originality alongside performance metrics."
             },
             "general": {
-                "zh": "MuRF 的价值在于它不用重新训练模型，就能让现有视觉大模型“多看几个尺度”后变得更准。对于已经部署好的视觉系统来说，这是一种成本很低但收益很高的升级方式。",
-                "en": "MuRF matters because it improves vision foundation models at inference time without retraining them. For teams already deploying large vision models, that makes it a rare upgrade path that is both simple and potentially high impact."
+                "zh": "将算法发现过程自动化，让AI像科学家一样不断提出、实验并修正理论模型与代码实现。这种方法不仅追求跑分，更强调方案的可复现性和科学原理的严谨性。",
+                "en": "Current AI discovery tools often focus on generating code without proper scientific grounding. This framework ensures that discovered algorithms are both novel and theoretically sound by using a structured, agent-led evolutionary process."
             },
             "lazy": {
-                "zh": "MuRF 的思路很朴素：让视觉模型别只眯着一只眼看图。",
-                "en": "MuRF wins by teaching vision models to stop looking at the world through just one zoom level."
+                "zh": "这是一个让AI自己进化出更强算法的实验室，而且写出的方案人类还能看懂。",
+                "en": "LLMs evolve new scientific algorithms by checking both the theory and the code."
             }
         }
     },
     {
-        "id": "2603.25730v1",
-        "title": "PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference",
-        "authors": "Xiaofeng Mao, Shaohao Rui, Kaining Ying, Bo Zheng, Chuanhao Li, Mingmin Chi, Kaipeng Zhang",
+        "id": "2604.01195v1",
+        "title": "ORBIT: Scalable and Verifiable Data Generation for Search Agents on a Tight Budget",
+        "authors": "Nandan Thakur, Zijian Chen, Xueguang Ma, Jimmy Lin",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25730v1",
+        "arxivUrl": "https://arxiv.org/abs/2604.01195v1",
+        "recommendationScore": 9.3,
+        "summaries": {
+            "expert": {
+                "zh": "构建包含2万个高难度推理查询的ORBIT数据集，采用种子创建、QA生成及内外双重验证的四阶段节俭框架。通过GRPO训练的Qwen3-4B模型在搜索智能体任务上表现强劲，验证了合成数据的有效性。",
+                "en": "ORBIT uses a modular four-stage framework—seed creation, QA generation, self-verification, and external search verification—to produce 20K reasoning-intensive queries without paid APIs. The resulting dataset was used to train a Qwen3-4B model via GRPO, achieving strong performance as a search agent."
+            },
+            "general": {
+                "zh": "解决搜索智能体训练数据昂贵且难以验证的问题，提供了一套无需依赖付费API的自动化数据生成方案。开源的数据集和代码为开发者构建高性能、可验证的搜索助手降低了门槛。",
+                "en": "Building datasets for web-search agents is often too expensive or complex for small teams. This open-sourced framework allows for the low-cost creation of high-quality training data that requires multi-step reasoning and external verification."
+            },
+            "lazy": {
+                "zh": "没钱买API也能造出高质量推理数据，这个省钱秘籍让小模型也能变身搜索大神。",
+                "en": "A frugal way to build high-quality reasoning data for search bots without burning cash."
+            }
+        }
+    },
+    {
+        "id": "2604.01193v1",
+        "title": "Embarrassingly Simple Self-Distillation Improves Code Generation",
+        "authors": "Ruixiang Zhang, Richard He Bai, Huangjie Zheng, Navdeep Jaitly, Ronan Collobert, Yizhe Zhang",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.01193v1",
+        "recommendationScore": 9.6,
+        "summaries": {
+            "expert": {
+                "zh": "提出简单自蒸馏（SSD）方法，仅通过对模型自身的原始输出进行标准监督微调，无需验证器或强化学习。该研究揭示了SSD通过重塑Token分布，有效解决了解码过程中的精度与探索冲突。",
+                "en": "Simple Self-Distillation (SSD) involves sampling solutions from a model and fine-tuning it on its own raw outputs with standard supervised fine-tuning. The researchers found this reshapes token distributions to suppress distractor tails, improving Qwen3-30B-Instruct performance on LiveCodeBench by 12.9 percentage points."
+            },
+            "general": {
+                "zh": "发现LLM写代码时只需通过微调自己的输出就能显著进步，在LiveCodeBench上提升了超过10个百分点。这证明了即使没有外部导师或复杂算法，模型也能实现自我进化的闭环。",
+                "en": "Improving code generation usually requires expensive human labels or complex reinforcement learning. This method proves that a model can improve simply by fine-tuning on its own outputs, specifically helping with harder coding problems."
+            },
+            "lazy": {
+                "zh": "AI也玩“左右互搏”，自己教自己写代码居然比以前更厉害了。",
+                "en": "Models can get better at coding just by training on their own best guesses."
+            }
+        }
+    },
+    {
+        "id": "2604.01178v1",
+        "title": "Screening Is Enough",
+        "authors": "Ken M. Nakanishi",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.01178v1",
         "recommendationScore": 9.4,
         "summaries": {
             "expert": {
-                "zh": "PackForcing 针对自回归视频扩散模型在长视频生成中的 KV-cache 线性膨胀问题，提出了 Sink、Mid、Recent 三分区历史管理策略。它对中段历史做大幅时空压缩，并结合动态 top-k 上下文选择和连续 Temporal RoPE 调整，在严格限制显存的同时维持长时一致性。最终系统只用 5 秒短视频监督就能外推出 2 分钟、16 FPS 的长视频生成，说明长上下文视频生成不一定要依赖同等长度的训练样本。",
-                "en": "PackForcing addresses the linear KV-cache growth that makes autoregressive video diffusion impractical for long sequences by partitioning history into Sink, Mid, and Recent token groups. It heavily compresses the middle context, then uses dynamic top-k selection and continuous Temporal RoPE adjustment to keep memory bounded while preserving long-range temporal consistency. The result is a system that can extrapolate from 5-second training clips to 2-minute generation at 16 FPS, which is a strong argument that long-context video generation does not require equally long supervision."
+                "zh": "引入Multiscreen架构，通过显式阈值的“筛选”机制取代传统Softmax注意力中相对权重的重新分配。该设计实现了绝对查询-键相关性，不仅减少了40%的参数量，还在长文本检索和推理延迟上表现优异。",
+                "en": "The paper introduces Multiscreen, replacing standard softmax attention with a screening mechanism that evaluates keys against an explicit threshold to establish absolute relevance. This architecture achieves comparable loss with 40% fewer parameters than Transformers and reduces 100K context inference latency by 3.2x."
             },
             "general": {
-                "zh": "这项工作把“长视频生成太吃显存”这个核心瓶颈拆开解决了。它让模型只保留最关键的历史信息，因此可以用更小的内存生成更长、更稳定的视频。",
-                "en": "This work directly attacks the memory bottleneck that makes long-video generation so expensive. By keeping only the most useful historical context, it lets the model generate much longer and more stable videos without blowing up compute costs."
+                "zh": "传统注意力机制总是“矮子里面拔将军”，而筛选机制则直接丢弃不相关的干扰信息。这种新架构让模型更轻量、运行更快，特别是在处理超长上下文时速度提升可达3.2倍。",
+                "en": "Standard attention is inefficient because it compares every key to every query, even irrelevant ones. By using a threshold-based screening method, this new architecture improves speed and context handling while using significantly fewer parameters."
             },
             "lazy": {
-                "zh": "PackForcing 的厉害之处在于，它让 AI 学会了怎么“记重点”，所以能把短片练成大片。",
-                "en": "PackForcing teaches video models to remember the important parts, which is how short training turns into long movies."
+                "zh": "别再被迫在垃圾信息里挑最好的了，直接把不合格的Keys统统踢出局。",
+                "en": "Softmax is out; screening irrelevant data makes models faster and lighter."
             }
         }
     },
     {
-        "id": "2603.25741v1",
-        "title": "Vega: Learning to Drive with Natural Language Instructions",
-        "authors": "Sicheng Zuo, Yuxuan Li, Wenzhao Zheng, Zheng Zhu, Jie Zhou, Jiwen Lu",
+        "id": "2604.01170v1",
+        "title": "Online Reasoning Calibration: Test-Time Training Enables Generalizable Conformal LLM Reasoning",
+        "authors": "Cai Zhou, Zekai Wang, Menghua Wu, Qianyu Julie Zhu, Flora C. Shi, Chenyu Wang, Ashia Wilson, Tommi Jaakkola, Stephen Bates",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25741v1",
+        "arxivUrl": "https://arxiv.org/abs/2604.01170v1",
+        "recommendationScore": 9.4,
+        "summaries": {
+            "expert": {
+                "zh": "提出ORCA框架，结合共形预测与元学习进行测试时训练，动态更新校准模块以应对分布偏移。该方法在保证理论风险界限的同时，显著提升了Qwen2.5等模型在复杂推理任务中的采样效率和泛化性。",
+                "en": "ORCA is a framework for calibrating the LLM sampling process using conformal prediction and a meta-learning test-time training procedure. It updates a calibration module for each input to maintain valid confidence estimates under distributional shifts, achieving up to 67% compute savings on MATH-500."
+            },
+            "general": {
+                "zh": "针对LLM推理计算昂贵的问题，通过在线校准采样过程，在保持准确率的前提下大幅节省计算资源。它能让模型在面对从未见过的任务时，更聪明地决定何时停止思考。",
+                "en": "LLM reasoning can be compute-intensive and poorly calibrated. ORCA provides a way to scale inference efficiently by dynamically updating calibration at test-time, significantly reducing costs while guaranteeing error rates."
+            },
+            "lazy": {
+                "zh": "给AI装个“自知之明”的实时进度条，能省下一半以上的推理算力。",
+                "en": "Smarter sampling at test-time saves compute while keeping reasoning reliable."
+            }
+        }
+    },
+    {
+        "id": "2604.01168v1",
+        "title": "S0 Tuning: Zero-Overhead Adaptation of Hybrid Recurrent-Attention Models",
+        "authors": "Jack Young",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.01168v1",
         "recommendationScore": 9.3,
         "summaries": {
             "expert": {
-                "zh": "Vega 提出统一的 Vision-Language-World-Action 框架，用自回归机制处理视觉与语言输入，再用扩散机制生成未来世界状态和驾驶轨迹。它还配套构建了包含约 10 万个场景的 InstructScene 数据集，把自然语言驾驶指令和对应轨迹明确对齐。相比把语言只当作场景描述的旧方案，Vega 更像是在把自动驾驶规划真正变成可指令化、可个性化的多模态决策问题。",
-                "en": "Vega proposes a unified Vision-Language-World-Action framework that uses autoregressive modeling for visual and language inputs and diffusion modeling for future world prediction and trajectory generation. It is trained with InstructScene, a roughly 100K-scene dataset that explicitly aligns diverse natural-language driving instructions with trajectories. Compared with prior pipelines that use language mostly for description or reasoning, Vega moves autonomous driving much closer to true instruction-conditioned planning."
+                "zh": "针对混合递归-注意力模型，提出仅优化每层递归的一个初始状态矩阵（S0）而不更新权重的PEFT方法。在极少监督数据下，该方法在HumanEval等任务上显著优于LoRA，且推理开销为零。",
+                "en": "S0 tuning optimizes a single initial state matrix per recurrent layer while freezing all model weights, outperforming LoRA by 10.8 percentage points on HumanEval. The method demonstrates significant cross-domain transfer on MATH-500 and GSM8K, particularly when verified supervision is scarce."
             },
             "general": {
-                "zh": "Vega 想解决的是自动驾驶系统“不太会听话”的问题。它不仅看路，还能理解像“开稳一点”或“准备靠右并入”这类自然语言指令，并把这些偏好反映到驾驶决策里。",
-                "en": "Vega is about making self-driving systems more steerable by people. Instead of just understanding the road scene, it also tries to follow natural-language instructions such as drive more cautiously or merge in a certain way."
+                "zh": "为混合架构模型提供了一种极轻量级的微调方案，只需调整几十MB的初始状态文件即可快速切换任务。这意味着开发者无需合并权重或重新加载模型就能实现高效的下游任务适配。",
+                "en": "Fine-tuning hybrid models often requires heavy weight merging or adds latency. This approach tunes only the initial state of recurrent layers, offering a 48 MB file for task switching that achieves better performance than LoRA without any inference cost."
             },
             "lazy": {
-                "zh": "Vega 让自动驾驶从“自己开”进化到“听得懂你怎么想开”。",
-                "en": "Vega pushes autonomous driving from just driving itself to actually understanding how you want it to drive."
+                "zh": "换个“心情”（初始状态）就能让AI写代码变强，还完全不增加推理负担。",
+                "en": "Tune the starting state, not the weights, for zero-overhead model adaptation."
             }
         }
     },
     {
-        "id": "2603.25719v1",
-        "title": "Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization?",
-        "authors": "Abhishek Bhandwaldar, Mihir Choudhury, Ruchir Puri, Akash Srivastava",
+        "id": "2604.01151v1",
+        "title": "Detecting Multi-Agent Collusion Through Multi-Agent Interpretability",
+        "authors": "Aaron Rose, Carissa Cullen, Brandon Gary Kaplowitz, Christian Schroeder de Witt",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25719v1",
-        "recommendationScore": 9.3,
-        "summaries": {
-            "expert": {
-                "zh": "这篇论文把通用代码智能体用于高层次综合优化，提出了一个两阶段 agent factory：先对子内核做分解优化与 ILP 组合，再让多个专家代理在全局候选上继续做跨函数优化。关键点不只是单个代理能优化硬件，而是代理规模化后能系统性地挖出 pragma 重组、循环融合和存储重构等复杂设计空间。实验里平均 8.27 倍加速、困难案例超过 20 倍，说明“代理并行工厂”已经是硬件优化里值得认真对待的工程范式。",
-                "en": "This paper applies general-purpose coding agents to high-level synthesis and organizes them into a two-stage agent factory: sub-kernel decomposition plus ILP-based assembly first, followed by multi-agent global optimization over promising candidates. The important point is not merely that one agent can optimize hardware code, but that scaling coordinated agents can systematically discover pragma recombination, loop fusion, and memory restructuring patterns across a much larger design space. With an average 8.27x speedup and more than 20x on harder kernels, the work makes a serious case for agent parallelism as an engineering paradigm in hardware optimization."
-            },
-            "general": {
-                "zh": "这项研究说明，通用 AI 编码代理已经不只是在改应用代码，它们开始能在芯片和硬件设计这种更专业的场景里拿到实打实的性能收益。最有意思的是，系统靠的是多代理协作，而不是某个单一“天才代理”。",
-                "en": "This study shows that general AI coding agents are starting to produce meaningful gains in specialized hardware-design tasks, not just ordinary software engineering. The most interesting part is that the gains come from coordinated agent teams rather than from a single magical model."
-            },
-            "lazy": {
-                "zh": "一群通用代码代理联手调硬件，结果把速度硬生生卷上去了。",
-                "en": "A team of general coding agents went after hardware optimization and basically brute-forced their way into real speedups."
-            }
-        }
-    },
-    {
-        "id": "2603.25738v1",
-        "title": "PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow",
-        "authors": "Xincheng Shuai, Song Tang, Yutong Huang, Henghui Ding, Dacheng Tao",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25738v1",
+        "arxivUrl": "https://arxiv.org/abs/2604.01151v1",
         "recommendationScore": 9.2,
         "summaries": {
             "expert": {
-                "zh": "PSDesigner 不是把设计任务简化成一张图的生成，而是试图复现真实设计师的工具链式工作流，包括素材检索、设计文件编辑和操作步骤推断。为此作者构建了带操作轨迹标注的 CreativePSD 数据集，让模型学习如何像设计师一样操作 PSD 文件。这个方向的重要性在于它把“自动设计”从最终像素输出推进到了可编辑、可复用、可继续协作的设计资产层面。",
-                "en": "PSDesigner does not reduce design automation to image generation; it tries to reproduce the actual tool-driven workflow of a human designer, including asset collection, design-file editing, and operation planning. To support that, the authors build CreativePSD, a dataset of PSD files annotated with operation traces so the model can learn procedural design behavior. The significance is that it moves automated design from static output pixels toward editable, reusable design artifacts that can remain inside a real production workflow."
+                "zh": "提出NARCBench基准，利用模型激活空间的线性探测技术检测多智能体间的隐蔽协作。研究发现协作信号在处理编码消息时在Token层面具有局部性特征，且不同类型的串通在激活空间表现各异。",
+                "en": "The researchers introduce NARCBench to evaluate collusion detection and propose five probing techniques that aggregate per-agent activation scores to identify covert coordination. They achieve 1.00 AUROC in-distribution and show that signals are localized at the token level, specifically spiking during steganographic message processing."
             },
             "general": {
-                "zh": "PSDesigner 更像是一个会真正操作设计软件的设计助理，而不是只会吐图的生成模型。对于广告、电商图和营销物料这类场景，它的价值在于结果可以继续编辑，而不是只能截图保存。",
-                "en": "PSDesigner behaves more like a design assistant that can actually operate professional design files than like a model that only spits out final images. That matters for ads, e-commerce, and creative production, where teams need editable deliverables instead of one-off renders."
+                "zh": "针对LLM智能体可能通过隐蔽手段绕过监管的问题，提出通过分析模型内部状态而非仅通过文本来发现串通。这为多智能体系统的安全审计提供了一种全新的“白盒”监控手段。",
+                "en": "LLM agents can covertly coordinate, creating risks for human oversight. This paper uses internal model activations to detect such collusion, providing a way to monitor multi-agent systems without relying solely on text-level inspections."
             },
             "lazy": {
-                "zh": "它不是给你一张图就算完，而是想直接把可改的设计稿交到你手里。",
-                "en": "Instead of just handing you a picture, PSDesigner wants to hand you the file the designer would still be editing."
-            }
-        }
-    },
-    {
-        "id": "2603.25739v1",
-        "title": "MegaFlow: Zero-Shot Large Displacement Optical Flow",
-        "authors": "Dingxi Zhang, Fangjinhua Wang, Marc Pollefeys, Haofei Xu",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25739v1",
-        "recommendationScore": 9.2,
-        "summaries": {
-            "expert": {
-                "zh": "MegaFlow 把大位移光流估计建模为基于预训练 Vision Transformer 特征的全局匹配问题，再辅以轻量级迭代细化提升亚像素精度。相比依赖局部搜索或特定数据域微调的旧方法，这种做法更好地释放了大模型视觉先验在零样本运动估计上的价值。论文同时在光流和长程点跟踪基准上取得强零样本性能，暗示光流和通用运动估计可能正在向统一范式收敛。",
-                "en": "MegaFlow reframes large-displacement optical flow as a global matching problem built on top of pre-trained Vision Transformer features, then uses lightweight iterative refinement to recover sub-pixel accuracy. Unlike prior approaches that rely heavily on local search or domain-specific fine-tuning, it leans into foundation-model priors for zero-shot generalization. Strong results on both optical flow and long-range point tracking suggest that a more unified motion-estimation paradigm may be emerging."
-            },
-            "general": {
-                "zh": "这项工作的亮点是它在没有特定场景再训练的情况下，仍然能很好地追踪视频里跨度很大的运动。对于通用视频理解和机器人感知，这种零样本泛化很有价值。",
-                "en": "The main appeal here is that MegaFlow handles large motion without needing to be retrained for every new domain. That kind of zero-shot robustness is useful anywhere motion estimation feeds into larger perception systems."
-            },
-            "lazy": {
-                "zh": "MegaFlow 让 AI 在陌生视频里也能盯住那些跑得飞快的东西。",
-                "en": "MegaFlow helps AI keep track of things that move wildly fast, even in videos it has never seen before."
-            }
-        }
-    },
-    {
-        "id": "2603.25737v1",
-        "title": "Training the Knowledge Base through Evidence Distillation and Write-Back Enrichment",
-        "authors": "Yuxing Lu, Xukai Zhao, Wei Wu, Jinzhuo Wang",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25737v1",
-        "recommendationScore": 9.1,
-        "summaries": {
-            "expert": {
-                "zh": "WriteBack-RAG 的核心观点是：RAG 的知识库不该是一份静态语料，而应该是可被训练和回写的系统组件。它利用标注样本识别有效检索路径，把分散证据蒸馏成更紧凑的知识单元，再把这些单元写回索引，从而在不改生成模型的情况下提升整个 RAG 流水线。跨方法、跨基准都能带来稳定收益，说明这个改进主要发生在语料组织层，而不是特定模型调参层。",
-                "en": "The core argument of WriteBack-RAG is that the corpus in a RAG system should not be treated as static; it should be trainable and writable. The framework identifies successful retrieval evidence, distills it into compact knowledge units, and writes those units back into the index so downstream RAG pipelines improve without changing the generator. The fact that the gains transfer across methods and benchmarks suggests the improvement lives in corpus structure rather than in model-specific tuning."
-            },
-            "general": {
-                "zh": "很多 RAG 系统的问题不在模型本身，而在知识库太碎、太吵、太难检索。WriteBack-RAG 的做法就是先把有用证据提纯，再把整理后的知识写回去，让下一次检索从一开始就站在更好的地基上。",
-                "en": "A lot of RAG failures come less from the model and more from a messy, fragmented knowledge base. WriteBack-RAG cleans and compresses the evidence, then writes it back so future retrieval starts from a better-organized corpus."
-            },
-            "lazy": {
-                "zh": "它相当于先把知识库整理一遍，再让 AI 去查资料，所以答题自然更稳。",
-                "en": "It basically tidies up the knowledge base before the AI searches it, which is why the answers get better."
-            }
-        }
-    },
-    {
-        "id": "2603.25720v1",
-        "title": "R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning",
-        "authors": "Zirui Zhang, Haoyu Dong, Kexin Pei, Chengzhi Mao",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25720v1",
-        "recommendationScore": 9.1,
-        "summaries": {
-            "expert": {
-                "zh": "R-C2 把多模态推理里的视觉-文本不一致性直接变成强化学习信号，要求模型在不同模态之间来回做推理并重构答案，从而形成循环一致性约束。这个设计提供了高密度、无标签的奖励，避免只是靠投票或后处理去掩盖模态冲突。实验中最高提升 7.6 个百分点，说明结构一致性本身可以成为多模态模型学习更稳健内部表示的重要驱动。",
-                "en": "R-C2 turns visual-text inconsistency inside multimodal models into a reinforcement-learning signal by forcing the model to reason back and forth across modalities and reconstruct the answer under a cycle-consistency constraint. That yields a dense, label-free reward instead of relying on voting or post hoc aggregation to paper over contradictions. The reported gains of up to 7.6 points suggest that structural consistency itself is a meaningful driver of stronger multimodal internal representations."
-            },
-            "general": {
-                "zh": "这篇论文的重点不是让模型多看点数据，而是让它在图像理解和文本理解之间保持逻辑闭环。这样一来，模型面对多模态问题时更不容易自相矛盾。",
-                "en": "This paper is less about feeding the model more data and more about forcing its image-side and text-side reasoning to agree with each other. That makes multimodal answers less self-contradictory and more reliable."
-            },
-            "lazy": {
-                "zh": "R-C2 逼着 AI 把图像和文字两套脑回路对齐，不许各说各话。",
-                "en": "R-C2 makes the image brain and text brain inside the model stop arguing with each other."
-            }
-        }
-    },
-    {
-        "id": "2603.25723v1",
-        "title": "Natural-Language Agent Harnesses",
-        "authors": "Linyue Pan, Lexiao Zou, Shuo Guo, Jingchen Ni, Hai-Tao Zheng",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2603.25723v1",
-        "recommendationScore": 9.0,
-        "summaries": {
-            "expert": {
-                "zh": "Natural-Language Agent Harnesses 试图把通常藏在运行时控制器代码里的 agent harness 抽出来，表达成可编辑、可迁移的自然语言工件。配套的 Intelligent Harness Runtime 则通过显式合同、持久化工件和轻量适配器去执行这些自然语言 harness。这个方向的意义在于，智能体控制逻辑终于可以被当作独立对象来比较、复用和研究，而不再被具体框架实现细节淹没。",
-                "en": "Natural-Language Agent Harnesses tries to externalize agent harness logic that is usually buried in runtime-specific controller code and express it as editable, portable natural-language artifacts. The accompanying Intelligent Harness Runtime executes those harnesses through explicit contracts, durable artifacts, and lightweight adapters. The broader significance is that harness engineering becomes something that can be compared, reused, and studied as an object in its own right instead of being trapped inside implementation details."
-            },
-            "general": {
-                "zh": "很多智能体系统的关键控制逻辑现在都写得很散、很隐蔽、很难迁移。NLAH 的想法是把这些高层行为规则提出来，用更可读也更可共享的方式表达出来。",
-                "en": "A lot of important agent behavior today lives in scattered controller code that is hard to port or inspect. NLAH argues that those high-level rules should be pulled out and expressed in a form humans can read, edit, and share more easily."
-            },
-            "lazy": {
-                "zh": "它想把“怎么管 agent”这件事，从一堆暗黑控制代码变成人人看得懂的说明书。",
-                "en": "It wants to turn agent control from hidden controller spaghetti into something closer to an editable instruction manual."
+                "zh": "别以为私下打手势AI看不出来，模型内部的“心跳”已经出卖了它们。",
+                "en": "Catching colluding AI agents by reading their minds through model activations."
             }
         }
     }

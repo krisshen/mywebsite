@@ -1,92 +1,92 @@
 [
     {
-        "id": "2603.25746v1",
-        "title": "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling",
-        "score": 9.5,
-        "reason": "Turns multi-shot video generation into a low-latency streaming problem and makes interactive narrative control practical on a single GPU.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-26T17:59:59Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25746v1"
-    },
-    {
-        "id": "2603.25744v1",
-        "title": "MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models",
-        "score": 9.4,
-        "reason": "A simple training-free multi-resolution fusion trick that upgrades frozen vision foundation models across tasks and model families.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-26T17:59:58Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25744v1"
-    },
-    {
-        "id": "2603.25730v1",
-        "title": "PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference",
-        "score": 9.4,
-        "reason": "Pushes long-video diffusion much further with bounded KV-cache growth and large temporal extrapolation from short-video supervision.",
-        "categories": ["cs.CV", "cs.AI"],
-        "published": "2026-03-26T17:59:05Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25730v1"
-    },
-    {
-        "id": "2603.25741v1",
-        "title": "Vega: Learning to Drive with Natural Language Instructions",
-        "score": 9.3,
-        "reason": "Combines language-conditioned world modeling and planning for personalized autonomous driving with a sizable new instruction dataset.",
-        "categories": ["cs.CV", "cs.AI", "cs.RO"],
-        "published": "2026-03-26T17:59:56Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25741v1"
-    },
-    {
-        "id": "2603.25719v1",
-        "title": "Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization?",
-        "score": 9.3,
-        "reason": "Shows coordinated general-purpose coding agents can deliver large hardware-design speedups without hardware-specific training.",
-        "categories": ["cs.AI", "cs.AR", "cs.LG"],
-        "published": "2026-03-26T17:57:50Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25719v1"
-    },
-    {
-        "id": "2603.25738v1",
-        "title": "PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow",
-        "score": 9.2,
-        "reason": "Moves beyond image generation into editable PSD-level automation by teaching models a more human design workflow.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-26T17:59:51Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25738v1"
-    },
-    {
-        "id": "2603.25739v1",
-        "title": "MegaFlow: Zero-Shot Large Displacement Optical Flow",
-        "score": 9.2,
-        "reason": "Uses pretrained global vision priors to get strong zero-shot large-displacement motion estimation without heavy task-specific tuning.",
-        "categories": ["cs.CV"],
-        "published": "2026-03-26T17:59:51Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25739v1"
-    },
-    {
-        "id": "2603.25737v1",
-        "title": "Training the Knowledge Base through Evidence Distillation and Write-Back Enrichment",
-        "score": 9.1,
-        "reason": "Treats the RAG corpus itself as a trainable component and improves retrieval quality by writing distilled evidence back into the index.",
-        "categories": ["cs.AI", "cs.CL", "cs.IR"],
-        "published": "2026-03-26T17:59:49Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25737v1"
-    },
-    {
-        "id": "2603.25720v1",
-        "title": "R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning",
-        "score": 9.1,
-        "reason": "Uses cycle-consistent RL as a dense alignment signal to improve multimodal reasoning without extra labels.",
+        "id": "2604.01221v1",
+        "title": "HippoCamp: Benchmarking Contextual Agents on Personal Computers",
+        "score": 9.6,
+        "reason": "A realistic personal-computing agent benchmark with device-scale filesystems that exposes major gaps in retrieval, grounding, and multimodal evidence use.",
         "categories": ["cs.AI", "cs.CV"],
-        "published": "2026-03-26T17:58:04Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25720v1"
+        "published": "2026-04-01T17:58:33Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01221v1"
     },
     {
-        "id": "2603.25723v1",
-        "title": "Natural-Language Agent Harnesses",
-        "score": 9.0,
-        "reason": "Externalizes agent harness logic into portable natural-language artifacts, making controller design easier to transfer and study.",
+        "id": "2604.01220v1",
+        "title": "Universal YOCO for Efficient Depth Scaling",
+        "score": 9.5,
+        "reason": "Combines recursive computation with the YOCO architecture to improve depth scaling and inference efficiency without exploding KV cache costs.",
+        "categories": ["cs.CL"],
+        "published": "2026-04-01T17:58:21Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01220v1"
+    },
+    {
+        "id": "2604.01212v1",
+        "title": "YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
+        "score": 9.5,
+        "reason": "A sharp benchmark for long-horizon agent planning that surfaces compounding execution failures rather than just one-shot task success.",
         "categories": ["cs.CL", "cs.AI"],
-        "published": "2026-03-26T17:58:15Z",
-        "pdf_url": "https://arxiv.org/pdf/2603.25723v1"
+        "published": "2026-04-01T17:52:19Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01212v1"
+    },
+    {
+        "id": "2604.01210v1",
+        "title": "CliffSearch: Structured Agentic Co-Evolution over Theory and Code for Scientific Algorithm Discovery",
+        "score": 9.4,
+        "reason": "Builds a more scientifically disciplined agentic discovery loop by evolving theory and code together with originality and correctness gates.",
+        "categories": ["cs.LG", "cs.AI"],
+        "published": "2026-04-01T17:51:26Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01210v1"
+    },
+    {
+        "id": "2604.01195v1",
+        "title": "ORBIT: Scalable and Verifiable Data Generation for Search Agents on a Tight Budget",
+        "score": 9.3,
+        "reason": "Shows a low-cost path to useful search-agent training data with verifiable multi-step queries and open, reproducible generation.",
+        "categories": ["cs.CL", "cs.AI", "cs.IR"],
+        "published": "2026-04-01T17:42:41Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01195v1"
+    },
+    {
+        "id": "2604.01193v1",
+        "title": "Embarrassingly Simple Self-Distillation Improves Code Generation",
+        "score": 9.6,
+        "reason": "A surprisingly strong result: simple self-distillation materially improves code generation without verifiers, teacher models, or RL.",
+        "categories": ["cs.CL"],
+        "published": "2026-04-01T17:39:50Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01193v1"
+    },
+    {
+        "id": "2604.01178v1",
+        "title": "Screening Is Enough",
+        "score": 9.4,
+        "reason": "Replaces relative softmax competition with thresholded absolute relevance and gets strong long-context performance with fewer parameters and lower latency.",
+        "categories": ["cs.LG", "cs.AI", "cs.CL"],
+        "published": "2026-04-01T17:29:08Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01178v1"
+    },
+    {
+        "id": "2604.01170v1",
+        "title": "Online Reasoning Calibration: Test-Time Training Enables Generalizable Conformal LLM Reasoning",
+        "score": 9.4,
+        "reason": "Pairs conformal calibration with test-time training to cut reasoning cost while keeping reliability under distribution shift.",
+        "categories": ["cs.LG", "cs.AI", "cs.CL", "stat.AP", "stat.ML"],
+        "published": "2026-04-01T17:21:50Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01170v1"
+    },
+    {
+        "id": "2604.01168v1",
+        "title": "S0 Tuning: Zero-Overhead Adaptation of Hybrid Recurrent-Attention Models",
+        "score": 9.3,
+        "reason": "Finds a clean zero-overhead PEFT surface for hybrid recurrent-attention models by tuning only the initial recurrent state.",
+        "categories": ["cs.CL", "cs.LG"],
+        "published": "2026-04-01T17:21:15Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01168v1"
+    },
+    {
+        "id": "2604.01151v1",
+        "title": "Detecting Multi-Agent Collusion Through Multi-Agent Interpretability",
+        "score": 9.2,
+        "reason": "Pushes interpretability into the multi-agent setting and offers a promising white-box signal for detecting covert coordination.",
+        "categories": ["cs.AI", "cs.LG", "cs.MA"],
+        "published": "2026-04-01T17:08:05Z",
+        "pdf_url": "https://arxiv.org/pdf/2604.01151v1"
     }
 ]
