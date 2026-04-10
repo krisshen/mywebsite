@@ -40,63 +40,63 @@ export const papers: Paper[] = [
         "authors": "Ziqiao Ma, Xueyang Yu, Haoyu Zhen, Yuncong Yang, Joyce Chai, Chuang Gan",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07350v1",
-        "recommendationScore": 5.0,
+        "recommendationScore": 9.8,
         "summaries": {
             "expert": {
-                "zh": "Large Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting. As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pass. We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state. The anchor evolves as an exponential moving average of past fast weights to balance stability and plasticity. Based on this updated architecture, we introduce Fast Spatial Memory (FSM), an efficient and scalable model for 4D reconstruction that learns spatiotemporal representations from long observation sequences and renders novel view-time combinations. We pre-trained FSM on large-scale curated 3D/4D data to capture the dynamics and semantics of complex spatial environments. Extensive experiments show that FSM supports fast adaptation over long sequences and delivers high-quality 3D/4D reconstruction with smaller chunks and mitigating the camera-interpolation shortcut. Overall, we hope to advance LaCT beyond the bounded single-chunk setting toward robust multi-chunk adaptation, a necessary step for generalization to genuinely longer sequences, while substantially alleviating the activation-memory bottleneck.",
-                "en": "Large Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting. As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pass. We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state. The anchor evolves as an exponential moving average of past fast weights to balance stability and plasticity. Based on this updated architecture, we introduce Fast Spatial Memory (FSM), an efficient and scalable model for 4D reconstruction that learns spatiotemporal representations from long observation sequences and renders novel view-time combinations. We pre-trained FSM on large-scale curated 3D/4D data to capture the dynamics and semantics of complex spatial environments. Extensive experiments show that FSM supports fast adaptation over long sequences and delivers high-quality 3D/4D reconstruction with smaller chunks and mitigating the camera-interpolation shortcut. Overall, we hope to advance LaCT beyond the bounded single-chunk setting toward robust multi-chunk adaptation, a necessary step for generalization to genuinely longer sequences, while substantially alleviating the activation-memory bottleneck."
+                "zh": "该论文提出弹性测试时训练（Elastic Test-Time Training），通过 Fisher 加权的弹性先验来稳定快速权重更新。基于该机制的 Fast Spatial Memory 能从长观测序列中学习时空表示，并在新视角下进行时间组合渲染。",
+                "en": "This paper introduces Elastic Test-Time Training, which stabilizes fast weight updates using a Fisher-weighted elastic prior centered on an evolving anchor state. The anchor state (an EMA of prior fast weights) enables robust multi-chunk adaptation for 4D reconstruction while reducing forgetting and activation-memory bottlenecks."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "该研究面向长序列 3D/4D 重建中的测试时训练不稳定问题，引入“锚点状态”来抑制遗忘和过拟合。结果是在长上下文上实现更快适应与更稳定的重建质量。",
+                "en": "The work improves how models reconstruct 3D/4D environments from long sequences by making test-time training more stable. It helps the model adapt quickly without forgetting what it learned earlier."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "用更稳定的测试时训练，让模型在长视频里更会“记路”和重建世界。",
+                "en": "A more stable test-time training method to help AI remember and reconstruct 3D/4D worlds from long videos."
             }
         }
     },
     {
-        "id": "2604.07348v1",
-        "title": "MoRight: Motion Control Done Right",
-        "authors": "Shaowei Liu, Xuanchi Ren, Tianchang Shen, Huan Ling, Saurabh Gupta, Shenlong Wang, Sanja Fidler, Jun Gao",
+        "id": "2604.07209v1",
+        "title": "INSPATIO-WORLD: A Real-Time 4D World Simulator via Spatiotemporal Autoregressive Modeling",
+        "authors": "InSpatio Team, Donghui Shen, Guofeng Zhang, Haomin Liu, Haoyu Ji, Hujun Bao, Hongjia Zhai, Jialin Liu, Jing Guo, Nan Wang, Siji Pan, Weihong Pan, Weijian Xie, Xianbin Liu, Xiaojun Xiang, Xiaoyu Zhang, Xinyu Chen, Yifu Wang, Yipeng Chen, Zhenzhou Fan, Zhewen Le, Zhichao Ye, Ziqiang Zhao",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07348v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07209v1",
+        "recommendationScore": 9.6,
         "summaries": {
             "expert": {
-                "zh": "Generating motion-controlled videos--where user-specified actions drive physically plausible scene dynamics under freely chosen viewpoints--demands two capabilities: (1) disentangled motion control, allowing users to separately control the object motion and adjust camera viewpoint; and (2) motion causality, ensuring that user-driven actions trigger coherent reactions from other objects rather than merely displacing pixels. Existing methods fall short on both fronts: they entangle camera and object motion into a single tracking signal and treat motion as kinematic displacement without modeling causal relationships between object motion. We introduce MoRight, a unified framework that addresses both limitations through disentangled motion modeling. Object motion is specified in a canonical static-view and transferred to an arbitrary target camera viewpoint via temporal cross-view attention, enabling disentangled camera and object control. We further decompose motion into active (user-driven) and passive (consequence) components, training the model to learn motion causality from data. At inference, users can either supply active motion and MoRight predicts consequences (forward reasoning), or specify desired passive outcomes and MoRight recovers plausible driving actions (inverse reasoning), all while freely adjusting the camera viewpoint. Experiments on three benchmarks demonstrate state-of-the-art performance in generation quality, motion controllability, and interaction awareness.",
-                "en": "Generating motion-controlled videos--where user-specified actions drive physically plausible scene dynamics under freely chosen viewpoints--demands two capabilities: (1) disentangled motion control, allowing users to separately control the object motion and adjust camera viewpoint; and (2) motion causality, ensuring that user-driven actions trigger coherent reactions from other objects rather than merely displacing pixels. Existing methods fall short on both fronts: they entangle camera and object motion into a single tracking signal and treat motion as kinematic displacement without modeling causal relationships between object motion. We introduce MoRight, a unified framework that addresses both limitations through disentangled motion modeling. Object motion is specified in a canonical static-view and transferred to an arbitrary target camera viewpoint via temporal cross-view attention, enabling disentangled camera and object control. We further decompose motion into active (user-driven) and passive (consequence) components, training the model to learn motion causality from data. At inference, users can either supply active motion and MoRight predicts consequences (forward reasoning), or specify desired passive outcomes and MoRight recovers plausible driving actions (inverse reasoning), all while freely adjusting the camera viewpoint. Experiments on three benchmarks demonstrate state-of-the-art performance in generation quality, motion controllability, and interaction awareness."
+                "zh": "INSPATIO-WORLD 采用时空自回归（STAR）架构：隐式时空缓存聚合观测为潜表示，并用显式空间约束模块强化几何结构。它还提出联合分布匹配蒸馏（JDMD），用真实数据分布正则化生成过程以缓解由合成数据导致的保真度下降。",
+                "en": "INSPATIO-WORLD uses a Spatiotemporal Autoregressive (STAR) architecture with an Implicit Spatiotemporal Cache and an Explicit Spatial Constraint Module for geometric structure. It introduces Joint Distribution Matching Distillation (JDMD) to regularize training with real-world distributions and mitigate fidelity degradation from synthetic data reliance."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "这是一个可实时生成高保真、可交互动态场景的 4D 世界模拟器，并能从单段参考视频恢复场景。它显著提升空间一致性与交互精度，适合用于导航、规划与仿真。",
+                "en": "This simulator can generate realistic, interactive 4D worlds from a single video clip in real time. It focuses on maintaining strong spatial consistency for smooth navigation and interaction."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "从一段视频生成可互动的 4D 世界，并且还能实时跑起来。",
+                "en": "A real-time 4D world simulator that generates interactive scenes from a single video."
             }
         }
     },
     {
-        "id": "2604.07345v1",
-        "title": "Measurement of Generative AI Workload Power Profiles for Whole-Facility Data Center Infrastructure Planning",
-        "authors": "Roberto Vercellino, Jared Willard, Gustavo Campos, Weslley da Silva Pereira, Olivia Hull, Matthew Selensky, Juliane Mueller",
+        "id": "2604.07223v1",
+        "title": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
+        "authors": "Yen-Shan Chen, Sian-Yao Huang, Cheng-Lin Yang, Yun-Nung Chen",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07345v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07223v1",
+        "recommendationScore": 9.5,
         "summaries": {
             "expert": {
-                "zh": "The rapid growth of generative artificial intelligence (AI) has introduced unprecedented computational demands, driving significant increases in the energy footprint of data centers. However, existing power consumption data is largely proprietary and reported at varying resolutions, creating challenges for estimating whole-facility energy use and planning infrastructure. In this work, we present a methodology that bridges this gap by linking high-resolution workload power measurements to whole-facility energy demand. Using NLR's high-performance computing data center equipped with NVIDIA H100 GPUs, we measure power consumption of AI workloads at 0.1-second resolution for AI training, fine-tuning and inference jobs. Workloads are characterized using MLCommons benchmarks for model training and fine-tuning, and vLLM benchmarks for inference, enabling reproducible and standardized workload profiling. The dataset of power consumption profiles is made publicly available. These power profiles are then scaled to the whole-facility-level using a bottom-up, event-driven, data center energy model. The resulting whole-facility energy profiles capture realistic temporal fluctuations driven by AI workloads and user-behavior, and can be used to inform infrastructure planning for grid connection, on-site energy generation, and distributed microgrids.",
-                "en": "The rapid growth of generative artificial intelligence (AI) has introduced unprecedented computational demands, driving significant increases in the energy footprint of data centers. However, existing power consumption data is largely proprietary and reported at varying resolutions, creating challenges for estimating whole-facility energy use and planning infrastructure. In this work, we present a methodology that bridges this gap by linking high-resolution workload power measurements to whole-facility energy demand. Using NLR's high-performance computing data center equipped with NVIDIA H100 GPUs, we measure power consumption of AI workloads at 0.1-second resolution for AI training, fine-tuning and inference jobs. Workloads are characterized using MLCommons benchmarks for model training and fine-tuning, and vLLM benchmarks for inference, enabling reproducible and standardized workload profiling. The dataset of power consumption profiles is made publicly available. These power profiles are then scaled to the whole-facility-level using a bottom-up, event-driven, data center energy model. The resulting whole-facility energy profiles capture realistic temporal fluctuations driven by AI workloads and user-behavior, and can be used to inform infrastructure planning for grid connection, on-site energy generation, and distributed microgrids."
+                "zh": "TraceSafe-Bench 在多步工具调用轨迹上覆盖 12 类风险，系统评估护栏在“过程”中的检测与拦截能力。结果显示护栏效果更依赖结构化数据理解/轨迹解析能力，而非纯粹的语义安全对齐；且随着轨迹变长，风险行为更可见时，检测表现反而提升。",
+                "en": "TraceSafe-Bench evaluates safety across 12 risk categories on multi-step tool-calling trajectories, showing guardrail efficacy is driven more by structural data competence than semantic safety alignment. General-purpose LLMs can outperform specialized guardrails on risk detection, and performance can improve as longer trajectories reveal more dynamic behavior."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "该论文提出面向智能体多步工具调用的安全评测基准，专门测“执行过程”而不是单轮文本。结论强调：要让智能体更安全，结构推理与对轨迹的理解能力可能比单纯扩大模型更关键。",
+                "en": "This paper introduces a benchmark to test AI safety when agents call tools over multiple steps. It suggests that understanding structured traces matters a lot for guardrails, sometimes more than model size."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "专门测智能体“多步用工具”的护栏到底靠不靠谱。",
+                "en": "A benchmark for how well guardrails work during multi-step tool-using agent runs."
             }
         }
     },
@@ -106,151 +106,151 @@ export const papers: Paper[] = [
         "authors": "Qiyao Ma, Dechen Gao, Rui Cai, Boqi Zhao, Hanchu Zhou, Junshan Zhang, Zhe Zhao",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07343v1",
-        "recommendationScore": 5.0,
+        "recommendationScore": 9.4,
         "summaries": {
             "expert": {
-                "zh": "Pluralistic alignment has emerged as a critical frontier in the development of Large Language Models (LLMs), with reward models (RMs) serving as a central mechanism for capturing diverse human values. While benchmarks for general response quality are prevalent, evaluating how well reward models account for individual user preferences remains an open challenge. To bridge this gap, we introduce Personalized RewardBench, a novel benchmark designed to rigorously assess reward models' capacity to model personalized preferences. We construct chosen and rejected response pairs based on strict adherence to (or violation of) user-specific rubrics, ensuring that preference distinctions are uniquely tailored to the individual. In particular, human evaluations confirm that the primary discriminative factor between pairs is strictly personal preference, with both responses maintaining high general quality (e.g., correctness, relevance and helpfulness). Extensive testing reveals that existing state-of-the-art reward models struggle significantly with personalization, peaking at an accuracy of just 75.94%. Crucially, because an effective reward model benchmark should predict a reward model's performance on downstream tasks, we conduct experiments demonstrating that our benchmark exhibits a significantly higher correlation with downstream performance in both Best-of-N (BoN) sampling and Proximal Policy Optimization (PPO) compared to existing baselines. These findings establish Personalized RewardBench as a robust and accurate proxy for evaluating reward models' performance in downstream applications.",
-                "en": "Pluralistic alignment has emerged as a critical frontier in the development of Large Language Models (LLMs), with reward models (RMs) serving as a central mechanism for capturing diverse human values. While benchmarks for general response quality are prevalent, evaluating how well reward models account for individual user preferences remains an open challenge. To bridge this gap, we introduce Personalized RewardBench, a novel benchmark designed to rigorously assess reward models' capacity to model personalized preferences. We construct chosen and rejected response pairs based on strict adherence to (or violation of) user-specific rubrics, ensuring that preference distinctions are uniquely tailored to the individual. In particular, human evaluations confirm that the primary discriminative factor between pairs is strictly personal preference, with both responses maintaining high general quality (e.g., correctness, relevance and helpfulness). Extensive testing reveals that existing state-of-the-art reward models struggle significantly with personalization, peaking at an accuracy of just 75.94%. Crucially, because an effective reward model benchmark should predict a reward model's performance on downstream tasks, we conduct experiments demonstrating that our benchmark exhibits a significantly higher correlation with downstream performance in both Best-of-N (BoN) sampling and Proximal Policy Optimization (PPO) compared to existing baselines. These findings establish Personalized RewardBench as a robust and accurate proxy for evaluating reward models' performance in downstream applications."
+                "zh": "Personalized RewardBench 通过用户特定准则构造响应对，用于评估奖励模型捕捉“个人偏好”的能力。实验表明该基准与 Best-of-N 采样、PPO 微调等下游表现的相关性更强，同时揭示现有 SOTA 奖励模型在个性化上仍明显不足。",
+                "en": "Personalized RewardBench evaluates reward models on user-specific rubrics via preference response pairs, measuring personalization rather than generic quality. It correlates better with downstream behavior (e.g., Best-of-N sampling, PPO) and shows current SOTA reward models still struggle to model individualized preferences."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "这个基准专门评估奖励模型能否学到“你喜欢什么”，而不仅是平均意义上的好回答。结果显示很多强模型在个性化上并不稳，离真正的“为你定制”还有距离。",
+                "en": "This benchmark tests whether reward models can follow an individual’s preferences instead of just general quality. It finds that even strong models still have gaps in true personalization."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "不是评“好不好”，而是评“是不是你想要的”。",
+                "en": "A benchmark for whether reward models match individual user preferences."
             }
         }
     },
     {
-        "id": "2604.07340v1",
-        "title": "TC-AE: Unlocking Token Capacity for Deep Compression Autoencoders",
-        "authors": "Teng Li, Ziyuan Huang, Cong Chen, Yangfu Li, Yuanhuiyi Lyu, Dandan Zheng, Chunhua Shen, Jun Zhang",
+        "id": "2604.07236v1",
+        "title": "How Much LLM Does a Self-Revising Agent Actually Need?",
+        "authors": "Seongwoo Jeong, Seonil Son",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07340v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07236v1",
+        "recommendationScore": 9.3,
         "summaries": {
             "expert": {
-                "zh": "We propose TC-AE, a ViT-based architecture for deep compression autoencoders. Existing methods commonly increase the channel number of latent representations to maintain reconstruction quality under high compression ratios. However, this strategy often leads to latent representation collapse, which degrades generative performance. Instead of relying on increasingly complex architectures or multi-stage training schemes, TC-AE addresses this challenge from the perspective of the token space, the key bridge between pixels and image latents, through two complementary innovations: Firstly, we study token number scaling by adjusting the patch size in ViT under a fixed latent budget, and identify aggressive token-to-latent compression as the key factor that limits effective scaling. To address this issue, we decompose token-to-latent compression into two stages, reducing structural information loss and enabling effective token number scaling for generation. Secondly, to further mitigate latent representation collapse, we enhance the semantic structure of image tokens via joint self-supervised training, leading to more generative-friendly latents. With these designs, TC-AE achieves substantially improved reconstruction and generative performance under deep compression. We hope our research will advance ViT-based tokenizer for visual generation.",
-                "en": "We propose TC-AE, a ViT-based architecture for deep compression autoencoders. Existing methods commonly increase the channel number of latent representations to maintain reconstruction quality under high compression ratios. However, this strategy often leads to latent representation collapse, which degrades generative performance. Instead of relying on increasingly complex architectures or multi-stage training schemes, TC-AE addresses this challenge from the perspective of the token space, the key bridge between pixels and image latents, through two complementary innovations: Firstly, we study token number scaling by adjusting the patch size in ViT under a fixed latent budget, and identify aggressive token-to-latent compression as the key factor that limits effective scaling. To address this issue, we decompose token-to-latent compression into two stages, reducing structural information loss and enabling effective token number scaling for generation. Secondly, to further mitigate latent representation collapse, we enhance the semantic structure of image tokens via joint self-supervised training, leading to more generative-friendly latents. With these designs, TC-AE achieves substantially improved reconstruction and generative performance under deep compression. We hope our research will advance ViT-based tokenizer for visual generation."
+                "zh": "论文提出声明式反射运行协议，将智能体的状态、置信信号与受限动作外部化为可检查的运行时结构，并将能力拆解为显式世界模型规划、符号化反思与稀疏的 LLM 修订。基于带噪声的战舰游戏实验显示，显式规划对胜率贡献最大，而低频 LLM 修订仅带来边际且不单调的提升。",
+                "en": "The paper introduces a declared reflective runtime protocol that externalizes agent state, confidence, and constrained actions into inspectable structures, decomposing competence into explicit world-model planning, symbolic reflection, and sparse LLM-based revision. In a noisy Battleship setting, explicit planning drives most of the win-rate gains, while low-frequency conditional LLM revision adds only marginal, non-monotonic improvements."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "该研究在问：自我修订智能体到底需要多少“LLM 智能”，以及多少来自外围结构。结论倾向于：把规划与反思做成显式结构，往往比频繁调用 LLM 更能带来稳定收益。",
+                "en": "This work asks how much of a self-revising agent’s performance comes from the LLM versus the surrounding structure. It suggests that explicit planning/structure can matter more than frequent LLM intervention."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "很多时候，智能体更需要“好结构”，而不是“多说两句”。",
+                "en": "Agents may benefit more from structured planning than from frequent LLM revisions."
             }
         }
     },
     {
-        "id": "2604.07338v1",
-        "title": "Appear2Meaning: A Cross-Cultural Benchmark for Structured Cultural Metadata Inference from Images",
-        "authors": "Yuechen Jiang, Enze Zhang, Md Mohsinul Kabir, Qianqian Xie, Stavroula Golfomitsou, Konstantinos Arvanitis, Sophia Ananiadou",
+        "id": "2604.07190v1",
+        "title": "The ATOM Report: Measuring the Open Language Model Ecosystem",
+        "authors": "Nathan Lambert, Florian Brand",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07338v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07190v1",
+        "recommendationScore": 9.1,
         "summaries": {
             "expert": {
-                "zh": "Recent advances in vision-language models (VLMs) have improved image captioning for cultural heritage. However, inferring structured cultural metadata (e.g., creator, origin, period) from visual input remains underexplored. We introduce a multi-category, cross-cultural benchmark for this task and evaluate VLMs using an LLM-as-Judge framework that measures semantic alignment with reference annotations. To assess cultural reasoning, we report exact-match, partial-match, and attribute-level accuracy across cultural regions. Results show that models capture fragmented signals and exhibit substantial performance variation across cultures and metadata types, leading to inconsistent and weakly grounded predictions. These findings highlight the limitations of current VLMs in structured cultural metadata inference beyond visual perception.",
-                "en": "Recent advances in vision-language models (VLMs) have improved image captioning for cultural heritage. However, inferring structured cultural metadata (e.g., creator, origin, period) from visual input remains underexplored. We introduce a multi-category, cross-cultural benchmark for this task and evaluate VLMs using an LLM-as-Judge framework that measures semantic alignment with reference annotations. To assess cultural reasoning, we report exact-match, partial-match, and attribute-level accuracy across cultural regions. Results show that models capture fragmented signals and exhibit substantial performance variation across cultures and metadata types, leading to inconsistent and weakly grounded predictions. These findings highlight the limitations of current VLMs in structured cultural metadata inference beyond visual perception."
+                "zh": "ATOM Report 从下载量、派生模型与推理市场等维度系统测量约 1500 个开源语言模型生态。报告记录了 2025 年夏季后开源模型采用格局的显著变化，并对主流系列（如 Qwen、DeepSeek、Llama）给出数据化对比。",
+                "en": "The ATOM Report measures roughly 1,500 open language models via metrics like Hugging Face downloads, derivatives, and inference market share. It documents a major ecosystem shift after mid-2025 and provides data-driven comparisons across leading model families such as Qwen, DeepSeek, and Llama."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "这是一份开源大模型生态“体检报告”，告诉你谁在被用、谁在被二次开发、谁在推理市场占主导。它适合用来快速把握开源 LLM 竞争格局与趋势。",
+                "en": "This report is a snapshot of the open LLM ecosystem—who gets adopted, forked, and deployed. It’s useful for quickly understanding competitive dynamics and trends."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "开源大模型世界的“年度盘点”。",
+                "en": "A data-driven snapshot of the open LLM ecosystem and how it’s shifting."
             }
         }
     },
     {
-        "id": "2604.07337v1",
-        "title": "From Blobs to Spokes: High-Fidelity Surface Reconstruction via Oriented Gaussians",
-        "authors": "Diego Gomez, Antoine Guédon, Nissim Maruani, Bingchen Gong, Maks Ovsjanikov",
+        "id": "2604.07230v1",
+        "title": "PhyEdit: Towards Real-World Object Manipulation via Physically-Grounded Image Editing",
+        "authors": "Ruihang Xu, Dewei Zhou, Xiaolong Shen, Fan Ma, Yi Yang",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07337v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07230v1",
+        "recommendationScore": 9.0,
         "summaries": {
             "expert": {
-                "zh": "3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult. Unlike implicit methods built on Signed Distance Fields or occupancy, 3DGS lacks a global geometric field, forcing existing approaches to resort to heuristics such as TSDF fusion of blended depth maps.   Inspired by the Objects as Volumes framework, we derive a principled occupancy field for Gaussian Splatting and show how it can be used to extract highly accurate watertight meshes of complex scenes. Our key contribution is to introduce a learnable oriented normal at each Gaussian element and to define an adapted attenuation formulation, which leads to closed-form expressions for both the normal and occupancy fields at arbitrary locations in space. We further introduce a novel consistency loss and a dedicated densification strategy to enforce Gaussians to wrap the entire surface by closing geometric holes, ensuring a complete shell of oriented primitives. We modify the differentiable rasterizer to output depth as an isosurface of our continuous model, and introduce Primal Adaptive Meshing for Region-of-Interest meshing at arbitrary resolution.   We additionally expose fundamental biases in standard surface evaluation protocols and propose two more rigorous alternatives. Overall, our method Gaussian Wrapping sets a new state-of-the-art on DTU and Tanks and Temples, producing complete, watertight meshes at a fraction of the size of concurrent work-recovering thin structures such as the notoriously elusive bicycle spokes.",
-                "en": "3D Gaussian Splatting (3DGS) has revolutionized fast novel view synthesis, yet its opacity-based formulation makes surface extraction fundamentally difficult. Unlike implicit methods built on Signed Distance Fields or occupancy, 3DGS lacks a global geometric field, forcing existing approaches to resort to heuristics such as TSDF fusion of blended depth maps.   Inspired by the Objects as Volumes framework, we derive a principled occupancy field for Gaussian Splatting and show how it can be used to extract highly accurate watertight meshes of complex scenes. Our key contribution is to introduce a learnable oriented normal at each Gaussian element and to define an adapted attenuation formulation, which leads to closed-form expressions for both the normal and occupancy fields at arbitrary locations in space. We further introduce a novel consistency loss and a dedicated densification strategy to enforce Gaussians to wrap the entire surface by closing geometric holes, ensuring a complete shell of oriented primitives. We modify the differentiable rasterizer to output depth as an isosurface of our continuous model, and introduce Primal Adaptive Meshing for Region-of-Interest meshing at arbitrary resolution.   We additionally expose fundamental biases in standard surface evaluation protocols and propose two more rigorous alternatives. Overall, our method Gaussian Wrapping sets a new state-of-the-art on DTU and Tanks and Temples, producing complete, watertight meshes at a fraction of the size of concurrent work-recovering thin structures such as the notoriously elusive bicycle spokes."
+                "zh": "PhyEdit 将显式 3D 几何/物理模拟作为可插拔的视觉引导，提升图像编辑中物体操控的空间一致性与尺度/透视正确性。作者还发布 RealManip-10K（含深度标注）与 ManipEval，用于评估 3D 几何精度、操作一致性等维度。",
+                "en": "PhyEdit uses explicit 3D geometric/physical simulation as a plug-and-play visual guide to improve spatial manipulation accuracy in image editing. The authors release RealManip-10K (with depth annotations) and the ManipEval benchmark to evaluate 3D geometry accuracy and manipulation consistency."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "它解决“把东西挪一下就穿模/比例不对”的老问题，用 3D 几何作为约束让编辑结果更真实。配套数据集与评测让不同方法能在几何一致性上被更公平地比较。",
+                "en": "It makes edits more physically and geometrically consistent by using 3D cues, so moved objects look properly scaled and placed. The accompanying dataset/benchmark helps compare methods on spatial correctness."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "让 P 图更像真的：用 3D 几何约束把物体放对位置和尺度。",
+                "en": "Photo editing that uses 3D geometry so moved objects look correctly placed and scaled."
             }
         }
     },
     {
-        "id": "2604.07329v1",
-        "title": "Distilling Photon-Counting CT into Routine Chest CT through Clinically Validated Degradation Modeling",
-        "authors": "Junqi Liu, Xinze Zhou, Wenxuan Li, Scott Ye, Arkadiusz Sitek, Xiaofeng Yang, Yucheng Tang, Daguang Xu, Kai Ding, Kang Wang, Yang Yang, Alan L. Yuille, Zongwei Zhou",
+        "id": "2604.07201v1",
+        "title": "BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment",
+        "authors": "Mohamed Darwish Mounis, Mohamed Mahmoud, Shaimaa Sedek, Mahmoud Abdalla, Mahmoud SalahEldin Kasem, Abdelrahman Abdallah, Hyun-Soo Kang",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07329v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07201v1",
+        "recommendationScore": 8.9,
         "summaries": {
             "expert": {
-                "zh": "Photon-counting CT (PCCT) provides superior image quality with higher spatial resolution and lower noise compared to conventional energy-integrating CT (EICT), but its limited clinical availability restricts large-scale research and clinical deployment. To bridge this gap, we propose SUMI, a simulated degradation-to-enhancement method that learns to reverse realistic acquisition artifacts in low-quality EICT by leveraging high-quality PCCT as reference. Our central insight is to explicitly model realistic acquisition degradations, transforming PCCT into clinically plausible lower-quality counterparts and learning to invert this process. The simulated degradations were validated for clinical realism by board-certified radiologists, enabling faithful supervision without requiring paired acquisitions at scale. As outcomes of this technical contribution, we: (1) train a latent diffusion model on 1,046 PCCTs, using an autoencoder first pre-trained on both these PCCTs and 405,379 EICTs from 145 hospitals to extract general CT latent features that we release for reuse in other generative medical imaging tasks; (2) construct a large-scale dataset of over 17,316 publicly available EICTs enhanced to PCCT-like quality, with radiologist-validated voxel-wise annotations of airway trees, arteries, veins, lungs, and lobes; and (3) demonstrate substantial improvements: across external data, SUMI outperforms state-of-the-art image translation methods by 15% in SSIM and 20% in PSNR, improves radiologist-rated clinical utility in reader studies, and enhances downstream top-ranking lesion detection performance, increasing sensitivity by up to 15% and F1 score by up to 10%. Our results suggest that emerging imaging advances can be systematically distilled into routine EICT using limited high-quality scans as reference.",
-                "en": "Photon-counting CT (PCCT) provides superior image quality with higher spatial resolution and lower noise compared to conventional energy-integrating CT (EICT), but its limited clinical availability restricts large-scale research and clinical deployment. To bridge this gap, we propose SUMI, a simulated degradation-to-enhancement method that learns to reverse realistic acquisition artifacts in low-quality EICT by leveraging high-quality PCCT as reference. Our central insight is to explicitly model realistic acquisition degradations, transforming PCCT into clinically plausible lower-quality counterparts and learning to invert this process. The simulated degradations were validated for clinical realism by board-certified radiologists, enabling faithful supervision without requiring paired acquisitions at scale. As outcomes of this technical contribution, we: (1) train a latent diffusion model on 1,046 PCCTs, using an autoencoder first pre-trained on both these PCCTs and 405,379 EICTs from 145 hospitals to extract general CT latent features that we release for reuse in other generative medical imaging tasks; (2) construct a large-scale dataset of over 17,316 publicly available EICTs enhanced to PCCT-like quality, with radiologist-validated voxel-wise annotations of airway trees, arteries, veins, lungs, and lobes; and (3) demonstrate substantial improvements: across external data, SUMI outperforms state-of-the-art image translation methods by 15% in SSIM and 20% in PSNR, improves radiologist-rated clinical utility in reader studies, and enhances downstream top-ranking lesion detection performance, increasing sensitivity by up to 15% and F1 score by up to 10%. Our results suggest that emerging imaging advances can be systematically distilled into routine EICT using limited high-quality scans as reference."
+                "zh": "BRIDGE 通过强化学习训练的查询对齐模型 FORGE，将含噪的多模态查询蒸馏为更利于检索的紧凑字符串，并结合推理增强稠密检索器 LENS。结果表明，多模态到文本检索的主要瓶颈在“查询对齐/可检索表达”，该系统能显著提升 embedding 相似度驱动的召回表现。",
+                "en": "BRIDGE improves multimodal-to-text retrieval with FORGE (an RL-trained query alignment model that distills noisy multimodal queries into compact search strings) and LENS (a reasoning-enhanced dense retriever). The results suggest query alignment is a primary bottleneck, improving embedding-based similarity and retrieval performance."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "这是一个更会“把你的图+字意图翻译成搜索词”的检索系统，提升跨模态搜索体验。它强调把查询表达对齐到可检索的文本形式，比单纯换更大编码器更有效。",
+                "en": "This system makes multimodal search better by rewriting image+text queries into cleaner, more retrievable text queries. It argues alignment and query formulation matter as much as (or more than) bigger encoders."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "把复杂的图文查询变成更好搜的关键词，让检索更准。",
+                "en": "Turns messy image+text queries into better search text to retrieve more accurately."
             }
         }
     },
     {
-        "id": "2604.07328v1",
-        "title": "How to sketch a learning algorithm",
-        "authors": "Sam Gunn",
+        "id": "2604.07238v1",
+        "title": "On the Price of Privacy for Language Identification and Generation",
+        "authors": "Xiaoyu Li, Andi Han, Jiaojiao Jiang, Junbin Gao",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07328v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07238v1",
+        "recommendationScore": 8.8,
         "summaries": {
             "expert": {
-                "zh": "How does the choice of training data influence an AI model? This question is of central importance to interpretability, privacy, and basic science. At its core is the data deletion problem: after a reasonable amount of precomputation, quickly predict how the model would behave in a given situation if a given subset of training data had been excluded from the learning algorithm.   We present a data deletion scheme capable of predicting model outputs with vanishing error $\\varepsilon$ in the deep learning setting. Our precomputation and prediction algorithms are only $\\mathrm{poly}(1/\\varepsilon)$ factors slower than regular training and inference, respectively. The storage requirements are those of $\\mathrm{poly}(1/\\varepsilon)$ models.   Our proof is based on an assumption that we call \"stability.\" In contrast to the assumptions made by prior work, stability appears to be fully compatible with learning powerful AI models. In support of this, we show that stability is satisfied in a minimal set of experiments with microgpt. Our code is available at https://github.com/SamSpo1/microgpt-sketch.   At a technical level, our work is based on a new method for locally sketching an arithmetic circuit by computing higher-order derivatives in random complex directions. Forward-mode automatic differentiation allows cheap computation of these derivatives.",
-                "en": "How does the choice of training data influence an AI model? This question is of central importance to interpretability, privacy, and basic science. At its core is the data deletion problem: after a reasonable amount of precomputation, quickly predict how the model would behave in a given situation if a given subset of training data had been excluded from the learning algorithm.   We present a data deletion scheme capable of predicting model outputs with vanishing error $\\varepsilon$ in the deep learning setting. Our precomputation and prediction algorithms are only $\\mathrm{poly}(1/\\varepsilon)$ factors slower than regular training and inference, respectively. The storage requirements are those of $\\mathrm{poly}(1/\\varepsilon)$ models.   Our proof is based on an assumption that we call \"stability.\" In contrast to the assumptions made by prior work, stability appears to be fully compatible with learning powerful AI models. In support of this, we show that stability is satisfied in a minimal set of experiments with microgpt. Our code is available at https://github.com/SamSpo1/microgpt-sketch.   At a technical level, our work is based on a new method for locally sketching an arithmetic circuit by computing higher-order derivatives in random complex directions. Forward-mode automatic differentiation allows cheap computation of these derivatives."
+                "zh": "该研究分析差分隐私（DP）在语言识别与生成中的统计代价，给出算法与匹配下界。在近似 DP 设定下可保持接近非隐私的错误率，而在纯 DP 下误差会按 ε 相关因子呈指数性恶化，给出最优速率刻画。",
+                "en": "This work characterizes the agnostic statistical cost of differential privacy (DP) for language identification and generation, providing matching algorithms and lower bounds. It shows approximate DP can retain non-private error rates, while pure DP incurs exponential degradation by an epsilon-dependent factor, yielding optimal rates."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "论文量化了“更隐私”会让语言模型/语言识别损失多少准确率。结论是：在很多近似 DP 的现实设定里，隐私代价可能比直觉更小。",
+                "en": "The paper studies how much accuracy you lose when enforcing differential privacy in language tasks. It suggests the privacy cost can be surprisingly small in approximate-DP regimes."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "隐私保护不一定“贵”：在一些设定下性能损失很小。",
+                "en": "Privacy can be cheap: some DP setups lose little performance."
             }
         }
     },
     {
-        "id": "2604.07321v1",
-        "title": "Syntax Is Easy, Semantics Is Hard: Evaluating LLMs for LTL Translation",
-        "authors": "Priscilla Kyei Danso, Mohammad Saqib Hasan, Niranjan Balasubramanian, Omar Chowdhury",
+        "id": "2604.07165v1",
+        "title": "Reason in Chains, Learn in Trees: Self-Rectification and Grafting for Multi-turn Agent Policy Optimization",
+        "authors": "Yu Li, Sizhe Tang, Tian Lan",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07321v1",
-        "recommendationScore": 5.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07165v1",
+        "recommendationScore": 8.7,
         "summaries": {
             "expert": {
-                "zh": "Propositional Linear Temporal Logic (LTL) is a popular formalism for specifying desirable requirements and security and privacy policies for software, networks, and systems. Yet expressing such requirements and policies in LTL remains challenging because of its intricate semantics. Since many security and privacy analysis tools require LTL formulas as input, this difficulty places them out of reach for many developers and analysts. Large Language Models (LLMs) could broaden access to such tools by translating natural language fragments into LTL formulas. This paper evaluates that premise by assessing how effectively several representative LLMs translate assertive English sentences into LTL formulas. Using both human-generated and synthetic ground-truth data, we evaluate effectiveness along syntactic and semantic dimensions. The results reveal three findings: (1) in line with prior findings, LLMs perform better on syntactic aspects of LTL than on semantic ones; (2) they generally benefit from more detailed prompts; and (3) reformulating the task as a Python code-completion problem substantially improves overall performance. We also discuss challenges in conducting a fair evaluation on this task and conclude with recommendations for future work.",
-                "en": "Propositional Linear Temporal Logic (LTL) is a popular formalism for specifying desirable requirements and security and privacy policies for software, networks, and systems. Yet expressing such requirements and policies in LTL remains challenging because of its intricate semantics. Since many security and privacy analysis tools require LTL formulas as input, this difficulty places them out of reach for many developers and analysts. Large Language Models (LLMs) could broaden access to such tools by translating natural language fragments into LTL formulas. This paper evaluates that premise by assessing how effectively several representative LLMs translate assertive English sentences into LTL formulas. Using both human-generated and synthetic ground-truth data, we evaluate effectiveness along syntactic and semantic dimensions. The results reveal three findings: (1) in line with prior findings, LLMs perform better on syntactic aspects of LTL than on semantic ones; (2) they generally benefit from more detailed prompts; and (3) reformulating the task as a Python code-completion problem substantially improves overall performance. We also discuss challenges in conducting a fair evaluation on this task and conclude with recommendations for future work."
+                "zh": "T-STAR（Tree-structured Self-Taught Agent Rectification）将多轮轨迹合并为“认知树”，用内省估值降低逐步优势估计的方差，并通过 In-Context Thought Grafting 在关键分歧点对比成功/失败分支以合成修正性推理。该框架旨在缓解多步任务的稀疏奖励与长链错误传播问题，提升智能体策略优化稳定性。",
+                "en": "T-STAR (Tree-structured Self-Taught Agent Rectification) merges multi-turn trajectories into a Cognitive Tree, enabling variance-reduced step-level advantages via Introspective Valuation. It uses In-Context Thought Grafting to synthesize corrective reasoning at critical divergence points by contrasting successful and failed branches, improving policy optimization under sparse rewards."
             },
             "general": {
-                "zh": "通用版摘要稍后补充。",
-                "en": "General summary coming soon."
+                "zh": "它把智能体的决策过程组织成一棵“可能性树”，更容易定位哪一步推理出了问题并进行纠错。这样能让多步任务训练更稳定、更会从失败里学。",
+                "en": "It organizes an agent’s multi-step reasoning into a tree so it can pinpoint where chains go wrong and learn corrections. This can make training on long-horizon tasks more stable under sparse feedback."
             },
             "lazy": {
-                "zh": "懒人版摘要稍后补充。",
-                "en": "Lazy summary coming soon."
+                "zh": "用“树”来帮智能体找错并改正，长链推理更不容易翻车。",
+                "en": "A tree-based way for agents to find and fix mistakes in long reasoning chains."
             }
         }
     }
