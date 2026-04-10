@@ -35,68 +35,24 @@ export const totalFilteredCount = 199;
 
 export const papers: Paper[] = [
     {
-        "id": "2604.07350v1",
-        "title": "Fast Spatial Memory with Elastic Test-Time Training",
-        "authors": "Ziqiao Ma, Xueyang Yu, Haoyu Zhen, Yuncong Yang, Joyce Chai, Chuang Gan",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07350v1",
-        "recommendationScore": 9.8,
-        "summaries": {
-            "expert": {
-                "zh": "该论文提出弹性测试时训练（Elastic Test-Time Training），通过 Fisher 加权的弹性先验来稳定快速权重更新。基于该机制的 Fast Spatial Memory 能从长观测序列中学习时空表示，并在新视角下进行时间组合渲染。",
-                "en": "This paper introduces Elastic Test-Time Training, which stabilizes fast weight updates using a Fisher-weighted elastic prior centered on an evolving anchor state. The anchor state (an EMA of prior fast weights) enables robust multi-chunk adaptation for 4D reconstruction while reducing forgetting and activation-memory bottlenecks."
-            },
-            "general": {
-                "zh": "该研究面向长序列 3D/4D 重建中的测试时训练不稳定问题，引入“锚点状态”来抑制遗忘和过拟合。结果是在长上下文上实现更快适应与更稳定的重建质量。",
-                "en": "The work improves how models reconstruct 3D/4D environments from long sequences by making test-time training more stable. It helps the model adapt quickly without forgetting what it learned earlier."
-            },
-            "lazy": {
-                "zh": "用更稳定的测试时训练，让模型在长视频里更会“记路”和重建世界。",
-                "en": "A more stable test-time training method to help AI remember and reconstruct 3D/4D worlds from long videos."
-            }
-        }
-    },
-    {
-        "id": "2604.07209v1",
-        "title": "INSPATIO-WORLD: A Real-Time 4D World Simulator via Spatiotemporal Autoregressive Modeling",
-        "authors": "InSpatio Team, Donghui Shen, Guofeng Zhang, Haomin Liu, Haoyu Ji, Hujun Bao, Hongjia Zhai, Jialin Liu, Jing Guo, Nan Wang, Siji Pan, Weihong Pan, Weijian Xie, Xianbin Liu, Xiaojun Xiang, Xiaoyu Zhang, Xinyu Chen, Yifu Wang, Yipeng Chen, Zhenzhou Fan, Zhewen Le, Zhichao Ye, Ziqiang Zhao",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07209v1",
-        "recommendationScore": 9.6,
-        "summaries": {
-            "expert": {
-                "zh": "INSPATIO-WORLD 采用时空自回归（STAR）架构：隐式时空缓存聚合观测为潜表示，并用显式空间约束模块强化几何结构。它还提出联合分布匹配蒸馏（JDMD），用真实数据分布正则化生成过程以缓解由合成数据导致的保真度下降。",
-                "en": "INSPATIO-WORLD uses a Spatiotemporal Autoregressive (STAR) architecture with an Implicit Spatiotemporal Cache and an Explicit Spatial Constraint Module for geometric structure. It introduces Joint Distribution Matching Distillation (JDMD) to regularize training with real-world distributions and mitigate fidelity degradation from synthetic data reliance."
-            },
-            "general": {
-                "zh": "这是一个可实时生成高保真、可交互动态场景的 4D 世界模拟器，并能从单段参考视频恢复场景。它显著提升空间一致性与交互精度，适合用于导航、规划与仿真。",
-                "en": "This simulator can generate realistic, interactive 4D worlds from a single video clip in real time. It focuses on maintaining strong spatial consistency for smooth navigation and interaction."
-            },
-            "lazy": {
-                "zh": "从一段视频生成可互动的 4D 世界，并且还能实时跑起来。",
-                "en": "A real-time 4D world simulator that generates interactive scenes from a single video."
-            }
-        }
-    },
-    {
         "id": "2604.07223v1",
         "title": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
         "authors": "Yen-Shan Chen, Sian-Yao Huang, Cheng-Lin Yang, Yun-Nung Chen",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07223v1",
-        "recommendationScore": 9.5,
+        "recommendationScore": 10,
         "summaries": {
             "expert": {
-                "zh": "TraceSafe-Bench 在多步工具调用轨迹上覆盖 12 类风险，系统评估护栏在“过程”中的检测与拦截能力。结果显示护栏效果更依赖结构化数据理解/轨迹解析能力，而非纯粹的语义安全对齐；且随着轨迹变长，风险行为更可见时，检测表现反而提升。",
-                "en": "TraceSafe-Bench evaluates safety across 12 risk categories on multi-step tool-calling trajectories, showing guardrail efficacy is driven more by structural data competence than semantic safety alignment. General-purpose LLMs can outperform specialized guardrails on risk detection, and performance can improve as longer trajectories reveal more dynamic behavior."
+                "zh": "引入 TraceSafe-Bench 评估多步工具调用轨迹的安全性。研究发现护栏效果受结构化数据处理能力影响远大于语义安全对齐，且通用模型优于专用护栏。",
+                "en": "TraceSafe-Bench evaluates the efficacy of LLM guardrails across multi-step tool-calling trajectories using 12 risk categories. The study finds that performance is primarily dictated by structural reasoning competence, such as JSON parsing, rather than semantic safety alignment."
             },
             "general": {
-                "zh": "该论文提出面向智能体多步工具调用的安全评测基准，专门测“执行过程”而不是单轮文本。结论强调：要让智能体更安全，结构推理与对轨迹的理解能力可能比单纯扩大模型更关键。",
-                "en": "This paper introduces a benchmark to test AI safety when agents call tools over multiple steps. It suggests that understanding structured traces matters a lot for guardrails, sometimes more than model size."
+                "zh": "随着 AI 变得更自主，中间执行过程容易出现安全风险。这项研究发现 AI 处理复杂数据格式的能力是其防御风险的关键。",
+                "en": "Researchers created a new testing tool to see if AI safety systems can catch errors while an agent performs complex, multi-step tasks. They discovered that an AI's ability to follow data formats is more important for safety than its general safety training."
             },
             "lazy": {
-                "zh": "专门测智能体“多步用工具”的护栏到底靠不靠谱。",
-                "en": "A benchmark for how well guardrails work during multi-step tool-using agent runs."
+                "zh": "研究 AI 代理在执行多步任务时的安全漏洞与防御。",
+                "en": "This paper tests if AI safety guards can actually stop agents from making mistakes during long, complicated workflows."
             }
         }
     },
@@ -106,151 +62,195 @@ export const papers: Paper[] = [
         "authors": "Qiyao Ma, Dechen Gao, Rui Cai, Boqi Zhao, Hanchu Zhou, Junshan Zhang, Zhe Zhao",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07343v1",
-        "recommendationScore": 9.4,
+        "recommendationScore": 9,
         "summaries": {
             "expert": {
-                "zh": "Personalized RewardBench 通过用户特定准则构造响应对，用于评估奖励模型捕捉“个人偏好”的能力。实验表明该基准与 Best-of-N 采样、PPO 微调等下游表现的相关性更强，同时揭示现有 SOTA 奖励模型在个性化上仍明显不足。",
-                "en": "Personalized RewardBench evaluates reward models on user-specific rubrics via preference response pairs, measuring personalization rather than generic quality. It correlates better with downstream behavior (e.g., Best-of-N sampling, PPO) and shows current SOTA reward models still struggle to model individualized preferences."
+                "zh": "提出 Personalized RewardBench 以评估奖励模型捕捉个体用户偏好的能力。研究指出当前主流模型在个性化对齐上表现不足，且该基准与下游任务表现高度相关。",
+                "en": "Personalized RewardBench assesses reward models by using chosen and rejected response pairs based on individual user rubrics. The benchmark demonstrates a high correlation with downstream performance in PPO and Best-of-N sampling, revealing that current state-of-the-art models struggle with personalization."
             },
             "general": {
-                "zh": "这个基准专门评估奖励模型能否学到“你喜欢什么”，而不仅是平均意义上的好回答。结果显示很多强模型在个性化上并不稳，离真正的“为你定制”还有距离。",
-                "en": "This benchmark tests whether reward models can follow an individual’s preferences instead of just general quality. It finds that even strong models still have gaps in true personalization."
+                "zh": "每个人对 AI 回复的好坏评价不同。这个新工具测试 AI 能否根据特定用户的不同品味和标准给出合理的评分。",
+                "en": "This paper introduces a new way to measure how well AI can learn a specific person's preferences rather than just general rules. It shows that most current AI models are not yet very good at following individual user styles or requirements."
             },
             "lazy": {
-                "zh": "不是评“好不好”，而是评“是不是你想要的”。",
-                "en": "A benchmark for whether reward models match individual user preferences."
+                "zh": "评估 AI 奖励模型对用户个性化偏好的建模能力。",
+                "en": "It's a benchmark that checks if AI can actually figure out what you personally like."
             }
         }
     },
     {
-        "id": "2604.07236v1",
-        "title": "How Much LLM Does a Self-Revising Agent Actually Need?",
-        "authors": "Seongwoo Jeong, Seonil Son",
+        "id": "2604.07274v1",
+        "title": "A Systematic Study of Retrieval Pipeline Design for Retrieval-Augmented Medical Question Answering",
+        "authors": "Nusrat Sultana, Abdullah Muhammad Moosa, Kazi Afzalur Rahman, Sajal Chandra Banik",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07236v1",
-        "recommendationScore": 9.3,
+        "arxivUrl": "https://arxiv.org/abs/2604.07274v1",
+        "recommendationScore": 8,
         "summaries": {
             "expert": {
-                "zh": "论文提出声明式反射运行协议，将智能体的状态、置信信号与受限动作外部化为可检查的运行时结构，并将能力拆解为显式世界模型规划、符号化反思与稀疏的 LLM 修订。基于带噪声的战舰游戏实验显示，显式规划对胜率贡献最大，而低频 LLM 修订仅带来边际且不单调的提升。",
-                "en": "The paper introduces a declared reflective runtime protocol that externalizes agent state, confidence, and constrained actions into inspectable structures, decomposing competence into explicit world-model planning, symbolic reflection, and sparse LLM-based revision. In a noisy Battleship setting, explicit planning drives most of the win-rate gains, while low-frequency conditional LLM revision adds only marginal, non-monotonic improvements."
+                "zh": "系统评估了医疗问答中 RAG 流程的设计，涵盖查询重构与重排序等组件。结果显示检索增强显著提升了零样本性能，且领域特定模型表现更佳。",
+                "en": "This study systematically evaluates forty retrieval-augmented generation configurations for medical question answering using the MedQA USMLE benchmark. The results indicate that dense retrieval combined with query reformulation and reranking optimizes performance, especially when using domain-specialized language models."
             },
             "general": {
-                "zh": "该研究在问：自我修订智能体到底需要多少“LLM 智能”，以及多少来自外围结构。结论倾向于：把规划与反思做成显式结构，往往比频繁调用 LLM 更能带来稳定收益。",
-                "en": "This work asks how much of a self-revising agent’s performance comes from the LLM versus the surrounding structure. It suggests that explicit planning/structure can matter more than frequent LLM intervention."
+                "zh": "研究如何通过让 AI 在回答医学问题前搜索参考书来减少错误。结果表明这种检索增强方法能让 AI 在普通电脑上也能给出更准确的医疗建议。",
+                "en": "Scientists tested many different ways to connect AI to medical textbooks to help it answer health-related questions. They found that using specialized medical AI along with smart search techniques makes the system much more accurate."
             },
             "lazy": {
-                "zh": "很多时候，智能体更需要“好结构”，而不是“多说两句”。",
-                "en": "Agents may benefit more from structured planning than from frequent LLM revisions."
+                "zh": "系统评估检索增强技术对医疗问答系统的性能提升。",
+                "en": "Giving AI a medical library and the right search tools makes it much better at passing medical exams."
             }
         }
     },
     {
-        "id": "2604.07190v1",
-        "title": "The ATOM Report: Measuring the Open Language Model Ecosystem",
-        "authors": "Nathan Lambert, Florian Brand",
+        "id": "2604.07345v1",
+        "title": "Measurement of Generative AI Workload Power Profiles for Whole-Facility Data Center Infrastructure Planning",
+        "authors": "Roberto Vercellino, Jared Willard, Gustavo Campos, Weslley da Silva Pereira, Olivia Hull, Matthew Selensky, Juliane Mueller",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07190v1",
-        "recommendationScore": 9.1,
+        "arxivUrl": "https://arxiv.org/abs/2604.07345v1",
+        "recommendationScore": 7,
         "summaries": {
             "expert": {
-                "zh": "ATOM Report 从下载量、派生模型与推理市场等维度系统测量约 1500 个开源语言模型生态。报告记录了 2025 年夏季后开源模型采用格局的显著变化，并对主流系列（如 Qwen、DeepSeek、Llama）给出数据化对比。",
-                "en": "The ATOM Report measures roughly 1,500 open language models via metrics like Hugging Face downloads, derivatives, and inference market share. It documents a major ecosystem shift after mid-2025 and provides data-driven comparisons across leading model families such as Qwen, DeepSeek, and Llama."
+                "zh": "提出一种将高分辨率 GPU 工作负载测量与全设施能耗模型相结合的方法。通过对 H100 GPU 训练与推理功率的精细化建模，为数据中心规划提供支撑。",
+                "en": "The authors present high-resolution power consumption profiles for NVIDIA H100 GPUs during various generative AI workloads. These profiles are used in a bottom-up energy model to simulate whole-facility demand, aiding in infrastructure planning for data centers and microgrids."
             },
             "general": {
-                "zh": "这是一份开源大模型生态“体检报告”，告诉你谁在被用、谁在被二次开发、谁在推理市场占主导。它适合用来快速把握开源 LLM 竞争格局与趋势。",
-                "en": "This report is a snapshot of the open LLM ecosystem—who gets adopted, forked, and deployed. It’s useful for quickly understanding competitive dynamics and trends."
+                "zh": "AI 模型的训练和运行非常耗电。这项工作通过精确测量 AI 的用电模式，帮助数据中心更好地规划电力和能源基础设施。",
+                "en": "This research provides detailed data on how much electricity AI chips use when training or running models. This information helps engineers plan the power needs and electrical grids for large data centers."
             },
             "lazy": {
-                "zh": "开源大模型世界的“年度盘点”。",
-                "en": "A data-driven snapshot of the open LLM ecosystem and how it’s shifting."
+                "zh": "测量生成式 AI 的能效特征以辅助数据中心电力规划。",
+                "en": "It measures exactly how much power AI chips use so data centers can plan their electricity needs."
             }
         }
     },
     {
-        "id": "2604.07230v1",
-        "title": "PhyEdit: Towards Real-World Object Manipulation via Physically-Grounded Image Editing",
-        "authors": "Ruihang Xu, Dewei Zhou, Xiaolong Shen, Fan Ma, Yi Yang",
+        "id": "2604.07276v1",
+        "title": "Making Room for AI: Multi-GPU Molecular Dynamics with Deep Potentials in GROMACS",
+        "authors": "Luca Pennati, Andong Hu, Ivy Peng, Lukas Müllender, Stefano Markidis",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07230v1",
-        "recommendationScore": 9.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.07276v1",
+        "recommendationScore": 6,
         "summaries": {
             "expert": {
-                "zh": "PhyEdit 将显式 3D 几何/物理模拟作为可插拔的视觉引导，提升图像编辑中物体操控的空间一致性与尺度/透视正确性。作者还发布 RealManip-10K（含深度标注）与 ManipEval，用于评估 3D 几何精度、操作一致性等维度。",
-                "en": "PhyEdit uses explicit 3D geometric/physical simulation as a plug-and-play visual guide to improve spatial manipulation accuracy in image editing. The authors release RealManip-10K (with depth annotations) and the ManipEval benchmark to evaluate 3D geometry accuracy and manipulation consistency."
+                "zh": "在分子动力学软件 GROMACS 中集成了 DeePMD-kit，实现了跨多 GPU 的神经网络势能推理。研究验证了其在大规模原子系统下的扩展性并分析了性能瓶颈。",
+                "en": "This work integrates the DeePMD-kit framework into GROMACS to support GPU-accelerated, domain-decomposed inference of deep potentials. Benchmarking on NVIDIA and AMD GPUs shows that while neural network inference is the primary bottleneck, the implementation maintains strong scaling for large-scale molecular dynamics."
             },
             "general": {
-                "zh": "它解决“把东西挪一下就穿模/比例不对”的老问题，用 3D 几何作为约束让编辑结果更真实。配套数据集与评测让不同方法能在几何一致性上被更公平地比较。",
-                "en": "It makes edits more physically and geometrically consistent by using 3D cues, so moved objects look properly scaled and placed. The accompanying dataset/benchmark helps compare methods on spatial correctness."
+                "zh": "科学家将 AI 模型引入了主流模拟软件，显著提高了模拟精度。这让利用大量显卡进行高水平的药物研发和材料模拟变得更加可行。",
+                "en": "Researchers added AI capabilities to a popular chemistry simulation software called GROMACS to make molecular research more accurate. They proved that this new setup can run effectively on large supercomputers with many graphics cards."
             },
             "lazy": {
-                "zh": "让 P 图更像真的：用 3D 几何约束把物体放对位置和尺度。",
-                "en": "Photo editing that uses 3D geometry so moved objects look correctly placed and scaled."
+                "zh": "在 GROMACS 中实现多显卡加速的 AI 分子动力学模拟。",
+                "en": "They put AI into a standard chemistry simulator to make it more accurate and faster on powerful computers."
             }
         }
     },
     {
-        "id": "2604.07201v1",
-        "title": "BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment",
-        "authors": "Mohamed Darwish Mounis, Mohamed Mahmoud, Shaimaa Sedek, Mahmoud Abdalla, Mahmoud SalahEldin Kasem, Abdelrahman Abdallah, Hyun-Soo Kang",
+        "id": "2604.07350v1",
+        "title": "Fast Spatial Memory with Elastic Test-Time Training",
+        "authors": "Ziqiao Ma, Xueyang Yu, Haoyu Zhen, Yuncong Yang, Joyce Chai, Chuang Gan",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07201v1",
-        "recommendationScore": 8.9,
+        "arxivUrl": "https://arxiv.org/abs/2604.07350v1",
+        "recommendationScore": 5,
         "summaries": {
             "expert": {
-                "zh": "BRIDGE 通过强化学习训练的查询对齐模型 FORGE，将含噪的多模态查询蒸馏为更利于检索的紧凑字符串，并结合推理增强稠密检索器 LENS。结果表明，多模态到文本检索的主要瓶颈在“查询对齐/可检索表达”，该系统能显著提升 embedding 相似度驱动的召回表现。",
-                "en": "BRIDGE improves multimodal-to-text retrieval with FORGE (an RL-trained query alignment model that distills noisy multimodal queries into compact search strings) and LENS (a reasoning-enhanced dense retriever). The results suggest query alignment is a primary bottleneck, improving embedding-based similarity and retrieval performance."
+                "zh": "提出弹性测试时训练（Elastic TTT），利用 Fisher 加权先验稳定权重更新。该技术在长序列 4D 重建任务中实现了高效的空时表征学习并缓解了遗忘问题。",
+                "en": "Fast Spatial Memory (FSM) utilizes Elastic Test-Time Training with a Fisher-weighted elastic prior to stabilize model updates during long-sequence 4D reconstruction. This approach mitigates catastrophic forgetting and reduces the activation-memory bottleneck by allowing for robust multi-chunk adaptation."
             },
             "general": {
-                "zh": "这是一个更会“把你的图+字意图翻译成搜索词”的检索系统，提升跨模态搜索体验。它强调把查询表达对齐到可检索的文本形式，比单纯换更大编码器更有效。",
-                "en": "This system makes multimodal search better by rewriting image+text queries into cleaner, more retrievable text queries. It argues alignment and query formulation matter as much as (or more than) bigger encoders."
+                "zh": "在对视频进行长时长的 3D 建模时，AI 常会忘记之前的信息。新技术通过特殊的记忆机制，让 AI 能在更长的时间跨度内保持记忆的准确性。",
+                "en": "This paper introduces a better way for AI to remember 3D scenes as it watches long videos. The new method prevents the AI from forgetting what it saw earlier, leading to much more accurate 3D models of moving objects."
             },
             "lazy": {
-                "zh": "把复杂的图文查询变成更好搜的关键词，让检索更准。",
-                "en": "Turns messy image+text queries into better search text to retrieve more accurately."
+                "zh": "采用弹性测试时训练技术提升 4D 重建的长序列稳定性。",
+                "en": "It's a way for AI to build 3D models of moving scenes without forgetting previous details or running out of memory."
             }
         }
     },
     {
-        "id": "2604.07238v1",
-        "title": "On the Price of Privacy for Language Identification and Generation",
-        "authors": "Xiaoyu Li, Andi Han, Jiaojiao Jiang, Junbin Gao",
+        "id": "2604.07279v1",
+        "title": "Mem3R: Streaming 3D Reconstruction with Hybrid Memory via Test-Time Training",
+        "authors": "Changkun Liu, Jiezhi Yang, Zeman Li, Yuan Deng, Jiancong Guo, Luca Ballan",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07238v1",
-        "recommendationScore": 8.8,
+        "arxivUrl": "https://arxiv.org/abs/2604.07279v1",
+        "recommendationScore": 4,
         "summaries": {
             "expert": {
-                "zh": "该研究分析差分隐私（DP）在语言识别与生成中的统计代价，给出算法与匹配下界。在近似 DP 设定下可保持接近非隐私的错误率，而在纯 DP 下误差会按 ε 相关因子呈指数性恶化，给出最优速率刻画。",
-                "en": "This work characterizes the agnostic statistical cost of differential privacy (DP) for language identification and generation, providing matching algorithms and lower bounds. It shows approximate DP can retain non-private error rates, while pure DP incurs exponential degradation by an epsilon-dependent factor, yielding optimal rates."
+                "zh": "提出流式 3D 重建模型 Mem3R，通过混合存储解耦相机跟踪与几何映射。该设计利用测试时训练优化跟踪精度，在降低参数量的同时减少了轨迹误差。",
+                "en": "Mem3R employs a hybrid memory design that decouples camera tracking from geometric mapping to improve temporal consistency in streaming 3D reconstruction. The model uses an implicit fast-weight memory for tracking and an explicit token-based state for mapping, resulting in reduced model size and lower trajectory error."
             },
             "general": {
-                "zh": "论文量化了“更隐私”会让语言模型/语言识别损失多少准确率。结论是：在很多近似 DP 的现实设定里，隐私代价可能比直觉更小。",
-                "en": "The paper studies how much accuracy you lose when enforcing differential privacy in language tasks. It suggests the privacy cost can be surprisingly small in approximate-DP regimes."
+                "zh": "为机器人实时绘制地图开发的新技术。它能像人类一样一边观察一边记录环境，有效解决了长时间运行后的位置偏差问题。",
+                "en": "This AI model helps robots and AR headsets map 3D environments more accurately by separating the task of tracking movement from the task of drawing the map. This design uses less memory and prevents the map from becoming distorted over time."
             },
             "lazy": {
-                "zh": "隐私保护不一定“贵”：在一些设定下性能损失很小。",
-                "en": "Privacy can be cheap: some DP setups lose little performance."
+                "zh": "通过混合存储和测试时训练实现低漂移的流式 3D 重建。",
+                "en": "A smarter 3D mapping AI that stays accurate and uses less memory during long recordings."
             }
         }
     },
     {
-        "id": "2604.07165v1",
-        "title": "Reason in Chains, Learn in Trees: Self-Rectification and Grafting for Multi-turn Agent Policy Optimization",
-        "authors": "Yu Li, Sizhe Tang, Tian Lan",
+        "id": "2604.07348v1",
+        "title": "MoRight: Motion Control Done Right",
+        "authors": "Shaowei Liu, Xuanchi Ren, Tianchang Shen, Huan Ling, Saurabh Gupta, Shenlong Wang, Sanja Fidler, Jun Gao",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07165v1",
-        "recommendationScore": 8.7,
+        "arxivUrl": "https://arxiv.org/abs/2604.07348v1",
+        "recommendationScore": 3,
         "summaries": {
             "expert": {
-                "zh": "T-STAR（Tree-structured Self-Taught Agent Rectification）将多轮轨迹合并为“认知树”，用内省估值降低逐步优势估计的方差，并通过 In-Context Thought Grafting 在关键分歧点对比成功/失败分支以合成修正性推理。该框架旨在缓解多步任务的稀疏奖励与长链错误传播问题，提升智能体策略优化稳定性。",
-                "en": "T-STAR (Tree-structured Self-Taught Agent Rectification) merges multi-turn trajectories into a Cognitive Tree, enabling variance-reduced step-level advantages via Introspective Valuation. It uses In-Context Thought Grafting to synthesize corrective reasoning at critical divergence points by contrasting successful and failed branches, improving policy optimization under sparse rewards."
+                "zh": "提出 MoRight 框架实现视频生成中的物体运动与视角解耦。模型通过学习运动因果性，能够预测物体受力后的连锁反应，支持前向预测与逆向动作恢复。",
+                "en": "MoRight is a framework for motion-controlled video generation that disentangles camera viewpoints from object motion using temporal cross-view attention. It models motion causality by separating active driving actions from passive consequences, allowing for both forward and inverse physical reasoning."
             },
             "general": {
-                "zh": "它把智能体的决策过程组织成一棵“可能性树”，更容易定位哪一步推理出了问题并进行纠错。这样能让多步任务训练更稳定、更会从失败里学。",
-                "en": "It organizes an agent’s multi-step reasoning into a tree so it can pinpoint where chains go wrong and learn corrections. This can make training on long-horizon tasks more stable under sparse feedback."
+                "zh": "用户现在可以分别控制视频里物体的动作和观察视角。AI 还能理解因果关系，比如它知道推一下物体会导致什么物理后果。",
+                "en": "This tool lets users control the movement of objects in AI-generated videos independently from how the camera moves. It also ensures that when one object moves, other objects in the scene react in a way that looks physically realistic."
             },
             "lazy": {
-                "zh": "用“树”来帮智能体找错并改正，长链推理更不容易翻车。",
-                "en": "A tree-based way for agents to find and fix mistakes in long reasoning chains."
+                "zh": "实现视频生成中物体运动与视角的解耦及因果逻辑控制。",
+                "en": "It's an AI video generator that lets you control the camera and object movements separately while keeping the physics real."
+            }
+        }
+    },
+    {
+        "id": "2604.07340v1",
+        "title": "TC-AE: Unlocking Token Capacity for Deep Compression Autoencoders",
+        "authors": "Teng Li, Ziyuan Huang, Cong Chen, Yangfu Li, Yuanhuiyi Lyu, Dandan Zheng, Chunhua Shen, Jun Zhang",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.07340v1",
+        "recommendationScore": 2,
+        "summaries": {
+            "expert": {
+                "zh": "提出 TC-AE 架构，通过两阶段 token 压缩策略解决高压缩比下的表征崩溃问题。结合联合自监督训练增强语义结构，提升了图像重建与生成的质量。",
+                "en": "TC-AE improves ViT-based autoencoders by decomposing token-to-latent compression into two stages to prevent latent representation collapse. The architecture also utilizes joint self-supervised training to enhance the semantic structure of image tokens, improving both reconstruction and generation quality."
+            },
+            "general": {
+                "zh": "图片在深度压缩后往往会变得模糊。这项研究通过优化图片“零件”的处理方式，让压缩得很小的图片也能在还原时保持清晰。",
+                "en": "Researchers found a new way to compress images for AI without losing the important details that make the pictures look real. Their method prevents the compressed data from becoming a mess, leading to much higher quality AI-generated images."
+            },
+            "lazy": {
+                "zh": "优化令牌容量设计以提升图像压缩与生成的质量。",
+                "en": "This new image compressor makes AI-generated pictures look much better even at very small file sizes."
+            }
+        }
+    },
+    {
+        "id": "2604.07321v1",
+        "title": "Syntax Is Easy, Semantics Is Hard: Evaluating LLMs for LTL Translation",
+        "authors": "Priscilla Kyei Danso, Mohammad Saqib Hasan, Niranjan Balasubramanian, Omar Chowdhury",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.07321v1",
+        "recommendationScore": 1,
+        "summaries": {
+            "expert": {
+                "zh": "评估了 LLM 将自然语言翻译为线性时序逻辑（LTL）公式的效果，发现模型语法处理较好但语义理解较弱。研究指出通过代码补全重构任务可有效提升准确性。",
+                "en": "This paper evaluates LLMs on translating natural language into Linear Temporal Logic (LTL) for system requirements. The study finds that while models handle LTL syntax well, they struggle with semantics, though performance is boosted when the task is reformulated as a code-completion problem."
+            },
+            "general": {
+                "zh": "软件安全规则通常需要写成复杂的数学公式，该研究测试了 AI 代写这些公式的能力。结果发现 AI 虽然能写对格式，但在理解深层含义上还有欠缺。",
+                "en": "This study tested how well AI can translate plain English into a complex logical language used for software security. They found that while AI is good at following the basic rules of the language, it often misses the deeper meaning of the instructions."
+            },
+            "lazy": {
+                "zh": "评估大语言模型翻译线性时序逻辑公式的能力与挑战。",
+                "en": "AI is decent at writing the formal rules for security but often gets the actual meaning of the rules wrong."
             }
         }
     }
