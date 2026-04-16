@@ -29,62 +29,18 @@ export function getSummaryText(summary: SummaryContent, language: 'zh' | 'en'): 
 }
 
 export const generatedYear = '2026';
-export const generatedDateLabel = "2026年4月10日星期五";
+export const generatedDateLabel = "2026年4月16日星期四";
 
 export const totalFilteredCount = 199;
 
 export const papers: Paper[] = [
-    {
-        "id": "2604.07350v1",
-        "title": "Fast Spatial Memory with Elastic Test-Time Training",
-        "authors": "Ziqiao Ma, Xueyang Yu, Haoyu Zhen, Yuncong Yang, Joyce Chai, Chuang Gan",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07350v1",
-        "recommendationScore": 9.8,
-        "summaries": {
-            "expert": {
-                "zh": "该论文提出弹性测试时训练（Elastic Test-Time Training），通过 Fisher 加权的弹性先验来稳定快速权重更新。基于该机制的 Fast Spatial Memory 能从长观测序列中学习时空表示，并在新视角下进行时间组合渲染。",
-                "en": "This paper introduces Elastic Test-Time Training, which stabilizes fast weight updates using a Fisher-weighted elastic prior centered on an evolving anchor state. The anchor state (an EMA of prior fast weights) enables robust multi-chunk adaptation for 4D reconstruction while reducing forgetting and activation-memory bottlenecks."
-            },
-            "general": {
-                "zh": "该研究面向长序列 3D/4D 重建中的测试时训练不稳定问题，引入“锚点状态”来抑制遗忘和过拟合。结果是在长上下文上实现更快适应与更稳定的重建质量。",
-                "en": "The work improves how models reconstruct 3D/4D environments from long sequences by making test-time training more stable. It helps the model adapt quickly without forgetting what it learned earlier."
-            },
-            "lazy": {
-                "zh": "用更稳定的测试时训练，让模型在长视频里更会“记路”和重建世界。",
-                "en": "A more stable test-time training method to help AI remember and reconstruct 3D/4D worlds from long videos."
-            }
-        }
-    },
-    {
-        "id": "2604.07209v1",
-        "title": "INSPATIO-WORLD: A Real-Time 4D World Simulator via Spatiotemporal Autoregressive Modeling",
-        "authors": "InSpatio Team, Donghui Shen, Guofeng Zhang, Haomin Liu, Haoyu Ji, Hujun Bao, Hongjia Zhai, Jialin Liu, Jing Guo, Nan Wang, Siji Pan, Weihong Pan, Weijian Xie, Xianbin Liu, Xiaojun Xiang, Xiaoyu Zhang, Xinyu Chen, Yifu Wang, Yipeng Chen, Zhenzhou Fan, Zhewen Le, Zhichao Ye, Ziqiang Zhao",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07209v1",
-        "recommendationScore": 9.6,
-        "summaries": {
-            "expert": {
-                "zh": "INSPATIO-WORLD 采用时空自回归（STAR）架构：隐式时空缓存聚合观测为潜表示，并用显式空间约束模块强化几何结构。它还提出联合分布匹配蒸馏（JDMD），用真实数据分布正则化生成过程以缓解由合成数据导致的保真度下降。",
-                "en": "INSPATIO-WORLD uses a Spatiotemporal Autoregressive (STAR) architecture with an Implicit Spatiotemporal Cache and an Explicit Spatial Constraint Module for geometric structure. It introduces Joint Distribution Matching Distillation (JDMD) to regularize training with real-world distributions and mitigate fidelity degradation from synthetic data reliance."
-            },
-            "general": {
-                "zh": "这是一个可实时生成高保真、可交互动态场景的 4D 世界模拟器，并能从单段参考视频恢复场景。它显著提升空间一致性与交互精度，适合用于导航、规划与仿真。",
-                "en": "This simulator can generate realistic, interactive 4D worlds from a single video clip in real time. It focuses on maintaining strong spatial consistency for smooth navigation and interaction."
-            },
-            "lazy": {
-                "zh": "从一段视频生成可互动的 4D 世界，并且还能实时跑起来。",
-                "en": "A real-time 4D world simulator that generates interactive scenes from a single video."
-            }
-        }
-    },
     {
         "id": "2604.07223v1",
         "title": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
         "authors": "Yen-Shan Chen, Sian-Yao Huang, Cheng-Lin Yang, Yun-Nung Chen",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07223v1",
-        "recommendationScore": 9.5,
+        "recommendationScore": 9.8,
         "summaries": {
             "expert": {
                 "zh": "TraceSafe-Bench 在多步工具调用轨迹上覆盖 12 类风险，系统评估护栏在“过程”中的检测与拦截能力。结果显示护栏效果更依赖结构化数据理解/轨迹解析能力，而非纯粹的语义安全对齐；且随着轨迹变长，风险行为更可见时，检测表现反而提升。",
@@ -106,7 +62,7 @@ export const papers: Paper[] = [
         "authors": "Qiyao Ma, Dechen Gao, Rui Cai, Boqi Zhao, Hanchu Zhou, Junshan Zhang, Zhe Zhao",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07343v1",
-        "recommendationScore": 9.4,
+        "recommendationScore": 9.7,
         "summaries": {
             "expert": {
                 "zh": "Personalized RewardBench 通过用户特定准则构造响应对，用于评估奖励模型捕捉“个人偏好”的能力。实验表明该基准与 Best-of-N 采样、PPO 微调等下游表现的相关性更强，同时揭示现有 SOTA 奖励模型在个性化上仍明显不足。",
@@ -123,34 +79,12 @@ export const papers: Paper[] = [
         }
     },
     {
-        "id": "2604.07236v1",
-        "title": "How Much LLM Does a Self-Revising Agent Actually Need?",
-        "authors": "Seongwoo Jeong, Seonil Son",
-        "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07236v1",
-        "recommendationScore": 9.3,
-        "summaries": {
-            "expert": {
-                "zh": "论文提出声明式反射运行协议，将智能体的状态、置信信号与受限动作外部化为可检查的运行时结构，并将能力拆解为显式世界模型规划、符号化反思与稀疏的 LLM 修订。基于带噪声的战舰游戏实验显示，显式规划对胜率贡献最大，而低频 LLM 修订仅带来边际且不单调的提升。",
-                "en": "The paper introduces a declared reflective runtime protocol that externalizes agent state, confidence, and constrained actions into inspectable structures, decomposing competence into explicit world-model planning, symbolic reflection, and sparse LLM-based revision. In a noisy Battleship setting, explicit planning drives most of the win-rate gains, while low-frequency conditional LLM revision adds only marginal, non-monotonic improvements."
-            },
-            "general": {
-                "zh": "该研究在问：自我修订智能体到底需要多少“LLM 智能”，以及多少来自外围结构。结论倾向于：把规划与反思做成显式结构，往往比频繁调用 LLM 更能带来稳定收益。",
-                "en": "This work asks how much of a self-revising agent’s performance comes from the LLM versus the surrounding structure. It suggests that explicit planning/structure can matter more than frequent LLM intervention."
-            },
-            "lazy": {
-                "zh": "很多时候，智能体更需要“好结构”，而不是“多说两句”。",
-                "en": "Agents may benefit more from structured planning than from frequent LLM revisions."
-            }
-        }
-    },
-    {
         "id": "2604.07190v1",
         "title": "The ATOM Report: Measuring the Open Language Model Ecosystem",
         "authors": "Nathan Lambert, Florian Brand",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07190v1",
-        "recommendationScore": 9.1,
+        "recommendationScore": 9.6,
         "summaries": {
             "expert": {
                 "zh": "ATOM Report 从下载量、派生模型与推理市场等维度系统测量约 1500 个开源语言模型生态。报告记录了 2025 年夏季后开源模型采用格局的显著变化，并对主流系列（如 Qwen、DeepSeek、Llama）给出数据化对比。",
@@ -167,46 +101,68 @@ export const papers: Paper[] = [
         }
     },
     {
-        "id": "2604.07230v1",
-        "title": "PhyEdit: Towards Real-World Object Manipulation via Physically-Grounded Image Editing",
-        "authors": "Ruihang Xu, Dewei Zhou, Xiaolong Shen, Fan Ma, Yi Yang",
+        "id": "2604.06811v1",
+        "title": "SkillTrojan: Backdoor Attacks on Skill-Based Agent Systems",
+        "authors": "Yunhao Feng, Yifan Ding, Yingshui Tan, Boren Zheng, Yanming Guo, Xiaolong Li, Kun Zhai, Yishan Li, Wenke Huang",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07230v1",
-        "recommendationScore": 9.0,
+        "arxivUrl": "https://arxiv.org/abs/2604.06811v1",
+        "recommendationScore": 9.5,
         "summaries": {
             "expert": {
-                "zh": "PhyEdit 将显式 3D 几何/物理模拟作为可插拔的视觉引导，提升图像编辑中物体操控的空间一致性与尺度/透视正确性。作者还发布 RealManip-10K（含深度标注）与 ManipEval，用于评估 3D 几何精度、操作一致性等维度。",
-                "en": "PhyEdit uses explicit 3D geometric/physical simulation as a plug-and-play visual guide to improve spatial manipulation accuracy in image editing. The authors release RealManip-10K (with depth annotations) and the ManipEval benchmark to evaluate 3D geometry accuracy and manipulation consistency."
+                "zh": "提出SkillTrojan，针对“技能可复用+可组合”的智能体系统，直接在技能实现中植入后门逻辑，而非篡改模型参数或训练数据。攻击通过看似正常的技能组合在特定触发条件下重组并执行恶意行为，凸显模块化技能库的安全审计难题。",
+                "en": "SkillTrojan targets skill-based agent systems by implanting backdoors in skill implementations rather than model weights or training data. It leverages standard skill composition to reconstruct and execute malicious behavior only under specific triggers, highlighting a hard-to-audit attack surface in modular agent toolchains."
             },
             "general": {
-                "zh": "它解决“把东西挪一下就穿模/比例不对”的老问题，用 3D 几何作为约束让编辑结果更真实。配套数据集与评测让不同方法能在几何一致性上被更公平地比较。",
-                "en": "It makes edits more physically and geometrically consistent by using 3D cues, so moved objects look properly scaled and placed. The accompanying dataset/benchmark helps compare methods on spatial correctness."
+                "zh": "模块化技能让智能体更强，也让攻击更隐蔽：恶意逻辑可以躲在“正常工具”里。论文提醒我们，技能仓库需要像依赖供应链一样做安全治理。",
+                "en": "Modular skills make agents more capable, but also create a supply-chain-like security risk: malicious logic can hide inside ‘normal’ tools. The work argues for stronger auditing and governance of skill repositories."
             },
             "lazy": {
-                "zh": "让 P 图更像真的：用 3D 几何约束把物体放对位置和尺度。",
-                "en": "Photo editing that uses 3D geometry so moved objects look correctly placed and scaled."
+                "zh": "给智能体的技能包投毒，比改模型更隐蔽。",
+                "en": "Poisoning an agent’s skills can be stealthier than attacking the model."
             }
         }
     },
     {
-        "id": "2604.07201v1",
-        "title": "BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment",
-        "authors": "Mohamed Darwish Mounis, Mohamed Mahmoud, Shaimaa Sedek, Mahmoud Abdalla, Mahmoud SalahEldin Kasem, Abdelrahman Abdallah, Hyun-Soo Kang",
+        "id": "2604.06846v1",
+        "title": "MedDialBench: Benchmarking LLM Diagnostic Robustness under Parametric Adversarial Patient Behaviors",
+        "authors": "Xiaotian Luo, Xun Jiang, Jiangcheng Wu",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07201v1",
-        "recommendationScore": 8.9,
+        "arxivUrl": "https://arxiv.org/abs/2604.06846v1",
+        "recommendationScore": 9.4,
         "summaries": {
             "expert": {
-                "zh": "BRIDGE 通过强化学习训练的查询对齐模型 FORGE，将含噪的多模态查询蒸馏为更利于检索的紧凑字符串，并结合推理增强稠密检索器 LENS。结果表明，多模态到文本检索的主要瓶颈在“查询对齐/可检索表达”，该系统能显著提升 embedding 相似度驱动的召回表现。",
-                "en": "BRIDGE improves multimodal-to-text retrieval with FORGE (an RL-trained query alignment model that distills noisy multimodal queries into compact search strings) and LENS (a reasoning-enhanced dense retriever). The results suggest query alignment is a primary bottleneck, improving embedding-based similarity and retrieval performance."
+                "zh": "提出MedDialBench，用参数化、可控强度的方式模拟多维“非合作病人”行为，以评估LLM在交互式诊断对话中的鲁棒性。基准不仅提供剂量-反应式的难度控制，还分析不同维度行为之间的交互影响，帮助定位诊断失败模式。",
+                "en": "MedDialBench benchmarks LLM diagnostic robustness in interactive medical dialogues by simulating multi-dimensional non-cooperative patient behaviors with controllable severity. It enables dose-response evaluation and studies cross-dimension interactions, helping characterize failure modes in dialogue-based diagnosis."
             },
             "general": {
-                "zh": "这是一个更会“把你的图+字意图翻译成搜索词”的检索系统，提升跨模态搜索体验。它强调把查询表达对齐到可检索的文本形式，比单纯换更大编码器更有效。",
-                "en": "This system makes multimodal search better by rewriting image+text queries into cleaner, more retrievable text queries. It argues alignment and query formulation matter as much as (or more than) bigger encoders."
+                "zh": "医疗对话里，病人可能含糊、遗漏甚至误导；这个基准把这些情况系统化并可调强度地测出来。它能帮助我们判断诊断智能体在真实交互中到底有多稳。",
+                "en": "Real patients can be vague, omit details, or mislead—this benchmark makes those behaviors controllable and measurable. It helps evaluate how robust diagnostic agents are under realistic interactive conditions."
             },
             "lazy": {
-                "zh": "把复杂的图文查询变成更好搜的关键词，让检索更准。",
-                "en": "Turns messy image+text queries into better search text to retrieve more accurately."
+                "zh": "病人“不配合”时，AI医生还能稳吗？",
+                "en": "How robust is medical AI when patients aren’t cooperative?"
+            }
+        }
+    },
+    {
+        "id": "2604.06814v1",
+        "title": "OmniTabBench: Mapping the Empirical Frontiers of GBDTs, Neural Networks, and Foundation Models for Tabular Data at Scale",
+        "authors": "Dihong Jiang, Ruoqi Cao, Zhiyuan Dang, Li Huang, Qingsong Zhang, Zhiyu Wang, Shihao Piao, Shenggao Zhu, Jianlong Chang, Zhouchen Lin, Qi Tian",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.06814v1",
+        "recommendationScore": 9.3,
+        "summaries": {
+            "expert": {
+                "zh": "提出OmniTabBench，收集并统一评测大规模表格数据任务，用于系统比较GBDT、深度网络与基础模型在不同数据属性下的表现。论文强调以元特征分析解释“何时谁更强”，并指出表格学习不存在单一万能范式。",
+                "en": "OmniTabBench is a large-scale tabular benchmark that systematically compares GBDTs, neural networks, and foundation-model approaches across diverse datasets. It pairs evaluation with metafeature analysis to explain when each paradigm excels, underscoring that no single family dominates tabular learning."
+            },
+            "general": {
+                "zh": "这是一份“表格数据到底该用什么模型”的大规模实证答案。它把不同模型的优势与数据特征关联起来，帮助工程落地选型。",
+                "en": "It’s a large empirical answer to ‘what should I use for tabular data?’. By linking performance to dataset characteristics, it offers practical guidance for model selection."
+            },
+            "lazy": {
+                "zh": "表格数据没有万能模型，得看数据长什么样。",
+                "en": "There’s no one best model for tabular data."
             }
         }
     },
@@ -216,7 +172,7 @@ export const papers: Paper[] = [
         "authors": "Xiaoyu Li, Andi Han, Jiaojiao Jiang, Junbin Gao",
         "year": "2026",
         "arxivUrl": "https://arxiv.org/abs/2604.07238v1",
-        "recommendationScore": 8.8,
+        "recommendationScore": 9.2,
         "summaries": {
             "expert": {
                 "zh": "该研究分析差分隐私（DP）在语言识别与生成中的统计代价，给出算法与匹配下界。在近似 DP 设定下可保持接近非隐私的错误率，而在纯 DP 下误差会按 ε 相关因子呈指数性恶化，给出最优速率刻画。",
@@ -233,24 +189,68 @@ export const papers: Paper[] = [
         }
     },
     {
-        "id": "2604.07165v1",
-        "title": "Reason in Chains, Learn in Trees: Self-Rectification and Grafting for Multi-turn Agent Policy Optimization",
-        "authors": "Yu Li, Sizhe Tang, Tian Lan",
+        "id": "2604.07036v1",
+        "title": "ReDAct: Uncertainty-Aware Deferral for LLM Agents",
+        "authors": "Dzianis Piatrashyn, Nikita Kotelevskii, Kirill Grishchenkov, Nikita Glazkov, Ivan Nasonov, Ilya Makarov, Timothy Baldwin, Preslav Nakov, Roman Vashurin, Maxim Panov",
         "year": "2026",
-        "arxivUrl": "https://arxiv.org/abs/2604.07165v1",
-        "recommendationScore": 8.7,
+        "arxivUrl": "https://arxiv.org/abs/2604.07036v1",
+        "recommendationScore": 9.1,
         "summaries": {
             "expert": {
-                "zh": "T-STAR（Tree-structured Self-Taught Agent Rectification）将多轮轨迹合并为“认知树”，用内省估值降低逐步优势估计的方差，并通过 In-Context Thought Grafting 在关键分歧点对比成功/失败分支以合成修正性推理。该框架旨在缓解多步任务的稀疏奖励与长链错误传播问题，提升智能体策略优化稳定性。",
-                "en": "T-STAR (Tree-structured Self-Taught Agent Rectification) merges multi-turn trajectories into a Cognitive Tree, enabling variance-reduced step-level advantages via Introspective Valuation. It uses In-Context Thought Grafting to synthesize corrective reasoning at critical divergence points by contrasting successful and failed branches, improving policy optimization under sparse rewards."
+                "zh": "提出ReDAct，通过“不确定性驱动的分流”让智能体优先用小模型决策，仅在高不确定时再委托给更大、更可靠但更昂贵的模型。该框架面向序列决策场景，目标是在控制推理成本的同时降低幻觉导致的不可逆轨迹崩坏风险。",
+                "en": "ReDAct proposes uncertainty-aware deferral for LLM agents: a cheaper model handles decisions by default and defers to a stronger, more expensive model when uncertainty is high. Designed for sequential decision-making, it aims to reduce trajectory-ruining hallucinations while controlling inference cost."
             },
             "general": {
-                "zh": "它把智能体的决策过程组织成一棵“可能性树”，更容易定位哪一步推理出了问题并进行纠错。这样能让多步任务训练更稳定、更会从失败里学。",
-                "en": "It organizes an agent’s multi-step reasoning into a tree so it can pinpoint where chains go wrong and learn corrections. This can make training on long-horizon tasks more stable under sparse feedback."
+                "zh": "把“大模型当专家会诊”而不是全程开着：便宜模型先做，拿不准再升级。它给智能体系统提供了成本与可靠性的工程折中。",
+                "en": "Use the big model like an on-call expert: run a cheap model most of the time and escalate only when needed. It’s a pragmatic reliability–cost tradeoff for agentic systems."
             },
             "lazy": {
-                "zh": "用“树”来帮智能体找错并改正，长链推理更不容易翻车。",
-                "en": "A tree-based way for agents to find and fix mistakes in long reasoning chains."
+                "zh": "不确定就升级到更强模型，既省钱又更稳。",
+                "en": "Escalate to a stronger model only when unsure."
+            }
+        }
+    },
+    {
+        "id": "2604.07172v1",
+        "title": "Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling",
+        "authors": "Tom A. Lamb, Desi R. Ivanova, Philip H. S. Torr, Tim G. J. Rudner",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.07172v1",
+        "recommendationScore": 9.0,
+        "summaries": {
+            "expert": {
+                "zh": "针对问答场景的语义不确定性量化，系统区分“区分度”和“校准度”，并指出现有方法常忽略后者导致不可靠。论文提出Token级温度缩放来优化校准，在多种置信度度量上改进语义校准表现。",
+                "en": "For semantic uncertainty in LM question answering, the paper separates discrimination from calibration and shows that focusing on discrimination alone yields unreliable uncertainty estimates. It proposes token-level temperature scaling to improve calibration, boosting semantic uncertainty quality across multiple confidence measures."
+            },
+            "general": {
+                "zh": "让模型更会判断自己是不是在瞎编：不仅要能区分对错，还要让置信度“说到做到”。该方法用很轻量的温度缩放就能明显改善校准。",
+                "en": "To make models better at knowing when they might be wrong, confidence should be calibrated, not just discriminative. A lightweight temperature-scaling approach improves how well uncertainty matches reality."
+            },
+            "lazy": {
+                "zh": "让AI的“自信值”更可信。",
+                "en": "Make the model’s confidence more trustworthy."
+            }
+        }
+    },
+    {
+        "id": "2604.07345v1",
+        "title": "Measurement of Generative AI Workload Power Profiles for Whole-Facility Data Center Infrastructure Planning",
+        "authors": "Roberto Vercellino, Jared Willard, Gustavo Campos, Weslley da Silva Pereira, Olivia Hull, Matthew Selensky, Juliane Mueller",
+        "year": "2026",
+        "arxivUrl": "https://arxiv.org/abs/2604.07345v1",
+        "recommendationScore": 8.9,
+        "summaries": {
+            "expert": {
+                "zh": "给出一套将GPU级高时间分辨率功耗测量映射到数据中心全设施能耗需求的方法，用于生成式AI训练/推理工作负载的基础设施规划。研究强调非专有、可复现的功耗剖面与自底向上建模对于电力接入与峰值管理的价值。",
+                "en": "This work measures high-resolution power profiles for generative AI workloads and links them to whole-facility data center energy demand for infrastructure planning. By providing non-proprietary, reproducible profiling and bottom-up modeling, it helps reason about grid connections, peak management, and facility sizing for AI workloads."
+            },
+            "general": {
+                "zh": "大模型到底“怎么花电”对电力与机房规划很关键，但公开数据一直稀缺。论文用更细粒度的功耗测量与建模把这件事做成可用的工程输入。",
+                "en": "Planning AI data centers needs realistic power traces, but public data is scarce. This paper provides a methodology for measuring and modeling AI power usage at a level useful for infrastructure decisions."
+            },
+            "lazy": {
+                "zh": "把大模型耗电曲线测清楚，数据中心才好规划。",
+                "en": "Measure AI power spikes so data centers can plan."
             }
         }
     }
