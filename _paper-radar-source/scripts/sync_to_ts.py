@@ -4,6 +4,146 @@ import os
 from datetime import datetime
 
 SUMMARIES = {
+    "2604.07223v1": {
+        "expert": {
+            "zh": "提出TraceSafe-Bench，用于评估LLM智能体在多步工具调用轨迹中的护栏有效性，将风险面从最终回答扩展到中间执行痕迹。基准覆盖多类工具与攻击路径，并分析哪些能力真正决定护栏能否在“过程”里及时拦截风险。",
+            "en": "TraceSafe-Bench evaluates safety guardrails for LLM agents over multi-step tool-use trajectories, shifting the focus from final text to intermediate execution traces. It probes guardrail behavior across varied tools and attack patterns and analyzes which capabilities actually drive effective trace-level risk detection.",
+        },
+        "general": {
+            "zh": "这篇论文系统测了“工具调用过程”里的安全护栏，而不仅是最后的输出文本。结论强调：要让智能体更安全，必须把轨迹级风险检测与拦截纳入评测与训练闭环。",
+            "en": "This paper benchmarks guardrails on the agent’s tool-calling process, not just the final answer. It argues that trajectory-level detection and intervention are essential for deploying safer tool-using agents.",
+        },
+        "lazy": {
+            "zh": "别只盯着最终回答，工具调用的中间步骤才是新的风险高地。",
+            "en": "The dangerous part is often the tool-use trace, not the final text.",
+        },
+    },
+    "2604.07343v1": {
+        "expert": {
+            "zh": "提出Personalized RewardBench，用于评估奖励模型是否能在“同样合理但偏好不同”的情形下对齐到个体用户的评价准则。基准通过个性化rubric与成对偏好样本衡量个体一致性，并与下游对齐/采样策略的效果关联。",
+            "en": "Personalized RewardBench evaluates whether reward models capture individual user preferences when multiple responses are plausible but taste differs. It uses personalized rubrics and paired comparisons to measure preference fidelity and studies how personalization relates to downstream alignment and sampling behavior.",
+        },
+        "general": {
+            "zh": "不是“整体更好”的回答才重要，而是“你更喜欢”的回答。该基准让我们能量化奖励模型的个性化能力，并暴露现有模型在多元价值对齐上的短板。",
+            "en": "It’s not just about a universally ‘better’ response—it’s about what a specific user prefers. This benchmark makes personalization measurable and highlights gaps in pluralistic alignment for today’s reward models.",
+        },
+        "lazy": {
+            "zh": "奖励模型还不太会学每个人的偏好。",
+            "en": "Reward models still struggle to learn personal taste.",
+        },
+    },
+    "2604.07190v1": {
+        "expert": {
+            "zh": "ATOM报告对主流开源语言模型生态做了系统盘点，聚焦约1.5K条主线模型及其构建者与采用度信号。报告通过下载、衍生与生态使用等指标给出“谁在被用、谁在引领”的快照，并指出2025年夏季后中国模型在采用度上的显著上升趋势。",
+            "en": "The ATOM Report provides an adoption snapshot of the open language model ecosystem, focusing on ~1.5K mainline models and who builds them. Using signals like downloads and ecosystem activity, it characterizes which model families lead adoption and documents a notable rise in Chinese model adoption starting in mid-2025.",
+        },
+        "general": {
+            "zh": "这是一个面向研究与政策的开源大模型生态“统计年鉴”。它把分散的生态信号汇总成可讨论的指标与趋势。",
+            "en": "It’s a data-driven ‘state of the ecosystem’ report for open LMs, aimed at researchers, builders, and policy audiences. It consolidates scattered signals into a clearer view of trends and adoption.",
+        },
+        "lazy": {
+            "zh": "开源大模型生态到底谁在领跑？这份报告给出数据快照。",
+            "en": "A data snapshot of who’s leading open LMs.",
+        },
+    },
+    "2604.06811v1": {
+        "expert": {
+            "zh": "提出SkillTrojan，针对“技能可复用+可组合”的智能体系统，直接在技能实现中植入后门逻辑，而非篡改模型参数或训练数据。攻击通过看似正常的技能组合在特定触发条件下重组并执行恶意行为，凸显模块化技能库的安全审计难题。",
+            "en": "SkillTrojan targets skill-based agent systems by implanting backdoors in skill implementations rather than model weights or training data. It leverages standard skill composition to reconstruct and execute malicious behavior only under specific triggers, highlighting a hard-to-audit attack surface in modular agent toolchains.",
+        },
+        "general": {
+            "zh": "模块化技能让智能体更强，也让攻击更隐蔽：恶意逻辑可以躲在“正常工具”里。论文提醒我们，技能仓库需要像依赖供应链一样做安全治理。",
+            "en": "Modular skills make agents more capable, but also create a supply-chain-like security risk: malicious logic can hide inside ‘normal’ tools. The work argues for stronger auditing and governance of skill repositories.",
+        },
+        "lazy": {
+            "zh": "给智能体的技能包投毒，比改模型更隐蔽。",
+            "en": "Poisoning an agent’s skills can be stealthier than attacking the model.",
+        },
+    },
+    "2604.06846v1": {
+        "expert": {
+            "zh": "提出MedDialBench，用参数化、可控强度的方式模拟多维“非合作病人”行为，以评估LLM在交互式诊断对话中的鲁棒性。基准不仅提供剂量-反应式的难度控制，还分析不同维度行为之间的交互影响，帮助定位诊断失败模式。",
+            "en": "MedDialBench benchmarks LLM diagnostic robustness in interactive medical dialogues by simulating multi-dimensional non-cooperative patient behaviors with controllable severity. It enables dose-response evaluation and studies cross-dimension interactions, helping characterize failure modes in dialogue-based diagnosis.",
+        },
+        "general": {
+            "zh": "医疗对话里，病人可能含糊、遗漏甚至误导；这个基准把这些情况系统化并可调强度地测出来。它能帮助我们判断诊断智能体在真实交互中到底有多稳。",
+            "en": "Real patients can be vague, omit details, or mislead—this benchmark makes those behaviors controllable and measurable. It helps evaluate how robust diagnostic agents are under realistic interactive conditions.",
+        },
+        "lazy": {
+            "zh": "病人“不配合”时，AI医生还能稳吗？",
+            "en": "How robust is medical AI when patients aren’t cooperative?",
+        },
+    },
+    "2604.06814v1": {
+        "expert": {
+            "zh": "提出OmniTabBench，收集并统一评测大规模表格数据任务，用于系统比较GBDT、深度网络与基础模型在不同数据属性下的表现。论文强调以元特征分析解释“何时谁更强”，并指出表格学习不存在单一万能范式。",
+            "en": "OmniTabBench is a large-scale tabular benchmark that systematically compares GBDTs, neural networks, and foundation-model approaches across diverse datasets. It pairs evaluation with metafeature analysis to explain when each paradigm excels, underscoring that no single family dominates tabular learning.",
+        },
+        "general": {
+            "zh": "这是一份“表格数据到底该用什么模型”的大规模实证答案。它把不同模型的优势与数据特征关联起来，帮助工程落地选型。",
+            "en": "It’s a large empirical answer to ‘what should I use for tabular data?’. By linking performance to dataset characteristics, it offers practical guidance for model selection.",
+        },
+        "lazy": {
+            "zh": "表格数据没有万能模型，得看数据长什么样。",
+            "en": "There’s no one best model for tabular data.",
+        },
+    },
+    "2604.07238v1": {
+        "expert": {
+            "zh": "研究差分隐私在语言识别与生成任务中的“隐私代价”，在不可知统计设置下给出算法与匹配下界，精确刻画误差随隐私强度变化的规律。结果对比了近似DP与纯DP下的可达性能，为“隐私-效用”权衡提供理论基准。",
+            "en": "This work quantifies the price of differential privacy for language identification and generation in the agnostic statistical setting, providing algorithms with matching lower bounds. It contrasts achievable performance under approximate vs pure DP, yielding sharp theory for privacy–utility tradeoffs in language learning.",
+        },
+        "general": {
+            "zh": "想用敏感数据训练语言系统，就必须知道隐私保护会损失多少效果。该论文用理论结果把这条曲线算清楚，便于工程与合规决策。",
+            "en": "If language systems are trained on sensitive data, we need to know the exact performance cost of privacy. This paper provides the theoretical curve to inform engineering and policy tradeoffs.",
+        },
+        "lazy": {
+            "zh": "隐私保护到底要付出多少性能？这篇给了“算出来的答案”。",
+            "en": "A theoretical answer to how much privacy costs in language learning.",
+        },
+    },
+    "2604.07036v1": {
+        "expert": {
+            "zh": "提出ReDAct，通过“不确定性驱动的分流”让智能体优先用小模型决策，仅在高不确定时再委托给更大、更可靠但更昂贵的模型。该框架面向序列决策场景，目标是在控制推理成本的同时降低幻觉导致的不可逆轨迹崩坏风险。",
+            "en": "ReDAct proposes uncertainty-aware deferral for LLM agents: a cheaper model handles decisions by default and defers to a stronger, more expensive model when uncertainty is high. Designed for sequential decision-making, it aims to reduce trajectory-ruining hallucinations while controlling inference cost.",
+        },
+        "general": {
+            "zh": "把“大模型当专家会诊”而不是全程开着：便宜模型先做，拿不准再升级。它给智能体系统提供了成本与可靠性的工程折中。",
+            "en": "Use the big model like an on-call expert: run a cheap model most of the time and escalate only when needed. It’s a pragmatic reliability–cost tradeoff for agentic systems.",
+        },
+        "lazy": {
+            "zh": "不确定就升级到更强模型，既省钱又更稳。",
+            "en": "Escalate to a stronger model only when unsure.",
+        },
+    },
+    "2604.07172v1": {
+        "expert": {
+            "zh": "针对问答场景的语义不确定性量化，系统区分“区分度”和“校准度”，并指出现有方法常忽略后者导致不可靠。论文提出Token级温度缩放来优化校准，在多种置信度度量上改进语义校准表现。",
+            "en": "For semantic uncertainty in LM question answering, the paper separates discrimination from calibration and shows that focusing on discrimination alone yields unreliable uncertainty estimates. It proposes token-level temperature scaling to improve calibration, boosting semantic uncertainty quality across multiple confidence measures.",
+        },
+        "general": {
+            "zh": "让模型更会判断自己是不是在瞎编：不仅要能区分对错，还要让置信度“说到做到”。该方法用很轻量的温度缩放就能明显改善校准。",
+            "en": "To make models better at knowing when they might be wrong, confidence should be calibrated, not just discriminative. A lightweight temperature-scaling approach improves how well uncertainty matches reality.",
+        },
+        "lazy": {
+            "zh": "让AI的“自信值”更可信。",
+            "en": "Make the model’s confidence more trustworthy.",
+        },
+    },
+    "2604.07345v1": {
+        "expert": {
+            "zh": "给出一套将GPU级高时间分辨率功耗测量映射到数据中心全设施能耗需求的方法，用于生成式AI训练/推理工作负载的基础设施规划。研究强调非专有、可复现的功耗剖面与自底向上建模对于电力接入与峰值管理的价值。",
+            "en": "This work measures high-resolution power profiles for generative AI workloads and links them to whole-facility data center energy demand for infrastructure planning. By providing non-proprietary, reproducible profiling and bottom-up modeling, it helps reason about grid connections, peak management, and facility sizing for AI workloads.",
+        },
+        "general": {
+            "zh": "大模型到底“怎么花电”对电力与机房规划很关键，但公开数据一直稀缺。论文用更细粒度的功耗测量与建模把这件事做成可用的工程输入。",
+            "en": "Planning AI data centers needs realistic power traces, but public data is scarce. This paper provides a methodology for measuring and modeling AI power usage at a level useful for infrastructure decisions.",
+        },
+        "lazy": {
+            "zh": "把大模型耗电曲线测清楚，数据中心才好规划。",
+            "en": "Measure AI power spikes so data centers can plan.",
+        },
+    },
     "2604.01151v1": {
         "expert": {
             "zh": "提出NARCBench基准，利用模型激活空间的线性探测技术检测多智能体间的隐蔽协作。研究发现协作信号在处理编码消息时在Token层面具有局部性特征，且不同类型的串通在激活空间表现各异。",
