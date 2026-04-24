@@ -3,7 +3,7 @@
     "id": "2604.07223v1",
     "title": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
     "score": 9.8,
-    "reason": "Systematic guardrail eval on multi-step tool-calling trajectories.",
+    "reason": "Systematic evaluation of guardrails under multi-step tool-calling.",
     "categories": [
       "cs.CR",
       "cs.AI",
@@ -17,8 +17,8 @@
   {
     "id": "2604.07343v1",
     "title": "Personalized RewardBench: Evaluating Reward Models with Human Aligned Personalization",
-    "score": 9.7,
-    "reason": "Reward-model benchmark focused on personalization and alignment.",
+    "score": 9.6,
+    "reason": "Benchmarking reward models with explicit personalization + alignment targets.",
     "categories": [
       "cs.CL",
       "cs.LG"
@@ -29,8 +29,8 @@
   {
     "id": "2604.07190v1",
     "title": "The ATOM Report: Measuring the Open Language Model Ecosystem",
-    "score": 9.6,
-    "reason": "Ecosystem measurement report for open language models.",
+    "score": 9.4,
+    "reason": "Measurement-style report mapping the open language model ecosystem.",
     "categories": [
       "cs.CY",
       "cs.AI",
@@ -40,45 +40,9 @@
     "pdf_url": "https://arxiv.org/pdf/2604.07190v1"
   },
   {
-    "id": "2604.06811v1",
-    "title": "SkillTrojan: Backdoor Attacks on Skill-Based Agent Systems",
-    "score": 9.5,
-    "reason": "Concrete attack surface: backdoors in skill-based agent systems.",
-    "categories": [
-      "cs.CR",
-      "cs.AI"
-    ],
-    "published": "2026-04-08T08:24:48Z",
-    "pdf_url": "https://arxiv.org/pdf/2604.06811v1"
-  },
-  {
-    "id": "2604.06846v1",
-    "title": "MedDialBench: Benchmarking LLM Diagnostic Robustness under Parametric Adversarial Patient Behaviors",
-    "score": 9.4,
-    "reason": "Medical dialogue robustness benchmark with adversarial patient behaviors.",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "published": "2026-04-08T09:09:08Z",
-    "pdf_url": "https://arxiv.org/pdf/2604.06846v1"
-  },
-  {
-    "id": "2604.06814v1",
-    "title": "OmniTabBench: Mapping the Empirical Frontiers of GBDTs, Neural Networks, and Foundation Models for Tabular Data at Scale",
-    "score": 9.3,
-    "reason": "Large-scale tabular benchmark comparing GBDTs vs neural vs foundation models.",
-    "categories": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "published": "2026-04-08T08:31:43Z",
-    "pdf_url": "https://arxiv.org/pdf/2604.06814v1"
-  },
-  {
     "id": "2604.07238v1",
     "title": "On the Price of Privacy for Language Identification and Generation",
-    "score": 9.2,
+    "score": 9.1,
     "reason": "Quantifies privacy/utility tradeoffs for language ID and generation.",
     "categories": [
       "cs.LG",
@@ -90,34 +54,10 @@
     "pdf_url": "https://arxiv.org/pdf/2604.07238v1"
   },
   {
-    "id": "2604.07036v1",
-    "title": "ReDAct: Uncertainty-Aware Deferral for LLM Agents",
-    "score": 9.1,
-    "reason": "Deferral policy for LLM agents under uncertainty (safety-oriented control).",
-    "categories": [
-      "cs.CL",
-      "cs.LG",
-      "cs.MA"
-    ],
-    "published": "2026-04-08T12:51:01Z",
-    "pdf_url": "https://arxiv.org/pdf/2604.07036v1"
-  },
-  {
-    "id": "2604.07172v1",
-    "title": "Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling",
-    "score": 9.0,
-    "reason": "Simple calibration method for semantic uncertainty in LM QA.",
-    "categories": [
-      "cs.LG"
-    ],
-    "published": "2026-04-08T15:00:32Z",
-    "pdf_url": "https://arxiv.org/pdf/2604.07172v1"
-  },
-  {
     "id": "2604.07345v1",
     "title": "Measurement of Generative AI Workload Power Profiles for Whole-Facility Data Center Infrastructure Planning",
     "score": 8.9,
-    "reason": "Practical systems measurements for genAI workload power planning.",
+    "reason": "Whole-facility power profiling for genAI workloads (practical infra planning).",
     "categories": [
       "eess.SY",
       "cs.DC",
@@ -125,5 +65,66 @@
     ],
     "published": "2026-04-08T17:56:41Z",
     "pdf_url": "https://arxiv.org/pdf/2604.07345v1"
+  },
+  {
+    "id": "2604.07242v1",
+    "title": "Weaves, Wires, and Morphisms: Formalizing and Implementing the Algebra of Deep Learning",
+    "score": 8.7,
+    "reason": "Category-theory flavored formalization + implementation lens for deep learning.",
+    "categories": [
+      "cs.LG",
+      "math.CT"
+    ],
+    "published": "2026-04-08T16:07:15Z",
+    "pdf_url": "https://arxiv.org/pdf/2604.07242v1"
+  },
+  {
+    "id": "2604.07321v1",
+    "title": "Syntax Is Easy, Semantics Is Hard: Evaluating LLMs for LTL Translation",
+    "score": 8.5,
+    "reason": "Evaluation on translating to temporal logic highlights semantic failure modes.",
+    "categories": [
+      "cs.LO",
+      "cs.AI"
+    ],
+    "published": "2026-04-08T17:36:33Z",
+    "pdf_url": "https://arxiv.org/pdf/2604.07321v1"
+  },
+  {
+    "id": "2604.07348v1",
+    "title": "MoRight: Motion Control Done Right",
+    "score": 8.3,
+    "reason": "Motion control method with clear robotics + embodied control relevance.",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "published": "2026-04-08T17:59:22Z",
+    "pdf_url": "https://arxiv.org/pdf/2604.07348v1"
+  },
+  {
+    "id": "2604.07279v1",
+    "title": "Mem3R: Streaming 3D Reconstruction with Hybrid Memory via Test-Time Training",
+    "score": 8.1,
+    "reason": "Streaming 3D reconstruction using hybrid memory + test-time training.",
+    "categories": [
+      "cs.CV"
+    ],
+    "published": "2026-04-08T16:41:22Z",
+    "pdf_url": "https://arxiv.org/pdf/2604.07279v1"
+  },
+  {
+    "id": "2604.07340v1",
+    "title": "TC-AE: Unlocking Token Capacity for Deep Compression Autoencoders",
+    "score": 7.9,
+    "reason": "Improves token capacity for deep compression autoencoders (practical CV compression).",
+    "categories": [
+      "cs.CV"
+    ],
+    "published": "2026-04-08T17:53:52Z",
+    "pdf_url": "https://arxiv.org/pdf/2604.07340v1"
   }
 ]
